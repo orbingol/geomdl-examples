@@ -1,0 +1,9 @@
+.idea/*
+nurbs/__pycache__/*
+nurbs/*.pyc
+*.out
+build/
+docs/_build
+docs/_static
+docs/_templates
+grid.txt

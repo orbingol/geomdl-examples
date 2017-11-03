@@ -15,7 +15,7 @@ curve = BSpline.Curve2D()
 curve.delta = 0.01
 
 # Set up curve
-curve.read_ctrlpts_from_txt("CP_Curve1.txt")
+curve.read_ctrlpts_from_txt("ex_curve01.cpt")
 curve.degree = 4
 
 # Auto-generate  knot vector

@@ -14,7 +14,7 @@ surf = BSpline.Surface()
 surf.delta = 0.01
 
 # Set up surface
-surf.read_ctrlpts_from_txt("CP_Surface1.txt")
+surf.read_ctrlpts_from_txt("ex_surface01.cpt")
 surf.degree_u = 3
 surf.degree_v = 3
 surf.knotvector_u = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]

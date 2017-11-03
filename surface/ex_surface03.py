@@ -13,7 +13,7 @@ from geomdl import NURBS
 surf = NURBS.Surface()
 
 # Set up surface
-surf.read_ctrlpts_from_txt("CPw_Surface3.txt")
+surf.read_ctrlpts_from_txt("ex_surface03.cptw")
 surf.degree_u = 1
 surf.degree_v = 2
 surf.knotvector_u = [0, 0, 1, 1]

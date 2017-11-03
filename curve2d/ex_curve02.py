@@ -9,10 +9,13 @@ from geomdl import BSpline
 from geomdl import utilities
 
 # Create a BSpline (NUBS) curve instance
-curve = BSpline.Curve()
+curve = BSpline.Curve2D()
+
+# Set evaluation delta
+curve.delta = 0.01
 
 # Set up curve
-curve.read_ctrlpts_from_txt("data/CP_Curve2.txt")
+curve.read_ctrlpts_from_txt("CP_Curve2.txt")
 curve.degree = 3
 
 # Auto-generate knot vector

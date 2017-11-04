@@ -31,4 +31,5 @@ curvetan = curve.tangent(0.6)
 curve.save_surfpts_to_csv("curve2.csv")
 curve.save_ctrlpts_to_csv("ctrlpts2.csv")
 
-print("End of NURBS-Python Example")
+# Good to have something here to put a breakpoint
+pass

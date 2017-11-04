@@ -48,4 +48,5 @@ nvec5 = utilities.vector_normalize((curvetan[1][0], curvetan[1][1]))
 curvetan = curve.tangent(1.0)
 nvec6 = utilities.vector_normalize((curvetan[1][0], curvetan[1][1]))
 
-print("End of NURBS-Python Example")
+# Good to have something here to put a breakpoint
+pass

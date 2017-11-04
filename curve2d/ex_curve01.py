@@ -28,4 +28,5 @@ curve.evaluate()
 curve.save_surfpts_to_csv("curve1.csv")
 curve.save_ctrlpts_to_csv("ctrlpts1.csv")
 
-print("End of NURBS-Python Example")
+# Good to have something here to put a breakpoint
+pass

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-    Examples for the NURBS-Python Package - 2D Grid Generator
+    Examples for the NURBS-Python Package
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2017
 """
@@ -22,4 +22,5 @@ mygrid.save()
 # Get the grid points for plotting
 grid_data = mygrid.grid()
 
-print("End of NURBS-Python Grid Generator Example")
+# Good to have something here to put a breakpoint
+pass

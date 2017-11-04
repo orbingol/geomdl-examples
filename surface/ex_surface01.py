@@ -23,4 +23,5 @@ surf.knotvector_v = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 # Evaluate surface points
 surf.evaluate()
 
-print("End of NURBS-Python Example")
+# Good to have something here to put a breakpoint
+pass

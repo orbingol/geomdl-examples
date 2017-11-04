@@ -35,4 +35,5 @@ print("* First derivative w.r.t. v is (%.2f, %.2f, %.2f)\n" % (surftan[2][0], su
 norm = surf.normal(u, v)
 print("* Normal at u = %.2f and v = %.2f is [%.1f, %.1f, %.1f]\n" % (u, v, norm[0], norm[1], norm[2]))
 
-print("End of NURBS-Python Example")
+# Good to have something here to put a breakpoint
+pass

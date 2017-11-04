@@ -26,27 +26,27 @@ curve.evaluate()
 
 # Evaluate curve tangent at u = 0.0
 curvetan = curve.tangent(0.0)
-nvec1 = utilities.vector_normalize((curvetan[1][0], curvetan[1][1]))
+nvec1 = utilities.vector_normalize(curvetan[1])
 
 # Evaluate curve tangent at u = 0.2
 curvetan = curve.tangent(0.2)
-nvec2 = utilities.vector_normalize((curvetan[1][0], curvetan[1][1]))
+nvec2 = utilities.vector_normalize(curvetan[1])
 
 # Evaluate curve tangent at u = 0.5
 curvetan = curve.tangent(0.5)
-nvec3 = utilities.vector_normalize((curvetan[1][0], curvetan[1][1]))
+nvec3 = utilities.vector_normalize(curvetan[1])
 
 # Evaluate curve tangent at u = 0.6
 curvetan = curve.tangent(0.6)
-nvec4 = utilities.vector_normalize((curvetan[1][0], curvetan[1][1]))
+nvec4 = utilities.vector_normalize(curvetan[1])
 
 # Evaluate curve tangent at u = 0.8
 curvetan = curve.tangent(0.8)
-nvec5 = utilities.vector_normalize((curvetan[1][0], curvetan[1][1]))
+nvec5 = utilities.vector_normalize(curvetan[1])
 
 # Evaluate curve tangent at u = 1.0
 curvetan = curve.tangent(1.0)
-nvec6 = utilities.vector_normalize((curvetan[1][0], curvetan[1][1]))
+nvec6 = utilities.vector_normalize(curvetan[1])
 
 # Good to have something here to put a breakpoint
 pass

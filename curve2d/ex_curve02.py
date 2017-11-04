@@ -24,6 +24,9 @@ curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpt
 # Evaulate curve
 curve.evaluate()
 
+# Evaluate derivatives at u = 0.6
+ders = curve.derivatives(0.6, 4)
+
 # Compute curve tangent at u = 0.6
 curvetan = curve.tangent(0.6)
 

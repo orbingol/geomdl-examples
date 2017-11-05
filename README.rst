@@ -15,8 +15,8 @@ Input Files
 -----------
 
 ``*.cpt`` and ``*.cptw`` files are simple text files. They contain *control points* and *weighted control points*,
-respectively. Please see the `NURBS-Python <https://github.com/orbingol/NURBS-Python>`_ package repository on details
-of the file formats.
+respectively. Please see the `NURBS-Python repository <https://github.com/orbingol/NURBS-Python>`_  on details of the
+file formats.
 
 License
 =======

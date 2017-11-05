@@ -9,6 +9,7 @@ Directory Structure
 * ``curve2d/`` contains examples for :code:`BSpline.Curve2D` and :code:`NURBS.Curve2D` classes
 * ``curve3d/`` contains examples for :code:`BSpline.Curve` and :code:`NURBS.Curve` classes
 * ``surface/`` contains examples for :code:`BSpline.Surface` and :code:`NURBS.Surface` classes
+* ``grid/`` contains examples for :code:`CPGen.Grid` and :code:`CPGen.GridWeighted` classes
 
 Input Files
 -----------

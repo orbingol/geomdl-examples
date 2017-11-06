@@ -23,5 +23,9 @@ surf.knotvector_v = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 # Evaluate surface points
 surf.evaluate()
 
+# Save control points and evaluated curve points
+surf.save_surfpts_to_csv("surfpts01.csv")
+surf.save_ctrlpts_to_csv("ctrlpts01.csv")
+
 # Good to have something here to put a breakpoint
 pass

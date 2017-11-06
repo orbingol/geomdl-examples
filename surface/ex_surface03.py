@@ -12,6 +12,9 @@ from geomdl import NURBS
 # Create a NURBS surface instance
 surf = NURBS.Surface()
 
+# Set evaluation delta
+surf.delta = 0.01
+
 # Set up surface
 surf.read_ctrlpts_from_txt("ex_surface03.cptw")
 surf.degree_u = 1
@@ -21,6 +24,10 @@ surf.knotvector_v = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]
 
 # Evaluate surface
 surf.evaluate()
+
+# Save control points and evaluated curve points
+surf.save_surfpts_to_csv("surfpts03.csv")
+surf.save_ctrlpts_to_csv("ctrlpts03.csv")
 
 # Good to have something here to put a breakpoint
 pass

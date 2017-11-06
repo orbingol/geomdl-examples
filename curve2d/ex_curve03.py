@@ -48,5 +48,9 @@ nvec5 = utilities.vector_normalize(curvetan[1])
 curvetan = curve.tangent(1.0)
 nvec6 = utilities.vector_normalize(curvetan[1])
 
+# Save control points and evaluated curve points
+curve.save_curvepts_to_csv("curvepts03.csv")
+curve.save_ctrlpts_to_csv("ctrlpts03.csv")
+
 # Good to have something here to put a breakpoint
 pass

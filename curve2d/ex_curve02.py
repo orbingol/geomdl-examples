@@ -32,8 +32,8 @@ ders2 = curve.derivatives2(0.6, 4)  # Algorithm A3.2
 curvetan = curve.tangent(0.6)
 
 # Save control points and evaluated curve points
-curve.save_surfpts_to_csv("curve2.csv")
-curve.save_ctrlpts_to_csv("ctrlpts2.csv")
+curve.save_curvepts_to_csv("curvepts02.csv")
+curve.save_ctrlpts_to_csv("ctrlpts02.csv")
 
 # Good to have something here to put a breakpoint
 pass

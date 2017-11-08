@@ -1,7 +1,7 @@
 NURBS-Python Package Example Scripts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This repository contains examples for the `NURBS-Python <https://github.com/orbingol/NURBS-Python>`_ package.
+This repository contains examples for the NURBS-Python_ package.
 
 Directory Structure
 ===================
@@ -18,7 +18,30 @@ Input Files
 respectively. Please see the `NURBS-Python repository <https://github.com/orbingol/NURBS-Python>`_  on details of the
 file formats.
 
+Author
+======
+
+* Onur Rauf Bingol (`@orbingol <https://github.com/orbingol>`_)
+
+Contributors
+============
+
+I would like to thank all contributors for their help and support in testing, bug fixing and improvement of the NURBS-Python_
+project.
+
+* Luke Frisken (`@kellpossible <https://github.com/kellpossible>`_)
+* John-Eric Dufour (`@jedufour <https://github.com/jedufour>`_)
+* Jan Heczko (`@heczis <https://github.com/heczis>`_)
+
 License
 =======
 
-NURBS-Python package and all example scripts are licensed under `The MIT License <LICENSE>`_.
+NURBS-Python_ package and all example scripts are licensed under `The MIT License <LICENSE>`_.
+
+Acknowledgments
+===============
+
+I would like to thank my PhD adviser, `Dr. Adarsh Krishnamurthy <https://www.me.iastate.edu/faculty/?user_page=adarsh>`_
+, for his guidance and supervision throughout the course of this project.
+
+.. _NURBS-Python: https://github.com/orbingol/NURBS-Python

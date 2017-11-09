@@ -29,28 +29,22 @@ curve.save_curvepts_to_csv("curvepts03_orig.csv")
 curve.save_ctrlpts_to_csv("ctrlpts03_orig.csv")
 
 # Evaluate curve tangent at u = 0.0
-curvetan = curve.tangent(0.0)
-nvec1 = utilities.vector_normalize(curvetan[1])
+curvetan1 = curve.tangent(0.0, normalize=True)
 
 # Evaluate curve tangent at u = 0.2
-curvetan = curve.tangent(0.2)
-nvec2 = utilities.vector_normalize(curvetan[1])
+curvetan2 = curve.tangent(0.2, normalize=True)
 
 # Evaluate curve tangent at u = 0.5
-curvetan = curve.tangent(0.5)
-nvec3 = utilities.vector_normalize(curvetan[1])
+curvetan3 = curve.tangent(0.5, normalize=True)
 
 # Evaluate curve tangent at u = 0.6
-curvetan = curve.tangent(0.6)
-nvec4 = utilities.vector_normalize(curvetan[1])
+curvetan4 = curve.tangent(0.6, normalize=True)
 
 # Evaluate curve tangent at u = 0.8
-curvetan = curve.tangent(0.8)
-nvec5 = utilities.vector_normalize(curvetan[1])
+curvetan5 = curve.tangent(0.8, normalize=True)
 
 # Evaluate curve tangent at u = 1.0
-curvetan = curve.tangent(1.0)
-nvec6 = utilities.vector_normalize(curvetan[1])
+curvetan6 = curve.tangent(1.0, normalize=True)
 
 # Good to have something here to put a breakpoint
 pass

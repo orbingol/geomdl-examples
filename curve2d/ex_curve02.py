@@ -24,16 +24,16 @@ curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpt
 # Evaulate curve
 curve.evaluate()
 
+# Save control points and evaluated curve points
+curve.save_curvepts_to_csv("curvepts02_orig.csv")
+curve.save_ctrlpts_to_csv("ctrlpts02_orig.csv")
+
 # Evaluate derivatives at u = 0.6
 ders = curve.derivatives(0.6, 4)  # Algorithm A3.4
 ders2 = curve.derivatives2(0.6, 4)  # Algorithm A3.2
 
 # Compute curve tangent at u = 0.6
 curvetan = curve.tangent(0.6)
-
-# Save control points and evaluated curve points
-curve.save_curvepts_to_csv("curvepts02.csv")
-curve.save_ctrlpts_to_csv("ctrlpts02.csv")
 
 # Good to have something here to put a breakpoint
 pass

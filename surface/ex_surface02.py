@@ -24,6 +24,10 @@ surf.knotvector_v = utilities.generate_knot_vector(surf.degree_v, 6)
 # Evaluate surface
 surf.evaluate()
 
+# Save control points and evaluated curve points
+surf.save_surfpts_to_csv("surfpts02_orig.csv")
+surf.save_ctrlpts_to_csv("ctrlpts02_orig.csv")
+
 # Evaluate 1st order surface derivative at the given u and v
 u = 0.2
 v = 0.9
@@ -34,10 +38,6 @@ print("* First derivative w.r.t. v is (%.2f, %.2f, %.2f)\n" % (surftan[2][0], su
 # Evaluate normal at the given u and v
 norm = surf.normal(u, v)
 print("* Normal at u = %.2f and v = %.2f is [%.1f, %.1f, %.1f]\n" % (u, v, norm[0], norm[1], norm[2]))
-
-# Save control points and evaluated curve points
-surf.save_surfpts_to_csv("surfpts02.csv")
-surf.save_ctrlpts_to_csv("ctrlpts02.csv")
 
 # Good to have something here to put a breakpoint
 pass

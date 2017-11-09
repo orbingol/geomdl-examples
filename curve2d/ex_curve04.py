@@ -23,8 +23,8 @@ curve.knotvector = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]
 curve.evaluate()
 
 # Save control points and evaluated curve points
-curve.save_curvepts_to_csv("curvepts04.csv")
-curve.save_ctrlpts_to_csv("ctrlpts04.csv")
+curve.save_curvepts_to_csv("curvepts04_orig.csv")
+curve.save_ctrlpts_to_csv("ctrlpts04_orig.csv")
 
 # Good to have something here to put a breakpoint
 pass

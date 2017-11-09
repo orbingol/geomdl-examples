@@ -25,8 +25,8 @@ curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpt
 curve.evaluate()
 
 # Save control points and evaluated curve points
-curve.save_curvepts_to_csv("curvepts01.csv")
-curve.save_ctrlpts_to_csv("ctrlpts01.csv")
+curve.save_curvepts_to_csv("curvepts01_orig.csv")
+curve.save_ctrlpts_to_csv("ctrlpts01_orig.csv")
 
 # Good to have something here to put a breakpoint
 pass

@@ -26,8 +26,8 @@ surf.knotvector_v = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]
 surf.evaluate()
 
 # Save control points and evaluated curve points
-surf.save_surfpts_to_csv("surfpts03.csv")
-surf.save_ctrlpts_to_csv("ctrlpts03.csv")
+surf.save_surfpts_to_csv("surfpts03_orig.csv")
+surf.save_ctrlpts_to_csv("ctrlpts03_orig.csv")
 
 # Good to have something here to put a breakpoint
 pass

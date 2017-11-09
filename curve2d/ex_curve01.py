@@ -28,5 +28,13 @@ curve.evaluate()
 curve.save_curvepts_to_csv("curvepts01_orig.csv")
 curve.save_ctrlpts_to_csv("ctrlpts01_orig.csv")
 
+# Insert a knot
+u = 0.2
+curve.insert_knot(u)
+
+# Save control points and evaluated curve points after knot insertion
+curve.save_curvepts_to_csv("curvepts01_knotins.csv")
+curve.save_ctrlpts_to_csv("ctrlpts01_knotins.csv")
+
 # Good to have something here to put a breakpoint
 pass

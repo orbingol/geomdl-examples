@@ -25,7 +25,7 @@ surf.evaluate()
 
 # Save control points and evaluated curve points
 surf.save_surfpts_to_csv("surfpts01_orig.csv", mode='zigzag')
-surf.save_ctrlpts_to_csv("ctrlpts01_orig.csv", mode='mesh')
+surf.save_ctrlpts_to_csv("ctrlpts01_orig.csv", mode='quad')
 
 # Good to have something here to put a breakpoint
 pass

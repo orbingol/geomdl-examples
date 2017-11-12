@@ -3,7 +3,7 @@
 NURBS-Python package is focused on geometric evaluations of 2D/3D NURBS curves and surfaces and it does not include any visualization component. I think there is no need to reinvent the wheel. As you may already know, there are a variety of programs and libraries focused on data visualization. For instance;
 
 * [VTK](https://www.vtk.org/)
-* [Paraview](https://www.paraview.org/) -- uses VTK and had Python bindings
+* [Paraview](https://www.paraview.org/) -- uses VTK and has Python bindings
 * [Matplotlib](https://matplotlib.org/)
 
 and even [OpenGL](https://www.opengl.org/) can directly be used to visualize data and can also be integrated in a [Qt](https://www.qt.io/) application via its OpenGL bindings.
@@ -31,4 +31,4 @@ Please see the NURBS-Python documentation on CSV saving functionality for furthe
 * Surface points: `mode='wireframe'`
 * Evaluation delta: 0.05
 
-![3D plot using Matplotlib](images\ex_surface03.png)
+![3D plot using Matplotlib](images/ex_surface03.png)

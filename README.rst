@@ -1,4 +1,4 @@
-NURBS-Python Package Example Scripts
+NURBS-Python Example Scripts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This repository contains examples for the NURBS-Python_ package.
@@ -10,6 +10,7 @@ Directory Structure
 * ``curve3d/`` contains examples for :code:`BSpline.Curve` and :code:`NURBS.Curve` classes
 * ``surface/`` contains examples for :code:`BSpline.Surface` and :code:`NURBS.Surface` classes
 * ``grid/`` contains examples for :code:`CPGen.Grid` and :code:`CPGen.GridWeighted` classes
+* ``visualization/`` contains some visualization examples. Please see the directory for details.
 
 Input Files
 -----------
@@ -41,7 +42,7 @@ NURBS-Python_ package and all example scripts are licensed under `The MIT Licens
 Acknowledgments
 ===============
 
-I would like to thank my PhD adviser, `Dr. Adarsh Krishnamurthy <https://www.me.iastate.edu/faculty/?user_page=adarsh>`_
-, for his guidance and supervision throughout the course of this project.
+I would like to thank my PhD adviser, `Dr. Adarsh Krishnamurthy <https://www.me.iastate.edu/faculty/?user_page=adarsh>`_,
+for his guidance and supervision throughout the course of this project.
 
 .. _NURBS-Python: https://github.com/orbingol/NURBS-Python

@@ -31,4 +31,4 @@ Please see the NURBS-Python documentation on CSV saving functionality for furthe
 * Surface points: `mode='wireframe'`
 * Evaluation delta: 0.05
 
-![3D plot using Matplotlib](images/ex_surface03.png)
+![Surface ex03 3D wireframe plot](images/ex_surface03_mpl.png)

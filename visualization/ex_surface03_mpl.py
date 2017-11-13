@@ -32,7 +32,7 @@ ax = fig.gca(projection='3d')
 # Control points as a scatter plot (use mode='linear' while saving CSV file)
 ax.scatter(cpgrid['x'], cpgrid['y'], cpgrid['z'], color='blue', s=50, depthshade=True)
 
-# Surface points as a wireframe plot (use mode='quad' while saving CSV file)
+# Surface points as a wireframe plot (use mode='wireframe' while saving CSV file)
 ax.plot_wireframe(X, Y, Z, color='green')
 
 # Set axis limits

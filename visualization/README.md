@@ -25,6 +25,14 @@ Please see the NURBS-Python documentation on CSV saving functionality for furthe
 
 ## Matplotlib
 
+### ex_surface01.py
+
+* Control points: `mode='wireframe'`
+* Surface points: `mode='linear'`
+* Evaluation delta: 0.05
+
+![Surface ex01 3D trisurface plot](images/ex_surface01_mpl.png)
+
 ### ex_surface02.py
 
 * Control points: `mode='wireframe'`

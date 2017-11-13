@@ -21,6 +21,7 @@ import matplotlib.pyplot as plt
 cpgrid = np.genfromtxt('ctrlpts02_orig.csv', delimiter=',', skip_header=1, names=['x', 'y', 'z'])
 surf = np.genfromtxt('surfpts02_orig.csv', delimiter=',', skip_header=1, names=['x', 'y', 'z'])
 
+# Arrange control points grid for plotting, @ref: https://stackoverflow.com/a/21352257
 cols = cpgrid['x'].shape[0]
 Xc = cpgrid['x'].reshape(-1, cols)
 Yc = cpgrid['y'].reshape(-1, cols)
@@ -38,7 +39,7 @@ colors = ['red', 'green']
 fig = plt.figure(figsize=(10.67, 8), dpi=96)
 ax = fig.gca(projection='3d')
 
-# Control points as a scatter plot (use mode='linear' while saving CSV file)
+# Control points as a scatter plot (use mode='wireframe' while saving CSV file)
 ax.plot_wireframe(Xc, Yc, Zc, color=colors[0])
 
 # Surface points as a triangulated surface plot (use mode='linear' while saving CSV file)

@@ -10,7 +10,7 @@ Directory Structure
 * ``curve3d/`` contains examples for :code:`BSpline.Curve` and :code:`NURBS.Curve` classes
 * ``surface/`` contains examples for :code:`BSpline.Surface` and :code:`NURBS.Surface` classes
 * ``grid/`` contains examples for :code:`CPGen.Grid` and :code:`CPGen.GridWeighted` classes
-* ``visualization/`` contains some visualization examples. Please see the directory for details.
+* ``visualization/`` contains some visualization examples. Please see the `README <visualization/README.md>`_ file inside the directory for details.
 
 Input Files
 -----------

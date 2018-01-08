@@ -3,10 +3,16 @@
 """
     Examples for the NURBS-Python Package
     Released under MIT License
-    Developed by Onur Rauf Bingol (c) 2016-2017
+    Developed by Onur Rauf Bingol (c) 2016-2018
 """
 from geomdl import BSpline
 from geomdl import utilities
+
+try:
+    render_curve = True
+    from geomdl.geomdl_vis import VisMPL
+except ImportError:
+    render_curve = False
 
 # Create a B-Spline curve instance
 curve = BSpline.Curve2D()
@@ -18,11 +24,17 @@ curve.delta = 0.01
 curve.read_ctrlpts_from_txt("ex_curve01.cpt")
 curve.degree = 4
 
-# Auto-generate  knot vector
+# Auto-generate knot vector
 curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpts))
 
-# Calculate curve
+# Evaluate curve
 curve.evaluate()
+
+# Draw the control point polygon and the evaluated curve
+if render_curve:
+    vis_comp = VisMPL.VisCurve2D()
+    curve.vis = vis_comp
+    curve.render()
 
 # Save control points and evaluated curve points
 curve.save_curvepts_to_csv("curvepts01_orig.csv")

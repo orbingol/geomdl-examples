@@ -8,9 +8,10 @@
 from geomdl import BSpline
 from geomdl import utilities
 
+# Try to load the visualization module
 try:
     render_curve = True
-    from geomdl.geomdl_vis import VisMPL
+    from geomdl.visualization import VisMPL
 except ImportError:
     render_curve = False
 

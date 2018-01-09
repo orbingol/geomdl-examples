@@ -31,18 +31,27 @@ curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpt
 # Evaluate curve
 curve.evaluate()
 
+# Draw the control point polygon and the evaluated curve
 if render_curve:
     vis_comp = VisMPL.VisCurve3D()
     curve.vis = vis_comp
     curve.render()
 
+# Save control points and evaluated curve points
+curve.save_curvepts_to_csv("curvepts3d01_orig.csv")
+curve.save_ctrlpts_to_csv("ctrlpts3d01_orig.csv")
+
 # Insert a knot
 u = 0.2
 curve.insert_knot(u)
 
+# Draw the control point polygon and the evaluated curve after knot insertion
+if render_curve:
+    curve.render()
+
 # Save control points and evaluated curve points after knot insertion
-curve.save_curvepts_to_csv("curvepts01_knotins.csv")
-curve.save_ctrlpts_to_csv("ctrlpts01_knotins.csv")
+curve.save_curvepts_to_csv("curvepts3d01_knotins.csv")
+curve.save_ctrlpts_to_csv("ctrlpts3d01_knotins.csv")
 
 # Good to have something here to put a breakpoint
 pass

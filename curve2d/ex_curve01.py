@@ -45,6 +45,10 @@ curve.save_ctrlpts_to_csv("ctrlpts01_orig.csv")
 u = 0.2
 curve.insert_knot(u)
 
+# Draw the control point polygon and the evaluated curve after knot insertion
+if render_curve:
+    curve.render()
+
 # Save control points and evaluated curve points after knot insertion
 curve.save_curvepts_to_csv("curvepts01_knotins.csv")
 curve.save_ctrlpts_to_csv("ctrlpts01_knotins.csv")

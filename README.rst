@@ -22,7 +22,7 @@ file formats.
 Visualization
 -------------
 
-The examples ``curve2d/ex_curve01.py`` and ``curve3d/ex_curve3d01.py`` illustrates usage of the optional visualization
+The examples ``curve2d/ex_curve01.py`` and ``curve3d/ex_curve3d01.py`` illustrate usage of the optional visualization
 component which comes with the NURBS-Python package.
 
 More advanced visualization options and some example figures with the instructions on how to generate them can be

@@ -1,5 +1,5 @@
 NURBS-Python Example Scripts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This repository contains examples for the NURBS-Python_ package.
 
@@ -29,7 +29,7 @@ More advanced visualization options and some example figures with the instructio
 found under ``visualization/`` directory.
 
 Branch Information
-------------------
+==================
 
 * ``master`` branch contains examples compatible with the latest version of NURBS-Python v3.x series.
 * ``2.x`` branch contains examples compatible with the latest version of NURBS-Python v2.x series.

@@ -30,14 +30,15 @@ surf.knotvector_v = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 # Evaluate surface points
 surf.evaluate()
 
-# Save control points and evaluated curve points
-surf.save_surfpts_to_csv("surfpts01_orig.csv", mode='zigzag')
-surf.save_ctrlpts_to_csv("ctrlpts01_orig.csv", mode='wireframe')
-
+# Draw the control point grid and the evaluated surface
 if render_surf:
     vis_comp = VisMPL.VisTriSurf()
     surf.vis = vis_comp
     surf.render()
+
+# Save control points and evaluated curve points
+surf.save_surfpts_to_csv("surfpts01_orig.csv", mode='zigzag')
+surf.save_ctrlpts_to_csv("ctrlpts01_orig.csv", mode='wireframe')
 
 # Good to have something here to put a breakpoint
 pass

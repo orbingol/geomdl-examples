@@ -28,6 +28,14 @@ component which comes with the NURBS-Python package.
 More advanced visualization options and some example figures with the instructions on how to generate them can be
 found under ``visualization/`` directory.
 
+Branch Information
+------------------
+
+* ``master`` branch contains examples compatible with the latest version of NURBS-Python v3.x series.
+* ``2.x`` branch contains examples compatible with the latest version of NURBS-Python v2.x series.
+
+Please note that there could be small API variations between the beta and the stable versions of the NURBS-Python package.
+
 Author
 ======
 
@@ -53,5 +61,6 @@ Acknowledgments
 
 I would like to thank my PhD adviser, `Dr. Adarsh Krishnamurthy <https://www.me.iastate.edu/faculty/?user_page=adarsh>`_,
 for his guidance and supervision throughout the course of this project.
+
 
 .. _NURBS-Python: https://github.com/orbingol/NURBS-Python

@@ -3,7 +3,7 @@
 """
     Examples for the NURBS-Python Package
     Released under MIT License
-    Developed by Onur Rauf Bingol (c) 2016-2017
+    Developed by Onur Rauf Bingol (c) 2016-2018
 """
 from geomdl import BSpline
 from geomdl import utilities

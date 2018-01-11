@@ -25,6 +25,8 @@ Visualization
 The following examples illustrate usage of the optional visualization component:
 
 * ``curve2d/ex_curve01.py``
+* ``curve2d/ex_curve02.py``
+* ``curve2d/ex_curve03.py``
 * ``curve3d/ex_curve3d01.py``
 * ``surface/ex_surface01.py``
 

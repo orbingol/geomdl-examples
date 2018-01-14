@@ -19,7 +19,7 @@ except ImportError:
 curve = BSpline.Curve()
 
 # Set evaluation delta
-curve.delta = 0.01
+curve.delta = 0.001
 
 # Set up curve
 curve.read_ctrlpts_from_txt("ex_curve3d01.cpt")

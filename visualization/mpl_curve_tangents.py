@@ -78,8 +78,8 @@ ctarr = np.array(curvetan)
 # Plot using Matplotlib
 plt.figure(figsize=(10.67, 8), dpi=96)
 yaxis = plt.plot((-1, 25), (0, 0), "k-")  # y-axis line
-cppolygon, = plt.plot(ctrlpts[:, 0], ctrlpts[:, 1], color='black', linestyle='-.', marker='o')  # control points polygon
-curveplt, = plt.plot(curvepts[:, 0], curvepts[:, 1], color='green', linestyle='g-')  # evaluated curve points
+cppolygon, = plt.plot(ctrlpts[:, 0], ctrlpts[:, 1], color='black', linestyle='-.', marker='o', markersize='3')  # control points polygon
+curveplt, = plt.plot(curvepts[:, 0], curvepts[:, 1], color='green', linestyle='-')  # evaluated curve points
 tanline = plt.quiver(ctarr[:, 0, 0], ctarr[:, 0, 1], ctarr[:, 1, 0], ctarr[:, 1, 1], color='blue', angles='xy', scale_units='xy', scale=1, width=0.003)  # tangents
 tanlinekey = plt.quiverkey(tanline, 23.75, -14.5, 35, "Tangent Vectors", coordinates='data', labelpos='W')
 plt.legend([cppolygon, curveplt], ["Control Points", "Evaluated Curve"])

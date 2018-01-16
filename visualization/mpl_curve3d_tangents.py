@@ -1,0 +1,100 @@
+# -*- coding: utf-8 -*-
+
+"""
+    Visualization Examples for the NURBS-Python Package
+    Released under The MIT License
+    Developed by Onur Rauf Bingol (c) 2018
+"""
+from geomdl import BSpline
+from geomdl import utilities
+
+import numpy as np
+import matplotlib
+from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.pyplot as plt
+
+#
+# Curve Evaluation
+#
+
+# Create a BSpline curve instance
+curve = BSpline.Curve()
+
+# Set evaluation delta
+curve.delta = 0.001
+
+# Set up the NURBS curve
+curve.read_ctrlpts_from_txt("../curve3d/ex_curve3d01.cpt")
+curve.degree = 3
+
+# Auto-generate knot vector
+curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpts))
+
+# Evaulate curve
+curve.evaluate()
+
+#
+# Tangent Vector Evaluation
+#
+
+# Store tangent vectors in a list for plotting
+curvetan = []
+
+# Evaluate curve tangent at u = 0.0175
+ct1 = curve.tangent(0.0175, normalize=True)
+curvetan.append(ct1)
+
+# Evaluate curve tangent at u = 0.075
+ct2 = curve.tangent(0.075, normalize=True)
+curvetan.append(ct2)
+
+# Evaluate curve tangent at u = 0.375
+ct3 = curve.tangent(0.375, normalize=True)
+curvetan.append(ct3)
+
+# Evaluate curve tangent at u = 0.535
+ct4 = curve.tangent(0.535, normalize=True)
+curvetan.append(ct4)
+
+# Evaluate curve tangent at u = 0.65
+ct5 = curve.tangent(0.65, normalize=True)
+curvetan.append(ct5)
+
+# Evaluate curve tangent at u = 0.85
+ct6 = curve.tangent(0.85, normalize=True)
+curvetan.append(ct6)
+
+# Evaluate curve tangent at u = 0.975
+ct7 = curve.tangent(0.975, normalize=True)
+curvetan.append(ct7)
+
+#
+# Control Points, Curve and Tangent Vector Plotting using Matplotlib
+#
+
+# Arrange control points and evaluated curve points for plotting
+ctrlpts = np.array(curve.ctrlpts)
+curvepts = np.array(curve.curvepts)
+
+# Convert tangent list into a NumPy array
+ctarr = np.array(curvetan)
+
+# Draw the control points polygon, the 3D curve and the tangent vectors
+fig = plt.figure(figsize=(10.67, 8), dpi=96)
+ax = fig.gca(projection='3d')
+
+# Plot 3D lines
+ax.plot(ctrlpts[:, 0], ctrlpts[:, 1], ctrlpts[:, 2], color='black', linestyle='-.', marker='o')
+ax.plot(curvepts[:, 0], curvepts[:, 1], curvepts[:, 2], color='green', linestyle='-')
+
+# Plot tangent vectors
+ax.quiver(ctarr[:, 0, 0], ctarr[:, 0, 1], ctarr[:, 0, 2], ctarr[:, 1, 0], ctarr[:, 1, 1], ctarr[:, 1, 2], color='blue')
+
+# Add legend to 3D plot, @ref: https://stackoverflow.com/a/20505720
+ctrlpts_proxy = matplotlib.lines.Line2D([0], [0], linestyle='-.', color='black', marker='o')
+curvepts_proxy = matplotlib.lines.Line2D([0], [0], linestyle='none', color='green', marker='o')
+tangent_proxy = matplotlib.lines.Line2D([0], [0], linestyle='none', color='blue', marker='>')
+ax.legend([ctrlpts_proxy, curvepts_proxy, tangent_proxy], ['Control Points', 'Curve', 'Tangents'], numpoints=1)
+
+# Display the 3D plot
+plt.show()

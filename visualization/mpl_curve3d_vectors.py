@@ -151,7 +151,7 @@ ctarr = np.array(curvetans)
 cnarr = np.array(curvenorms)
 cbnarr = np.array(curvebinorms)
 
-# Draw the control points polygon, the 3D curve and the tangent vectors
+# Draw the control points polygon, the 3D curve and the vectors
 fig = plt.figure(figsize=(10.67, 8), dpi=96)
 ax = fig.gca(projection='3d')
 
@@ -160,13 +160,16 @@ ax.plot(ctrlpts[:, 0], ctrlpts[:, 1], ctrlpts[:, 2], color='black', linestyle='-
 ax.plot(curvepts[:, 0], curvepts[:, 1], curvepts[:, 2], color='cyan', linestyle='-')
 
 # Plot tangent vectors
-ax.quiver(ctarr[:, 0, 0], ctarr[:, 0, 1], ctarr[:, 0, 2], ctarr[:, 1, 0], ctarr[:, 1, 1], ctarr[:, 1, 2], color='blue', length=2.5)
+ax.quiver(ctarr[:, 0, 0], ctarr[:, 0, 1], ctarr[:, 0, 2], ctarr[:, 1, 0], ctarr[:, 1, 1], ctarr[:, 1, 2],
+          color='blue', length=2.5)
 
 # Plot normal vectors
-ax.quiver(cnarr[:, 0, 0], cnarr[:, 0, 1], cnarr[:, 0, 2], cnarr[:, 1, 0], cnarr[:, 1, 1], cnarr[:, 1, 2], color='red', length=2.5)
+ax.quiver(cnarr[:, 0, 0], cnarr[:, 0, 1], cnarr[:, 0, 2], cnarr[:, 1, 0], cnarr[:, 1, 1], cnarr[:, 1, 2],
+          color='red', length=2.5)
 
-# Plot normal vectors
-ax.quiver(cbnarr[:, 0, 0], cbnarr[:, 0, 1], cbnarr[:, 0, 2], cbnarr[:, 1, 0], cbnarr[:, 1, 1], cbnarr[:, 1, 2], color='green', length=2.5)
+# Plot binormal vectors
+ax.quiver(cbnarr[:, 0, 0], cbnarr[:, 0, 1], cbnarr[:, 0, 2], cbnarr[:, 1, 0], cbnarr[:, 1, 1], cbnarr[:, 1, 2],
+          color='green', length=2.5)
 
 # Add legend to 3D plot, @ref: https://stackoverflow.com/a/20505720
 ctrlpts_proxy = matplotlib.lines.Line2D([0], [0], linestyle='-.', color='black', marker='o')
@@ -174,7 +177,8 @@ curvepts_proxy = matplotlib.lines.Line2D([0], [0], linestyle='none', color='cyan
 tangent_proxy = matplotlib.lines.Line2D([0], [0], linestyle='none', color='blue', marker='>')
 normal_proxy = matplotlib.lines.Line2D([0], [0], linestyle='none', color='red', marker='>')
 binormal_proxy = matplotlib.lines.Line2D([0], [0], linestyle='none', color='green', marker='>')
-ax.legend([ctrlpts_proxy, curvepts_proxy, tangent_proxy, normal_proxy, binormal_proxy], ['Control Points', 'Curve', 'Tangents', 'Normals', 'Binormals'], numpoints=1)
+ax.legend([ctrlpts_proxy, curvepts_proxy, tangent_proxy, normal_proxy, binormal_proxy],
+          ['Control Points', 'Curve', 'Tangents', 'Normals', 'Binormals'], numpoints=1)
 
 # Display the 3D plot
 plt.show()

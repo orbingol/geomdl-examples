@@ -37,7 +37,7 @@ print("* First derivative w.r.t. u is (%.2f, %.2f, %.2f)" % (surftan[1][0], surf
 print("* First derivative w.r.t. v is (%.2f, %.2f, %.2f)\n" % (surftan[2][0], surftan[2][1], surftan[2][2]))
 # Evaluate normal at the given u and v
 norm = surf.normal(u, v)
-print("* Normal at u = %.2f and v = %.2f is [%.1f, %.1f, %.1f]\n" % (u, v, norm[0], norm[1], norm[2]))
+print("* Normal at u = %.2f and v = %.2f is [%.1f, %.1f, %.1f]\n" % (u, v, norm[1][0], norm[1][1], norm[1][2]))
 
 # Good to have something here to put a breakpoint
 pass

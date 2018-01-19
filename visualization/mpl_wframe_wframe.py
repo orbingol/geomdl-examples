@@ -16,8 +16,8 @@ from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 
 # Read surface and control points, @ref: https://stackoverflow.com/a/13550615
-cpgrid = np.genfromtxt('ctrlpts01_orig.csv', delimiter=',', skip_header=1, names=['x', 'y', 'z'])
-surf = np.genfromtxt('surfpts01_orig.csv', delimiter=',', skip_header=1, names=['x', 'y', 'z'])
+cpgrid = np.genfromtxt('ctrlpts03_orig.csv', delimiter=',', skip_header=1, names=['x', 'y', 'z'])
+surf = np.genfromtxt('surfpts03_orig.csv', delimiter=',', skip_header=1, names=['x', 'y', 'z'])
 
 # Arrange control points grid for plotting, @ref: https://stackoverflow.com/a/21352257
 Xc = cpgrid['x'].reshape(-1, cpgrid['x'].shape[0])

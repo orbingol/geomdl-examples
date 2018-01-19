@@ -5,6 +5,7 @@
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2016-2018
 """
+import os
 from geomdl import BSpline
 from geomdl import utilities
 
@@ -14,6 +15,9 @@ try:
     from geomdl.visualization import VisMPL
 except ImportError:
     render_curve = False
+
+# Fix file path
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 # Create a BSpline curve instance
 curve = BSpline.Curve2D()

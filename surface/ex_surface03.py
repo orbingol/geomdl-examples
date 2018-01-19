@@ -7,7 +7,11 @@
 
     This example is contributed by John-Eric Dufour (@jedufour)
 """
+import os
 from geomdl import NURBS
+
+# Fix file path
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 # Create a NURBS surface instance
 surf = NURBS.Surface()

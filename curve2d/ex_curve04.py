@@ -5,7 +5,11 @@
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2017
 """
+import os
 from geomdl import NURBS
+
+# Fix file path
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 # Create a NURBS curve instance (full circle)
 curve = NURBS.Curve2D()

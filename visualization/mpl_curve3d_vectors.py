@@ -5,6 +5,7 @@
     Released under The MIT License
     Developed by Onur Rauf Bingol (c) 2018
 """
+import os
 from geomdl import BSpline
 from geomdl import utilities
 
@@ -12,6 +13,9 @@ import numpy as np
 import matplotlib
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
+
+# Fix file path
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 #
 # Curve Evaluation

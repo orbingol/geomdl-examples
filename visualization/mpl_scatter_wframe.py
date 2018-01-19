@@ -10,10 +10,14 @@
     * NumPy v1.13.3
     * Matplotlib v2.1.0
 """
+import os
 import numpy as np
 import matplotlib
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
+
+# Fix file path
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 # Read surface and control points, @ref: https://stackoverflow.com/a/13550615
 cpgrid = np.genfromtxt('ctrlpts03_orig.csv', delimiter=',', skip_header=1, names=['x', 'y', 'z'])

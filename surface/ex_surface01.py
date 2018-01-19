@@ -5,6 +5,7 @@
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2016-2018
 """
+import os
 from geomdl import BSpline
 
 # Try to load the visualization module
@@ -13,6 +14,9 @@ try:
     from geomdl.visualization import VisMPL
 except ImportError:
     render_surf = False
+
+# Fix file path
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 # Create a BSpline surface instance
 surf = BSpline.Surface()

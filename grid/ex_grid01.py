@@ -5,7 +5,11 @@
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2017
 """
+import os
 from geomdl import CPGen
+
+# Fix file path
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 # Generate a 50x100 rectangle
 mygrid = CPGen.Grid(50, 100)

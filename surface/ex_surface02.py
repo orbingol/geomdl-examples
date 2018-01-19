@@ -5,8 +5,12 @@
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2016-2017
 """
+import os
 from geomdl import BSpline
 from geomdl import utilities
+
+# Fix file path
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 # Create a BSpline surface instance
 surf = BSpline.Surface()

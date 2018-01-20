@@ -15,7 +15,7 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 surf = BSpline.Surface()
 
 # Set evaluation delta
-surf.delta = 0.05
+surf.delta = 0.005
 
 # Set up surface
 surf.read_ctrlpts_from_txt("ex_surface01.cpt")
@@ -28,7 +28,7 @@ surf.knotvector_v = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 surf.evaluate()
 
 # Save control points and evaluated curve points
-surf.save_surfpts_to_csv("surfpts01_orig.csv", mode='zigzag')
+surf.save_surfpts_to_csv("surfpts01_orig.csv", mode='wireframe')
 surf.save_ctrlpts_to_csv("ctrlpts01_orig.csv", mode='wireframe')
 
 # Good to have something here to put a breakpoint

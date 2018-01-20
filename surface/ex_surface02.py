@@ -9,6 +9,13 @@ import os
 from geomdl import BSpline
 from geomdl import utilities
 
+# Try to load the visualization module
+try:
+    render_surf = True
+    from geomdl.visualization import VisMPL
+except ImportError:
+    render_surf = False
+
 # Fix file path
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
@@ -16,7 +23,7 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 surf = BSpline.Surface()
 
 # Set evaluation delta
-surf.delta = 0.01
+surf.delta = 0.05
 
 # Set up surface
 surf.read_ctrlpts_from_txt("ex_surface02.cpt")
@@ -27,6 +34,12 @@ surf.knotvector_v = utilities.generate_knot_vector(surf.degree_v, 6)
 
 # Evaluate surface
 surf.evaluate()
+
+# Draw the control point grid and the evaluated surface
+if render_surf:
+    vis_comp = VisMPL.VisTriSurf()
+    surf.vis = vis_comp
+    surf.render()
 
 # Save control points and evaluated curve points
 surf.save_surfpts_to_csv("surfpts02_orig.csv")

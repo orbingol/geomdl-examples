@@ -29,7 +29,7 @@ The following examples illustrate usage of the optional visualization component:
 * ``curve2d/ex_curve03.py``
 * ``curve3d/ex_curve3d01.py``
 * ``curve3d/ex_curve3d02.py``
-* ``surface/ex_surface01.py``
+* ``surface/ex_surface02.py``
 
 More advanced visualization options and some example figures with the instructions on how to generate them can be
 found under ``visualization/`` directory.

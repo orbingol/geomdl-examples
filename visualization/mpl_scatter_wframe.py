@@ -20,8 +20,8 @@ import matplotlib.pyplot as plt
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 # Read surface and control points, @ref: https://stackoverflow.com/a/13550615
-cpgrid = np.genfromtxt('ctrlpts03_orig.csv', delimiter=',', skip_header=1, names=['x', 'y', 'z'])
-surf = np.genfromtxt('surfpts03_orig.csv', delimiter=',', skip_header=1, names=['x', 'y', 'z'])
+cpgrid = np.genfromtxt('../surface/ctrlpts03_orig.csv', delimiter=',', skip_header=1, names=['x', 'y', 'z'])
+surf = np.genfromtxt('../surface/surfpts03_orig.csv', delimiter=',', skip_header=1, names=['x', 'y', 'z'])
 
 # Reshape surface points array for plotting, @ref: https://stackoverflow.com/a/21352257
 cols = surf['x'].shape[0]

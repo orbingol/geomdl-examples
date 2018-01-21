@@ -24,12 +24,22 @@ Visualization
 
 The following examples illustrate usage of the optional visualization component:
 
+**2D Curves:**
+
 * ``curve2d/ex_curve01.py``
 * ``curve2d/ex_curve02.py``
 * ``curve2d/ex_curve03.py``
+
+**3D Curves:**
+
 * ``curve3d/ex_curve3d01.py``
 * ``curve3d/ex_curve3d02.py``
+
+**Surfaces:**
+
+* ``surface/ex_surface01.py``
 * ``surface/ex_surface02.py``
+* ``surface/ex_surface03.py``
 
 More advanced visualization options and some example figures with the instructions on how to generate them can be
 found under ``visualization/`` directory.

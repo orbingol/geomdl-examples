@@ -23,12 +23,6 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 cpgrid = np.genfromtxt('../surface/ctrlpts03_orig.csv', delimiter=',', skip_header=1, names=['x', 'y', 'z'])
 surf = np.genfromtxt('../surface/surfpts03_orig.csv', delimiter=',', skip_header=1, names=['x', 'y', 'z'])
 
-# Reshape surface points array for plotting, @ref: https://stackoverflow.com/a/21352257
-cols = surf['x'].shape[0]
-X = surf['x'].reshape(-1, cols)
-Y = surf['y'].reshape(-1, cols)
-Z = surf['z'].reshape(-1, cols)
-
 # Start plotting of the surface and the control points grid
 fig = plt.figure(figsize=(10.67, 8), dpi=96)
 ax = fig.gca(projection='3d')
@@ -37,7 +31,7 @@ ax = fig.gca(projection='3d')
 ax.scatter(cpgrid['x'], cpgrid['y'], cpgrid['z'], color='blue', s=50, depthshade=True)
 
 # Surface points as a wireframe plot (use mode='wireframe' while saving CSV file)
-ax.plot_wireframe(X, Y, Z, color='green')
+ax.plot(surf['x'], surf['y'], surf['z'], color='green')
 
 # Set axis limits
 ax.set_xlim(-1, 1)
@@ -45,9 +39,9 @@ ax.set_ylim(-1, 1)
 ax.set_zlim(0, 1)
 
 # Add legend to 3D plot, @ref: https://stackoverflow.com/a/20505720
-scatter1_proxy = matplotlib.lines.Line2D([0], [0], linestyle='none', color='blue', marker='o')
-scatter2_proxy = matplotlib.lines.Line2D([0], [0], linestyle='none', color='green', marker='o')
-ax.legend([scatter1_proxy, scatter2_proxy], ['Control Points', 'Surface Wireframe'], numpoints=1)
+plot1_proxy = matplotlib.lines.Line2D([0], [0], linestyle='none', color='blue', marker='o')
+plot2_proxy = matplotlib.lines.Line2D([0], [0], linestyle='none', color='green', marker='o')
+ax.legend([plot1_proxy, plot2_proxy], ['Control Points Grid', 'Surface Plot'], numpoints=1)
 
 # Display the 3D plot
 plt.show()

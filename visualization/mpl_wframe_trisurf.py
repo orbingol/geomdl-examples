@@ -26,10 +26,9 @@ cpgrid = np.genfromtxt('../surface/ctrlpts02_orig.csv', delimiter=',', skip_head
 surf = np.genfromtxt('../surface/surfpts02_orig.csv', delimiter=',', skip_header=1, names=['x', 'y', 'z'])
 
 # Arrange control points grid for plotting, @ref: https://stackoverflow.com/a/21352257
-cols = cpgrid['x'].shape[0]
-Xc = cpgrid['x'].reshape(-1, cols)
-Yc = cpgrid['y'].reshape(-1, cols)
-Zc = cpgrid['z'].reshape(-1, cols)
+Xc = cpgrid['x']
+Yc = cpgrid['y']
+Zc = cpgrid['z']
 
 # Arrange surface points array for plotting
 X = surf['x']
@@ -44,15 +43,15 @@ fig = plt.figure(figsize=(10.67, 8), dpi=96)
 ax = fig.gca(projection='3d')
 
 # Control points as a scatter plot (use mode='wireframe' while saving CSV file)
-ax.plot_wireframe(Xc, Yc, Zc, color=colors[0])
+ax.plot(Xc, Yc, Zc, color=colors[0], linestyle='-.', marker='o', markerfacecolor='orange', markersize=5)
 
 # Surface points as a triangulated surface plot (use mode='linear' while saving CSV file)
 ax.plot_trisurf(X, Y, Z, cmap=cm.winter)
 
 # Add legend to 3D plot, @ref: https://stackoverflow.com/a/20505720
-scatter1_proxy = matplotlib.lines.Line2D([0], [0], linestyle='none', color=colors[0], marker='o')
-scatter2_proxy = matplotlib.lines.Line2D([0], [0], linestyle='none', color=colors[1], marker='^')
-ax.legend([scatter1_proxy, scatter2_proxy], ['Control Grid', 'Surface Triplot'], numpoints=1)
+plot1_proxy = matplotlib.lines.Line2D([0], [0], linestyle='-.', color=colors[0], marker='o')
+plot2_proxy = matplotlib.lines.Line2D([0], [0], linestyle='none', color=colors[1], marker='^')
+ax.legend([plot1_proxy, plot2_proxy], ['Control Points Grid', 'Surface Plot'], numpoints=1)
 
 # Display the 3D plot
 plt.show()

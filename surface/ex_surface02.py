@@ -23,7 +23,7 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 surf = BSpline.Surface()
 
 # Set evaluation delta
-surf.delta = 0.05
+surf.delta = 0.025
 
 # Set up surface
 surf.read_ctrlpts_from_txt("ex_surface02.cpt")
@@ -37,13 +37,13 @@ surf.evaluate()
 
 # Draw the control point grid and the evaluated surface
 if render_surf:
-    vis_comp = VisMPL.VisTriSurf()
+    vis_comp = VisMPL.VisSurfScatter()
     surf.vis = vis_comp
     surf.render()
 
 # Save control points and evaluated curve points
-surf.save_surfpts_to_csv("surfpts02_orig.csv")
-surf.save_ctrlpts_to_csv("ctrlpts02_orig.csv")
+surf.save_surfpts_to_csv("surfpts02_orig.csv", mode='linear')
+surf.save_ctrlpts_to_csv("ctrlpts02_orig.csv", mode='wireframe')
 
 # Evaluate 1st order surface derivative at the given u and v
 u = 0.2

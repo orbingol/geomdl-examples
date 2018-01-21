@@ -10,6 +10,13 @@
 import os
 from geomdl import NURBS
 
+# Try to load the visualization module
+try:
+    render_surf = True
+    from geomdl.visualization import VisMPL
+except ImportError:
+    render_surf = False
+
 # Fix file path
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
@@ -17,7 +24,7 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 surf = NURBS.Surface()
 
 # Set evaluation delta
-surf.delta = 0.05
+surf.delta = 0.025
 
 # Set up surface
 surf.read_ctrlpts_from_txt("ex_surface03.cptw")
@@ -28,6 +35,12 @@ surf.knotvector_v = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]
 
 # Evaluate surface
 surf.evaluate()
+
+# Draw the control point grid and the evaluated surface
+if render_surf:
+    vis_comp = VisMPL.VisSurfWireframe()
+    surf.vis = vis_comp
+    surf.render()
 
 # Save control points and evaluated curve points
 surf.save_surfpts_to_csv("surfpts03_orig.csv", mode='wireframe')

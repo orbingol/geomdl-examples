@@ -164,8 +164,8 @@ fig = plt.figure(figsize=(10.67, 8), dpi=96)
 ax = fig.gca(projection='3d')
 
 # Plot 3D lines
-ax.plot(ctrlpts[:, 0], ctrlpts[:, 1], ctrlpts[:, 2], color='black', linestyle='-.', marker='o')
-ax.plot(curvepts[:, 0], curvepts[:, 1], curvepts[:, 2], color='cyan', linestyle='-')
+ax.plot(ctrlpts[:, 0], ctrlpts[:, 1], ctrlpts[:, 2], color='black', linestyle='-.', marker='o', linewidth=1)
+ax.plot(curvepts[:, 0], curvepts[:, 1], curvepts[:, 2], color='brown', linestyle='-', linewidth=2)
 
 # Plot tangent vectors
 ax.quiver(ctarr[:, 0, 0], ctarr[:, 0, 1], ctarr[:, 0, 2], ctarr[:, 1, 0], ctarr[:, 1, 1], ctarr[:, 1, 2],
@@ -181,7 +181,7 @@ ax.quiver(cbnarr[:, 0, 0], cbnarr[:, 0, 1], cbnarr[:, 0, 2], cbnarr[:, 1, 0], cb
 
 # Add legend to 3D plot, @ref: https://stackoverflow.com/a/20505720
 ctrlpts_proxy = matplotlib.lines.Line2D([0], [0], linestyle='-.', color='black', marker='o')
-curvepts_proxy = matplotlib.lines.Line2D([0], [0], linestyle='none', color='cyan', marker='o')
+curvepts_proxy = matplotlib.lines.Line2D([0], [0], linestyle='none', color='brown', marker='o')
 tangent_proxy = matplotlib.lines.Line2D([0], [0], linestyle='none', color='blue', marker='>')
 normal_proxy = matplotlib.lines.Line2D([0], [0], linestyle='none', color='red', marker='>')
 binormal_proxy = matplotlib.lines.Line2D([0], [0], linestyle='none', color='green', marker='>')

@@ -45,16 +45,10 @@ if render_surf:
 surf.save_surfpts_to_csv("surfpts02_orig.csv", mode='linear')
 surf.save_ctrlpts_to_csv("ctrlpts02_orig.csv", mode='wireframe')
 
-# Evaluate 1st order surface derivative at the given u and v
-u = 0.2
-v = 0.9
-surftan = surf.tangent(u, v)
-print("* Surface point at u = %.2f and v = %.2f is (%.2f, %.2f, %.2f)" % (u, v, surftan[0][0], surftan[0][1], surftan[0][2]))
-print("* First derivative w.r.t. u is (%.2f, %.2f, %.2f)" % (surftan[1][0], surftan[1][1], surftan[1][2]))
-print("* First derivative w.r.t. v is (%.2f, %.2f, %.2f)\n" % (surftan[2][0], surftan[2][1], surftan[2][2]))
-# Evaluate normal at the given u and v
-norm = surf.normal(u, v)
-print("* Normal at u = %.2f and v = %.2f is [%.1f, %.1f, %.1f]\n" % (u, v, norm[1][0], norm[1][1], norm[1][2]))
+# Evaluate surface tangent and normal at the given u and v
+uv = [0.2, 0.9]
+surf_tangent = surf.tangent(uv[0], uv[1])
+surf_normal = surf.normal(uv[0], uv[1])
 
 # Good to have something here to put a breakpoint
 pass

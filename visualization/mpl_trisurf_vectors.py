@@ -41,8 +41,8 @@ surf.knotvector_v = utilities.generate_knot_vector(surf.degree_v, 6)
 # Evaluate surface
 surf.evaluate()
 
-# Evaluate surface tangentvectors and normals
-uv_vals = [[0.1, 0.1], [0.65, 0.25], [0.9, 0.7], [0.1, 0.9]]
+# Evaluate surface tangent and normal vectors
+uv_vals = [[0.1, 0.1], [0.65, 0.25], [0.9, 0.7], [0.2, 0.9]]
 surftans = surf.tangents(uv_list=uv_vals, normalize=True)
 surfnorms = surf.normals(uv_list=uv_vals, normalize=True)
 

@@ -38,12 +38,13 @@ surf.evaluate()
 
 # Draw the control point grid and the evaluated surface
 if render_surf:
-    vis_comp = VisMPL.VisSurfWireframe()
+    # Previously using VisMPL.VisSurfWireframe()
+    vis_comp = VisMPL.VisSurface()
     surf.vis = vis_comp
     surf.render()
 
 # Save control points and evaluated curve points
-surf.save_surfpts_to_csv("surfpts03_orig.csv", mode='wireframe')
+surf.save_surfpts_to_csv("surfpts03_orig.csv", mode='triangle')
 surf.save_ctrlpts_to_csv("ctrlpts03_orig.csv")
 
 # Good to have something here to put a breakpoint

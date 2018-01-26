@@ -25,7 +25,7 @@ surf = np.genfromtxt('../surface/surfpts03_orig.csv', delimiter=',', skip_header
 
 # Start plotting of the surface and the control points grid
 fig = plt.figure(figsize=(10.67, 8), dpi=96)
-ax = fig.gca(projection='3d')
+ax = Axes3D(fig)
 
 # Control points as a scatter plot (use mode='linear' while saving CSV file)
 ax.scatter(cpgrid['x'], cpgrid['y'], cpgrid['z'], color='blue', s=50, depthshade=True)

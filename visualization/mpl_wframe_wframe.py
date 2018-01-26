@@ -38,7 +38,7 @@ colors = ['gray', 'brown']
 
 # Start plotting of the surface and the control points grid
 fig = plt.figure(figsize=(10.67, 8), dpi=96)
-ax = fig.gca(projection='3d')
+ax = Axes3D(fig)
 
 # Control points as a wireframe plot (use mode='wireframe' while saving CSV file)
 ax.plot(Xc, Yc, Zc, color=colors[0], linestyle='-.', marker='o', markerfacecolor='orange', markersize=5)

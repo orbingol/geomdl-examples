@@ -53,7 +53,7 @@ normal_vectors = np.array(surfnorms)
 
 # Start plotting of the surface and the control points grid
 fig = plt.figure(figsize=(10.67, 8), dpi=96)
-ax = fig.gca(projection='3d')
+ax = Axes3D(fig)
 
 # Plot surface points
 ax.plot_trisurf(surfpts[:, 0], surfpts[:, 1], surfpts[:, 2], color='xkcd:gold', alpha=0.5)

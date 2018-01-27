@@ -82,5 +82,11 @@ ax.legend([surface_prx, tanu_prx, tanv_prx, normal_prx],
           ['Surface Plot', 'Tangent Vectors (u-dir)', 'Tangent Vectors (v-dir)', 'Normal Vectors'],
           numpoints=1)
 
-# Display the 3D plot
+# Rotate the axes and update the plot
+for angle in range(0, 360, 10):
+    ax.view_init(30, angle)
+    plt.draw()
+    plt.pause(.001)
+
+# Display the final 3D plot
 plt.show()

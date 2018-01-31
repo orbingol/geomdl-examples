@@ -6,18 +6,18 @@ This repository contains examples for the NURBS-Python_ package.
 Directory Structure
 ===================
 
-* ``curve2d/`` contains examples for :code:`BSpline.Curve2D` and :code:`NURBS.Curve2D` classes
-* ``curve3d/`` contains examples for :code:`BSpline.Curve` and :code:`NURBS.Curve` classes
-* ``surface/`` contains examples for :code:`BSpline.Surface` and :code:`NURBS.Surface` classes
-* ``grid/`` contains examples for :code:`CPGen.Grid` and :code:`CPGen.GridWeighted` classes
-* ``visualization/`` contains some visualization examples. Please see the `README <visualization/README.md>`_ file inside the directory for details.
+* ``curve2d/`` contains examples for ``BSpline.Curve2D`` and ``NURBS.Curve2D`` classes
+* ``curve3d/`` contains examples for ``BSpline.Curve`` and ``NURBS.Curve`` classes
+* ``surface/`` contains examples for ``BSpline.Surface`` and ``NURBS.Surface`` classes
+* ``grid/`` contains examples for ``CPGen.Grid`` and ``CPGen.GridWeighted`` classes
+* ``visualization/`` contains some visualization examples. Please see NURBS-Python_ documentation for details.
+* ``bezier/`` contains examples for Bezier surfaces and 2D/3D curves generated using ``BSpline`` module
 
 Input Files
 -----------
 
 ``*.cpt`` and ``*.cptw`` files are simple text files. They contain *control points* and *weighted control points*,
-respectively. Please see the `NURBS-Python repository <https://github.com/orbingol/NURBS-Python>`_  on details of the
-file formats.
+respectively. Please see the NURBS-Python_ documentation for details on the input file formats.
 
 Visualization
 -------------

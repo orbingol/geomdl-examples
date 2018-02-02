@@ -9,6 +9,13 @@
 import os
 from geomdl import NURBS
 
+# Try to load the visualization module
+try:
+    render_curve = True
+    from geomdl.visualization import VisMPL
+except ImportError:
+    render_curve = False
+
 # Fix file path
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
@@ -26,6 +33,13 @@ curve.knotvector = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]
 
 # Evaluate curve
 curve.evaluate()
+
+# Draw the control point polygon and the evaluated curve
+if render_curve:
+    vis_comp = VisMPL.VisCurve2D(plot_ctrlpts=True)
+    vis_comp.figure_size([8, 8])
+    curve.vis = vis_comp
+    curve.render()
 
 # Save control points and evaluated curve points
 curve.save_curvepts_to_csv("curvepts04_orig.csv")

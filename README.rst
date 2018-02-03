@@ -12,6 +12,8 @@ Directory Structure
 * ``grid/`` contains examples for ``CPGen.Grid`` and ``CPGen.GridWeighted`` classes
 * ``visualization/`` contains some visualization examples. Please see NURBS-Python_ documentation for details.
 * ``bezier/`` contains examples for Bezier surfaces and 2D/3D curves generated using ``BSpline`` module
+* ``shapes/`` contains examples for ``geomdl.shapes`` component
+* ``exchange/`` contains examples for ``geomdl.exchange`` module
 
 Input Files
 -----------
@@ -22,8 +24,9 @@ respectively. Please see the NURBS-Python_ documentation for details on the inpu
 Visualization
 -------------
 
-All examples in this repository tries to illustrate some parts of the Matplotlib visualization implementation,
-``VisMPL`` class. ``VisMPL`` is designed to be a representative class for future visualization extensions therefore,
+All examples in this repository uses Matplotlib visualization implementation, the ``VisMPL`` module.
+
+``VisMPL`` module is designed to be a representative class for future visualization extensions therefore,
 it might not be a perfect fit for advanced visualization purposes. More advanced visualization options and some
 example figures with the instructions on how to generate them can be found under ``visualization/`` directory.
 
@@ -36,7 +39,8 @@ Branch Information
 * ``master`` branch contains examples compatible with the latest version of NURBS-Python v3.x series.
 * ``2.x`` branch contains examples compatible with the latest version of NURBS-Python v2.x series.
 
-Please note that there could be small API variations between the beta and the stable versions of the NURBS-Python package.
+Please note that there could be small API variations between the beta and the stable versions of the NURBS-Python
+package.
 
 Author
 ======

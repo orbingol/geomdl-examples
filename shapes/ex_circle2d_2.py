@@ -1,0 +1,46 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+    Examples for the NURBS-Python Package
+    Released under MIT License
+    Developed by Onur Rauf Bingol (c) 2018
+"""
+from geomdl.shapes import curve2d
+from geomdl import Multi
+
+# Try to load the visualization module
+try:
+    render = True
+    from geomdl.visualization import VisMPL
+except ImportError:
+    render = False
+
+# Generate a NURBS full circle from 7 control points
+circle = curve2d.full_circle2(radius=5.0)
+circle.delta = 0.01
+
+# Render the circle and the control points polygon
+if render:
+    vis_comp = VisMPL.VisCurve2D(plot_ctrlpts=True)
+    vis_comp.figure_size([9, 8])
+    circle.vis = vis_comp
+    circle.render()
+
+# Decompose the circle into Bezier curve segments
+bezier_segments = circle.decompose()
+
+# Prepare Bezier segments for plotting
+curves = Multi.MultiCurve()
+curves.add_list(bezier_segments)
+curves.delta = 0.01
+
+# Render the Bezier curve segments and their control points polygons
+if render:
+    vis_comp = VisMPL.VisCurve2D(plot_ctrlpts=True)
+    vis_comp.figure_size([9, 8])
+    curves.vis = vis_comp
+    curves.render()
+
+# Good to have something here to put a breakpoint
+pass

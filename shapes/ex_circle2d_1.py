@@ -15,10 +15,11 @@ try:
 except ImportError:
     render = False
 
+# Generate a NURBS full circle from 9 control points
 circle = curve2d.full_circle(radius=5.0)
 circle.delta = 0.01
 
-# Render the curve and the control points polygon
+# Render the circle and the control points polygon
 if render:
     vis_comp = VisMPL.VisCurve2D(plot_ctrlpts=True)
     vis_comp.figure_size([8, 8])

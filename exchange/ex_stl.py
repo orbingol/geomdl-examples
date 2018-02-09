@@ -10,10 +10,10 @@ from geomdl.shapes import surface
 from geomdl import exchange
 
 cylinder = surface.cylinder(radius=5.0, height=22.5)
-cylinder.delta = 0.05
+cylinder.delta = 0.01
 
-# Export the surface as a .obj file
-exchange.save_obj(cylinder, "cylindrical_surface.obj")
+# Export the surface as a .stl file
+exchange.save_stl(cylinder, "cylindrical_surface.stl")
 
 # Good to have something here to put a breakpoint
 pass

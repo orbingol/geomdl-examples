@@ -9,7 +9,6 @@
 import os
 from geomdl import BSpline
 from geomdl import utilities
-from geomdl import Multi
 
 # Try to load the visualization module
 try:
@@ -38,14 +37,12 @@ curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpt
 bezier = curve.decompose()
 
 # Plot the curves using the curve container
-curves = Multi.MultiCurve()
-curves.delta = 0.01
-curves.add_list(bezier)
+bezier.delta = 0.01
 
 if render_curve:
     vis_comp = VisMPL.VisCurve2D()
-    curves.vis = vis_comp
-    curves.render()
+    bezier.vis = vis_comp
+    bezier.render()
 
 # Good to have something here to put a breakpoint
 pass

@@ -8,7 +8,6 @@
 """
 import os
 from geomdl import NURBS
-from geomdl import Multi
 
 # Try to load the visualization module
 try:
@@ -36,15 +35,13 @@ curve.knotvector = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]
 bezier = curve.decompose()
 
 # Plot the curves using the curve container
-curves = Multi.MultiCurve()
-curves.delta = 0.01
-curves.add_list(bezier)
+bezier.delta = 0.01
 
 if render_curve:
     vis_comp = VisMPL.VisCurve2D()
     vis_comp.figure_size([8, 8])
-    curves.vis = vis_comp
-    curves.render()
+    bezier.vis = vis_comp
+    bezier.render()
 
 # Good to have something here to put a breakpoint
 pass

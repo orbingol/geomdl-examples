@@ -7,7 +7,6 @@
     Developed by Onur Rauf Bingol (c) 2018
 """
 from geomdl.shapes import curve2d
-from geomdl import Multi
 
 # Try to load the visualization module
 try:
@@ -31,16 +30,14 @@ if render:
 bezier_segments = circle.decompose()
 
 # Prepare Bezier segments for plotting
-curves = Multi.MultiCurve()
-curves.add_list(bezier_segments)
-curves.delta = 0.01
+bezier_segments.delta = 0.01
 
 # Render the Bezier curve segments and their control points polygons
 if render:
     vis_comp = VisMPL.VisCurve2D(plot_ctrlpts=True)
     vis_comp.figure_size([9, 8])
-    curves.vis = vis_comp
-    curves.render()
+    bezier_segments.vis = vis_comp
+    bezier_segments.render()
 
 # Good to have something here to put a breakpoint
 pass

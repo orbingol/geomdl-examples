@@ -9,7 +9,6 @@
 import os
 from geomdl import BSpline
 from geomdl import utilities
-from geomdl import Multi
 
 # Try to load the visualization module
 try:
@@ -47,14 +46,12 @@ c2tanvec2 = [1 * p for p in c2tan2[1]]
 bezier[2].translate(c2tanvec2)
 
 # Plot the curves using the curve container
-curves = Multi.MultiCurve()
-curves.delta = 0.01
-curves.add_list(bezier)
+bezier.delta = 0.01
 
 if render_curve:
     vis_comp = VisMPL.VisCurve2D()
-    curves.vis = vis_comp
-    curves.render()
+    bezier.vis = vis_comp
+    bezier.render()
 
 # Good to have something here to put a breakpoint
 pass

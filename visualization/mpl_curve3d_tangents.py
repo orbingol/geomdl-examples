@@ -85,7 +85,7 @@ ctarr = np.array(curvetan)
 
 # Draw the control points polygon, the 3D curve and the tangent vectors
 fig = plt.figure(figsize=(10.67, 8), dpi=96)
-ax = fig.gca(projection='3d')
+ax = Axes3D(fig)
 
 # Plot 3D lines
 ax.plot(ctrlpts[:, 0], ctrlpts[:, 1], ctrlpts[:, 2], color='black', linestyle='-.', marker='o')

@@ -10,8 +10,6 @@ from geomdl import BSpline
 from geomdl import utilities
 
 import numpy as np
-import matplotlib
-from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 
 # Fix file path

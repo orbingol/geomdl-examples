@@ -35,6 +35,11 @@ surf.knotvector_v = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 # Split the surface
 # surfaces = surf.split_u(t=0.5)
 surfaces = surf.split_v(t=0.5)
+
+# Translate one of the surfaces by a vector
+surfaces[0].translate((0, -2.5, 0))
+
+# Set evaluation delta for all split surfaces
 surfaces.delta = 0.05
 
 # Draw the control point grid and the evaluated surface

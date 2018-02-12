@@ -32,11 +32,12 @@ surf.degree_v = 3
 surf.knotvector_u = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 surf.knotvector_v = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 
-# Split the surface in V-direction
-surfaces = surf.split_v(t=0.5)
+# Split the surface
+surfaces1 = surf.split_u(t=0.25)
 
-# Translate one of the surfaces by a vector
-surfaces[0].translate((0, -2.5, 0))
+# Split once more
+surfaces = surfaces1[1].split_v(t=0.75)
+surfaces.add(surfaces1[0])
 
 # Set evaluation delta for all split surfaces
 surfaces.delta = 0.05

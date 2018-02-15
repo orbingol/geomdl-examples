@@ -21,8 +21,8 @@ circle.delta = 0.01
 
 # Render the circle and the control points polygon
 if render:
-    vis_comp = VisMPL.VisCurve2D(plot_ctrlpts=True)
-    vis_comp.figure_size([8, 8])
+    vis_config = VisMPL.VisConfig(ctrlpts=True, figure_size=[8, 8])
+    vis_comp = VisMPL.VisCurve2D(config=vis_config)
     circle.vis = vis_comp
     circle.render()
 

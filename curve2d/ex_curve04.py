@@ -36,8 +36,8 @@ curve.evaluate()
 
 # Draw the control point polygon and the evaluated curve
 if render_curve:
-    vis_comp = VisMPL.VisCurve2D(plot_ctrlpts=True)
-    vis_comp.figure_size([8, 8])
+    vis_config = VisMPL.VisConfig(figure_size=[8, 8])
+    vis_comp = VisMPL.VisCurve2D(config=vis_config)
     curve.vis = vis_comp
     curve.render()
 

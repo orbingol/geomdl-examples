@@ -20,7 +20,8 @@ cylinder.delta = 0.05
 
 # Render the surface
 if render:
-    vis_comp = VisMPL.VisSurface(plot_ctrlpts=False)
+    vis_config = VisMPL.VisConfig(ctrlpts=False)
+    vis_comp = VisMPL.VisSurface(config=vis_config)
     cylinder.vis = vis_comp
     cylinder.render()
 

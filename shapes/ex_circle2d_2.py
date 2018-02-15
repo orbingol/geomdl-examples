@@ -21,8 +21,8 @@ circle.delta = 0.01
 
 # Render the circle and the control points polygon
 if render:
-    vis_comp = VisMPL.VisCurve2D(plot_ctrlpts=True)
-    vis_comp.figure_size([9, 8])
+    vis_config = VisMPL.VisConfig(ctrlpts=True, figure_size=[9, 8])
+    vis_comp = VisMPL.VisCurve2D(config=vis_config)
     circle.vis = vis_comp
     circle.render()
 
@@ -34,8 +34,8 @@ bezier_segments.delta = 0.01
 
 # Render the Bezier curve segments and their control points polygons
 if render:
-    vis_comp = VisMPL.VisCurve2D(plot_ctrlpts=True)
-    vis_comp.figure_size([9, 8])
+    vis_config = VisMPL.VisConfig(ctrlpts=True, figure_size=[9, 8])
+    vis_comp = VisMPL.VisCurve2D(config=vis_config)
     bezier_segments.vis = vis_comp
     bezier_segments.render()
 

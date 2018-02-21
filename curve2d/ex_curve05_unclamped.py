@@ -26,9 +26,11 @@ curve = BSpline.Curve2D()
 # Set evaluation delta
 curve.delta = 0.01
 
-# Set up curve
-curve.ctrlpts = [[-1, 0], [-0.5, 0.5], [0.5, -0.5], [1, 0]]
+# Set degree
 curve.degree = 2
+
+# Set control points for a periodic curve
+curve.ctrlpts = [[-1, 0], [-0.5, 0.5], [0.5, -0.5], [1, 0]]
 
 # Knot vector for unclamped curve
 curve.knotvector = [0, 1, 2, 3, 4, 5, 6]

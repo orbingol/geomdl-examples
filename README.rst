@@ -14,6 +14,7 @@ Directory Structure
 * ``bezier/`` contains examples for Bezier surfaces and 2D/3D curves generated using ``BSpline`` module
 * ``shapes/`` contains examples for ``geomdl.shapes`` component
 * ``exchange/`` contains examples for ``geomdl.exchange`` module
+* ``compat/`` contains examples which utilize ``geomdl.compatibility`` module for data conversion
 
 Input Files
 -----------

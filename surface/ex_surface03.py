@@ -27,10 +27,14 @@ surf = NURBS.Surface()
 # Set evaluation delta
 surf.delta = 0.025
 
-# Set up surface
-surf.read_ctrlpts_from_txt("ex_surface03.cptw")
+# Set degrees
 surf.degree_u = 1
 surf.degree_v = 2
+
+# Set control points
+surf.read_ctrlpts_from_txt("ex_surface03.cptw")
+
+# Set knot vectors
 surf.knotvector_u = [0, 0, 1, 1]
 surf.knotvector_v = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]
 

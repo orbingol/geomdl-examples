@@ -27,9 +27,11 @@ curve = BSpline.Curve()
 # Set evaluation delta
 curve.delta = 0.001
 
-# Set up the NURBS curve
-curve.read_ctrlpts_from_txt("../curve3d/ex_curve3d02.cpt")
+# Set degree
 curve.degree = 3
+
+# Set control points
+curve.read_ctrlpts_from_txt("../curve3d/ex_curve3d02.cpt")
 
 # Auto-generate knot vector
 curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpts))

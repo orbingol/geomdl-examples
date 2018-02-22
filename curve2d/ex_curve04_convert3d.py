@@ -39,7 +39,8 @@ curve3d.translate((0, 0, 5))
 
 # Draw the control point polygon and the evaluated curve
 if render_curve:
-    vis_comp = VisMPL.VisCurve3D(plot_ctrlpts=True)
+    vis_config = VisMPL.VisConfig(ctrlpts=True)
+    vis_comp = VisMPL.VisCurve3D(vis_config)
     curve3d.vis = vis_comp
     curve3d.render()
 

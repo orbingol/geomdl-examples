@@ -20,7 +20,7 @@ except ImportError:
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 # Create a NURBS curve instance (full circle)
-curve = NURBS.Curve2D()
+curve = NURBS.Curve()
 
 # Set evaluation delta
 curve.delta = 0.01

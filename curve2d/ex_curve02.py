@@ -21,7 +21,7 @@ except ImportError:
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 # Create a BSpline (NUBS) curve instance
-curve = BSpline.Curve2D()
+curve = BSpline.Curve()
 
 # Set evaluation delta
 curve.delta = 0.01

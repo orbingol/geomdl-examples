@@ -20,7 +20,7 @@ except ImportError:
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 # Create a NURBS curve instance (full circle)
-curve = NURBS.Curve2D()
+curve = NURBS.Curve()
 
 # Set evaluation delta
 curve.delta = 0.01
@@ -38,8 +38,8 @@ bezier = curve.decompose()
 bezier.delta = 0.01
 
 if render_curve:
-    vis_comp = VisMPL.VisCurve2D()
-    vis_comp.figure_size([8, 8])
+    vis_config = VisMPL.VisConfig(figure_size=[8, 8])
+    vis_comp = VisMPL.VisCurve2D(vis_config)
     bezier.vis = vis_comp
     bezier.render()
 

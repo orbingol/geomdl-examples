@@ -25,7 +25,7 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 #
 
 # Create a B-Spline curve instance (Bezier Curve)
-curve1 = BSpline.Curve2D()
+curve1 = BSpline.Curve()
 
 # Set evaluation delta
 curve1.delta = 0.01

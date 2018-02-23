@@ -20,7 +20,7 @@ except ImportError:
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 # Create a NURBS curve instance (full circle)
-curve = NURBS.Curve2D()
+curve = NURBS.Curve()
 
 # Set evaluation delta
 curve.delta = 0.01
@@ -32,7 +32,7 @@ curve.degree = 2
 curve.knotvector = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]
 
 # Convert to a 3D curve
-curve3d = curve.convert3d()
+curve3d = curve.add_dimension()
 
 # Translate curve to z = 5
 curve3d.translate((0, 0, 5))

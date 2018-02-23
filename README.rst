@@ -1,19 +1,25 @@
-NURBS-Python Example Scripts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Examples for NURBS-Python Package
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This repository contains examples for the NURBS-Python_ package.
+This repository contains API demonstration scripts for the NURBS-Python_ package.
+
+Installing NURBS-Python
+=======================
+
+``pip install NURBS-Python``
+
 
 Directory Structure
 ===================
 
-* ``curve2d/`` contains examples for ``BSpline.Curve2D`` and ``NURBS.Curve2D`` classes
-* ``curve3d/`` contains examples for ``BSpline.Curve`` and ``NURBS.Curve`` classes
-* ``surface/`` contains examples for ``BSpline.Surface`` and ``NURBS.Surface`` classes
-* ``grid/`` contains examples for ``CPGen.Grid`` and ``CPGen.GridWeighted`` classes
-* ``visualization/`` contains some visualization examples. Please see NURBS-Python_ documentation for details.
-* ``bezier/`` contains examples for Bezier surfaces and 2D/3D curves generated using ``BSpline`` module
-* ``shapes/`` contains examples for ``geomdl.shapes`` component
-* ``exchange/`` contains examples for ``geomdl.exchange`` module
+* ``curve2d/`` contains 2D curve examples
+* ``curve3d/`` contains 3D curve examples
+* ``surface/`` contains surface examples
+* ``grid/`` contains examples for surface grid generator
+* ``visualization/`` contains visualization examples. Please see NURBS-Python_ documentation for details.
+* ``bezier/`` contains Bezier curve and surface examples
+* ``shapes/`` contains examples demonstrating ``geomdl.shapes`` component
+* ``exchange/`` contains examples demonstrating  ``geomdl.exchange`` module
 * ``compat/`` contains examples which utilize ``geomdl.compatibility`` module for data conversion
 
 Input Files

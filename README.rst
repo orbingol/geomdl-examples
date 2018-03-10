@@ -3,11 +3,17 @@ Examples for NURBS-Python Package
 
 This repository contains API demonstration scripts for the NURBS-Python_ package.
 
-Installing NURBS-Python
-=======================
+Requirements
+============
+
+NURBS-Python_ package is required to all examples in this repository. Please make sure that you have installed it
+properly before running any of these examples.
+
+The easiest method to install NURBS-Python_ is using `pip <https://pip.pypa.io/en/stable/>`_.
 
 ``pip install NURBS-Python``
 
+Please see the NURBS-Python_ documentation for details.
 
 Directory Structure
 ===================

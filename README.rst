@@ -3,18 +3,6 @@ Examples for NURBS-Python Package
 
 This repository contains API demonstration scripts for the NURBS-Python_ package.
 
-Requirements
-============
-
-NURBS-Python_ package is required to all examples in this repository. Please make sure that you have installed it
-properly before running any of these examples.
-
-The easiest method to install NURBS-Python_ is using `pip <https://pip.pypa.io/en/stable/>`_.
-
-``pip install NURBS-Python``
-
-Please see the NURBS-Python_ documentation for details.
-
 Directory Structure
 ===================
 
@@ -45,6 +33,32 @@ example figures with the instructions on how to generate them can be found under
 
 All the examples should work fine with the latest version of NURBS-Python_, but they might or might not work with the
 older versions.
+
+Installing NURBS-Python
+=======================
+
+NURBS-Python_ package is required to run all the examples in this repository.
+Please make sure that you have installed it properly before running any of these examples.
+
+The easiest method to install NURBS-Python_ is using `pip <https://pip.pypa.io/en/stable/>`_.
+
+``pip install NURBS-Python``
+
+If you would like the check installation, you may try to print ``geomdl.__version__`` variable after the import.
+The following example illustrates installation check on a Windows PowerShell instance::
+
+    Windows PowerShell
+    Copyright (C) Microsoft Corporation. All rights reserved.
+
+    PS C:\> python
+    Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:57:36) [MSC v.1900 64 bit (AMD64)] on win32
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> import geomdl
+    >>> geomdl.__version__
+    '3.6.1'
+    >>>
+
+Please see the NURBS-Python_ documentation for more details.
 
 Branch Information
 ==================

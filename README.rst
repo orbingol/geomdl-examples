@@ -44,8 +44,8 @@ The easiest method to install NURBS-Python_ is using `pip <https://pip.pypa.io/e
 
 ``pip install NURBS-Python``
 
-If you would like the check installation, you may try to print ``geomdl.__version__`` variable after the import.
-The following example illustrates installation check on a Windows PowerShell instance::
+If you would like to check if you have installed the package correctly, you may try to print ``geomdl.__version__``
+variable after the import. The following example illustrates installation check on a Windows PowerShell instance::
 
     Windows PowerShell
     Copyright (C) Microsoft Corporation. All rights reserved.

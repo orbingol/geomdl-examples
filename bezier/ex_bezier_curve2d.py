@@ -51,7 +51,7 @@ if render_curve:
 #
 
 # Create another B-Spline curve instance (Bezier Curve)
-curve2 = BSpline.Curve2D()
+curve2 = BSpline.Curve()
 
 # Set evaluation delta
 curve2.delta = 0.01

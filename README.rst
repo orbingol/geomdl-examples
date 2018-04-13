@@ -63,11 +63,9 @@ Please see the NURBS-Python_ documentation for more details.
 Branch Information
 ==================
 
-* ``master`` branch contains examples compatible with the latest version of NURBS-Python v3.x series.
+* ``master`` branch contains examples compatible with the latest version of NURBS-Python.
+* ``3.x`` branch contains examples compatible with the latest version of NURBS-Python v3.x series.
 * ``2.x`` branch contains examples compatible with the latest version of NURBS-Python v2.x series.
-
-Please note that there could be small API variations between the beta and the stable versions of the NURBS-Python
-package.
 
 Author
 ======

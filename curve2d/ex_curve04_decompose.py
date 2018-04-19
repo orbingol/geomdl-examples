@@ -35,7 +35,7 @@ curve.knotvector = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]
 bezier = curve.decompose()
 
 # Plot the curves using the curve container
-bezier.delta = 0.01
+bezier.sample_size = 20
 
 if render_curve:
     vis_config = VisMPL.VisConfig(figure_size=[8, 8])

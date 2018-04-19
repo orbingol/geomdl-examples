@@ -23,15 +23,15 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 # Create a 3D B-Spline curve instance (Bezier Curve)
 curve = BSpline.Curve()
 
-# Set evaluation delta
-curve.delta = 0.01
-
 # Set up the Bezier curve
 curve.ctrlpts = [[15, 5, 20], [7.5, 7.5, -25], [22.5, 7.5, 25], [14, 5, 0]]
 curve.degree = 3
 
 # Auto-generate knot vector
 curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpts))
+
+# Set evaluation delta
+curve.sample_size = 40
 
 # Evaluate curve
 curve.evaluate()

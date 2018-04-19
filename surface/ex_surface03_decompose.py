@@ -24,9 +24,6 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 # Create a NURBS surface instance
 surf = NURBS.Surface()
 
-# Set evaluation delta
-surf.delta = 0.025
-
 # Set degrees
 surf.degree_u = 1
 surf.degree_v = 2
@@ -41,8 +38,8 @@ surf.knotvector_v = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]
 # Decompose the surface
 surfaces = surf.decompose()
 
-# Set evaluation delta for all split surfaces
-surfaces.delta = 0.025
+# Set number of samples for all split surfaces
+surfaces.sample_size = 51
 
 # Draw the control point grid and the evaluated surface
 if render_surf:

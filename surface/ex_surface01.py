@@ -22,9 +22,6 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 # Create a BSpline surface instance
 surf = BSpline.Surface()
 
-# Set evaluation delta
-surf.delta = 0.05
-
 # Set degrees
 surf.degree_u = 3
 surf.degree_v = 3
@@ -35,6 +32,9 @@ surf.read_ctrlpts_from_txt("ex_surface01.cpt")
 # Set knot vectors
 surf.knotvector_u = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 surf.knotvector_v = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
+
+# Set evaluation delta
+surf.delta = 0.05
 
 # Evaluate surface points
 surf.evaluate()

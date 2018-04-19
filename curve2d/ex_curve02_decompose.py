@@ -23,9 +23,6 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 # Create a BSpline (NUBS) curve instance
 curve = BSpline.Curve()
 
-# Set evaluation delta
-curve.delta = 0.01
-
 # Set up curve
 curve.read_ctrlpts_from_txt("ex_curve02.cpt")
 curve.degree = 3
@@ -46,7 +43,7 @@ c2tanvec2 = [1 * p for p in c2tan2[1]]
 bezier[2].translate(c2tanvec2)
 
 # Plot the curves using the curve container
-bezier.delta = 0.01
+bezier.sample_size = 20
 
 if render_curve:
     vis_comp = VisMPL.VisCurve2D()

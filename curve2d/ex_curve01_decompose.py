@@ -23,9 +23,6 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 # Create a B-Spline curve instance
 curve = BSpline.Curve()
 
-# Set evaluation delta
-curve.delta = 0.01
-
 # Set up curve
 curve.read_ctrlpts_from_txt("ex_curve01.cpt")
 curve.degree = 4
@@ -37,7 +34,7 @@ curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpt
 bezier = curve.decompose()
 
 # Plot the curves using the curve container
-bezier.delta = 0.01
+bezier.sample_size = 40
 
 if render_curve:
     vis_comp = VisMPL.VisCurve2D()

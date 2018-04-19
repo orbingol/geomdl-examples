@@ -23,15 +23,15 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 # Create a BSpline curve instance
 curve = BSpline.Curve()
 
-# Set evaluation delta
-curve.delta = 0.01
-
 # Set up the NURBS curve
 curve.read_ctrlpts_from_txt("ex_curve03.cpt")
 curve.degree = 3
 
 # Auto-generate knot vector
 curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpts))
+
+# Set evaluation delta
+curve.delta = 0.01
 
 # Evaulate curve
 curve.evaluate()

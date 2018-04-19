@@ -22,9 +22,6 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 # Create a BSpline surface instance
 surf = BSpline.Surface()
 
-# Set evaluation delta
-surf.delta = 0.05
-
 # Set degrees
 surf.degree_u = 3
 surf.degree_v = 3
@@ -43,8 +40,8 @@ surfaces1 = surf.split_u(t=0.25)
 surfaces = surfaces1[1].split_v(t=0.75)
 surfaces.add(surfaces1[0])
 
-# Set evaluation delta for all split surfaces
-surfaces.delta = 0.05
+# Set number of samples for all split surfaces
+surfaces.sample_size = 20
 
 # Draw the control point grid and the evaluated surface
 if render_surf:

@@ -24,9 +24,6 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 # Create a BSpline (NUBS) curve instance
 curve = BSpline.Curve()
 
-# Set evaluation delta
-curve.delta = 0.01
-
 # Set up curve
 curve.read_ctrlpts_from_txt("ex_curve02.cpt")
 curve.degree = 3
@@ -44,7 +41,7 @@ curve1.translate(c2tanvec)
 
 # Plot the curves using the curve container
 curves = Multi.MultiCurve()
-curves.delta = 0.01
+curves.sample_size = 40
 curves.add(curve1)
 curves.add(curve2)
 if render_curve:

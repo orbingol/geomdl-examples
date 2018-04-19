@@ -23,9 +23,6 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 # Create a BSpline surface instance (Bezier surface)
 surf = BSpline.Surface()
 
-# Set evaluation delta
-surf.delta = 0.05
-
 # Set up the Bezier surface
 surf.degree_u = 3
 surf.degree_v = 2
@@ -36,6 +33,9 @@ control_points = [[0, 0, 0], [0, 1, 0], [0, 2, -3],
 surf.set_ctrlpts(control_points, 4, 3)
 surf.knotvector_u = utilities.generate_knot_vector(surf.degree_u, 4)
 surf.knotvector_v = utilities.generate_knot_vector(surf.degree_v, 3)
+
+# Set evaluation delta
+surf.sample_size = 25
 
 # Evaluate surface
 surf.evaluate()

@@ -15,12 +15,14 @@
 import os
 from geomdl import BSpline
 from geomdl import utilities
+from geomdl import exchange
 
 import numpy as np
 import matplotlib
 from matplotlib import cm
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
+
 
 # Fix file path
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
@@ -33,7 +35,7 @@ surf.degree_u = 3
 surf.degree_v = 3
 
 # Set control points
-surf.read_ctrlpts_from_txt("../surface/ex_surface02.cpt")
+surf.set_ctrlpts(*exchange.read_txt("../surface/ex_surface02.cpt", two_dimensional=True))
 
 surf.knotvector_u = utilities.generate_knot_vector(surf.degree_u, 6)
 surf.knotvector_v = utilities.generate_knot_vector(surf.degree_v, 6)

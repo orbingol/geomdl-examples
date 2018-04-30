@@ -9,6 +9,7 @@
 import os
 from geomdl import BSpline
 from geomdl import utilities
+from geomdl import exchange
 
 # Try to load the visualization module
 try:
@@ -24,7 +25,7 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 curve = BSpline.Curve()
 
 # Set up curve
-curve.read_ctrlpts_from_txt("ex_curve01.cpt")
+curve.ctrlpts = exchange.read_txt("ex_curve01.cpt")
 curve.degree = 4
 
 # Auto-generate knot vector
@@ -42,10 +43,6 @@ if render_curve:
     curve.vis = vis_comp
     curve.render()
 
-# Save control points and evaluated curve points
-curve.save_curvepts_to_csv("curvepts01_orig.csv")
-curve.save_ctrlpts_to_csv("ctrlpts01_orig.csv")
-
 # Insert a knot
 u = 0.2
 curve.insert_knot(u)
@@ -53,10 +50,6 @@ curve.insert_knot(u)
 # Draw the control point polygon and the evaluated curve after knot insertion
 if render_curve:
     curve.render()
-
-# Save control points and evaluated curve points after knot insertion
-curve.save_curvepts_to_csv("curvepts01_knotins.csv")
-curve.save_ctrlpts_to_csv("ctrlpts01_knotins.csv")
 
 # Good to have something here to put a breakpoint
 pass

@@ -8,13 +8,10 @@
 """
 import os
 from geomdl import BSpline
+from geomdl import exchange
 
-# Try to load the visualization module
-try:
-    render_surf = True
-    from geomdl.visualization import VisMPL
-except ImportError:
-    render_surf = False
+from geomdl.visualization import VisMPL
+
 
 # Fix file path
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
@@ -27,7 +24,7 @@ surf.degree_u = 3
 surf.degree_v = 3
 
 # Set control points
-surf.read_ctrlpts_from_txt("ex_surface01.cpt")
+surf.ctrlpts = exchange.read_txt("ex_surface01.cpt", two_dimensional=True)
 
 # Set knot vectors
 surf.knotvector_u = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
@@ -39,15 +36,10 @@ surf.delta = 0.05
 # Evaluate surface points
 surf.evaluate()
 
-# Draw the control point grid and the evaluated surface
-if render_surf:
-    vis_comp = VisMPL.VisSurfTriangle()
-    surf.vis = vis_comp
-    surf.render()
-
-# Save control points and evaluated curve points
-surf.save_surfpts_to_csv("surfpts01_orig.csv", mode='wireframe')
-surf.save_ctrlpts_to_csv("ctrlpts01_orig.csv", mode='wireframe')
+# Plot the control point grid and the evaluated surface
+vis_comp = VisMPL.VisSurfTriangle()
+surf.vis = vis_comp
+surf.render()
 
 # Good to have something here to put a breakpoint
 pass

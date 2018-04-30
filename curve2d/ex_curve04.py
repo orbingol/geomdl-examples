@@ -8,6 +8,7 @@
 """
 import os
 from geomdl import NURBS
+from geomdl import exchange
 
 # Try to load the visualization module
 try:
@@ -23,7 +24,7 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 curve = NURBS.Curve()
 
 # Set up curve
-curve.read_ctrlpts_from_txt("ex_curve04.cptw")
+curve.ctrlptsw = exchange.read_txt("ex_curve04.cptw")
 curve.degree = 2
 # Use a specialized knot vector
 curve.knotvector = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]
@@ -40,10 +41,6 @@ if render_curve:
     vis_comp = VisMPL.VisCurve2D(config=vis_config)
     curve.vis = vis_comp
     curve.render()
-
-# Save control points and evaluated curve points
-curve.save_curvepts_to_csv("curvepts04_orig.csv")
-curve.save_ctrlpts_to_csv("ctrlpts04_orig.csv")
 
 # Good to have something here to put a breakpoint
 pass

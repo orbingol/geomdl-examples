@@ -9,6 +9,7 @@
 import os
 from geomdl import BSpline
 from geomdl import utilities
+from geomdl import exchange
 
 # Try to load the visualization module
 try:
@@ -24,7 +25,7 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 curve = BSpline.Curve()
 
 # Set up curve
-curve.read_ctrlpts_from_txt("ex_curve02.cpt")
+curve.ctrlpts = exchange.read_txt("ex_curve02.cpt")
 curve.degree = 3
 
 # Auto-generate knot vector
@@ -41,10 +42,6 @@ if render_curve:
     vis_comp = VisMPL.VisCurve2D()
     curve.vis = vis_comp
     curve.render()
-
-# Save control points and evaluated curve points
-curve.save_curvepts_to_csv("curvepts02_orig.csv")
-curve.save_ctrlpts_to_csv("ctrlpts02_orig.csv")
 
 # Evaluate derivatives at u = 0.6
 ders = curve.derivatives(0.6, 4)  # Algorithm A3.4

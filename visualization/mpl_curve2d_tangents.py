@@ -8,9 +8,11 @@
 import os
 from geomdl import BSpline
 from geomdl import utilities
+from geomdl import exchange
 
 import numpy as np
 import matplotlib.pyplot as plt
+
 
 # Fix file path
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
@@ -20,13 +22,13 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 #
 
 # Create a BSpline curve instance
-curve = BSpline.Curve2D()
+curve = BSpline.Curve()
 
 # Set degree
 curve.degree = 3
 
 # Set control points
-curve.read_ctrlpts_from_txt("../curve2d/ex_curve03.cpt")
+curve.ctrlpts = exchange.read_txt("../curve2d/ex_curve03.cpt")
 
 # Auto-generate knot vector
 curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpts))

@@ -9,13 +9,10 @@
 import os
 from geomdl import BSpline
 from geomdl import utilities
+from geomdl import exchange
 
-# Try to load the visualization module
-try:
-    render_surf = True
-    from geomdl.visualization import VisMPL
-except ImportError:
-    render_surf = False
+from geomdl.visualization import VisMPL
+
 
 # Fix file path
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
@@ -28,7 +25,7 @@ surf.degree_u = 3
 surf.degree_v = 3
 
 # Set control points
-surf.read_ctrlpts_from_txt("ex_surface02.cpt")
+surf.set_ctrlpts(*exchange.read_txt("ex_surface02.cpt", two_dimensional=True))
 
 # Set knot vectors
 surf.knotvector_u = utilities.generate_knot_vector(surf.degree_u, 6)
@@ -40,15 +37,10 @@ surf.delta = 0.025
 # Evaluate surface
 surf.evaluate()
 
-# Draw the control point grid and the evaluated surface
-if render_surf:
-    vis_comp = VisMPL.VisSurfScatter()
-    surf.vis = vis_comp
-    surf.render()
-
-# Save control points and evaluated curve points
-surf.save_surfpts_to_csv("surfpts02_orig.csv", mode='linear')
-surf.save_ctrlpts_to_csv("ctrlpts02_orig.csv", mode='wireframe')
+# Plot the control point grid and the evaluated surface
+vis_comp = VisMPL.VisSurfScatter()
+surf.vis = vis_comp
+surf.render()
 
 # Evaluate surface tangent and normal at the given u and v
 uv = [0.2, 0.9]

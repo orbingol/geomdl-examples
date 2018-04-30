@@ -9,13 +9,10 @@
 import os
 from geomdl import BSpline
 from geomdl import utilities
+from geomdl import exchange
 
-# Try to load the visualization module
-try:
-    render_curve = True
-    from geomdl.visualization import VisMPL
-except ImportError:
-    render_curve = False
+from geomdl.visualization import VisMPL
+
 
 # Fix file path
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
@@ -24,7 +21,7 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 curve = BSpline.Curve()
 
 # Set up curve
-curve.read_ctrlpts_from_txt("ex_curve3d02.cpt")
+curve.ctrlpts = exchange.read_txt("ex_curve3d02.cpt")
 curve.degree = 3
 
 # Auto-generate knot vector
@@ -36,15 +33,10 @@ curve.delta = 0.01
 # Evaluate curve
 curve.evaluate()
 
-# Draw the control point polygon and the evaluated curve
-if render_curve:
-    vis_comp = VisMPL.VisCurve3D()
-    curve.vis = vis_comp
-    curve.render()
-
-# Save control points and evaluated curve points
-curve.save_curvepts_to_csv("curvepts3d02_orig.csv")
-curve.save_ctrlpts_to_csv("ctrlpts3d02_orig.csv")
+# Plot the control point polygon and the evaluated curve
+vis_comp = VisMPL.VisCurve3D()
+curve.vis = vis_comp
+curve.render()
 
 # Good to have something here to put a breakpoint
 pass

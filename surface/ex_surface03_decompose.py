@@ -10,13 +10,10 @@
 """
 import os
 from geomdl import NURBS
+from geomdl import exchange
 
-# Try to load the visualization module
-try:
-    render_surf = True
-    from geomdl.visualization import VisMPL
-except ImportError:
-    render_surf = False
+from geomdl.visualization import VisMPL
+
 
 # Fix file path
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
@@ -29,7 +26,7 @@ surf.degree_u = 1
 surf.degree_v = 2
 
 # Set control points
-surf.read_ctrlpts_from_txt("ex_surface03.cptw")
+surf.set_ctrlpts(*exchange.read_txt("ex_surface03.cptw", two_dimensional=True))
 
 # Set knot vector
 surf.knotvector_u = [0, 0, 1, 1]
@@ -41,11 +38,10 @@ surfaces = surf.decompose()
 # Set number of samples for all split surfaces
 surfaces.sample_size = 51
 
-# Draw the control point grid and the evaluated surface
-if render_surf:
-    vis_comp = VisMPL.VisSurfWireframe()
-    surfaces.vis = vis_comp
-    surfaces.render()
+# Plot the control point grid and the evaluated surface
+vis_comp = VisMPL.VisSurfWireframe()
+surfaces.vis = vis_comp
+surfaces.render()
 
 # Good to have something here to put a breakpoint
 pass

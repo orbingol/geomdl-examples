@@ -6,12 +6,13 @@
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2018
 """
+
 import os
 from geomdl import BSpline
 from geomdl import utilities
 from geomdl import exchange
-
-from geomdl.visualization import VisMPL
+# from geomdl.visualization import VisMPL
+from geomdl.visualization import VisPlotly
 
 
 # Fix file path
@@ -34,7 +35,7 @@ curve.delta = 0.01
 curve.evaluate()
 
 # Plot the control point polygon and the evaluated curve
-vis_comp = VisMPL.VisCurve3D()
+vis_comp = VisPlotly.VisCurve3D()
 curve.vis = vis_comp
 curve.render()
 

@@ -6,16 +6,13 @@
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2017
 """
+
 import os
 from geomdl import NURBS
 from geomdl import exchange
+# from geomdl.visualization import VisMPL
+from geomdl.visualization import VisPlotly
 
-# Try to load the visualization module
-try:
-    render_curve = True
-    from geomdl.visualization import VisMPL
-except ImportError:
-    render_curve = False
 
 # Fix file path
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
@@ -35,12 +32,10 @@ curve.delta = 0.01
 # Evaluate curve
 curve.evaluate()
 
-# Draw the control point polygon and the evaluated curve
-if render_curve:
-    vis_config = VisMPL.VisConfig(figure_size=[8, 8])
-    vis_comp = VisMPL.VisCurve2D(config=vis_config)
-    curve.vis = vis_comp
-    curve.render()
+# Plot the control point polygon and the evaluated curve
+vis_comp = VisPlotly.VisCurve2D()
+curve.vis = vis_comp
+curve.render()
 
 # Good to have something here to put a breakpoint
 pass

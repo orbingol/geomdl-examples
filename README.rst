@@ -48,7 +48,7 @@ for his guidance and supervision throughout the course of this project.
 
 In addition, I would like to thank
 `all NURBS-Python contributors <https://github.com/orbingol/NURBS-Python/blob/master/CONTRIBUTORS.rst>`_
-for their time and effort in fixing, extending and supporting this project.
+for their time and effort in supporting this project.
 
 
 .. _NURBS-Python: https://github.com/orbingol/NURBS-Python

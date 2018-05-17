@@ -18,7 +18,7 @@ Directory Structure
 * ``curve3d/`` contains 3D curve examples
 * ``surface/`` contains surface examples
 * ``grid/`` contains examples for surface grid generator
-* ``visualization/`` contains visualization examples. Please see NURBS-Python_ documentation for details.
+* ``visualization/`` contains advanced visualization examples. Please see NURBS-Python_ documentation for details.
 * ``bezier/`` contains Bezier curve and surface examples
 * ``shapes/`` contains examples demonstrating ``geomdl.shapes`` component
 * ``exchange/`` contains examples demonstrating  ``geomdl.exchange`` module
@@ -38,7 +38,7 @@ Author
 License
 =======
 
-NURBS-Python_ package and all example scripts are licensed under `The MIT License <LICENSE>`_.
+NURBS-Python_ package and all the scripts in this repository are licensed under the `MIT License <LICENSE>`_.
 
 Acknowledgments
 ===============
@@ -49,5 +49,6 @@ for his guidance and supervision throughout the course of this project.
 In addition, I would like to thank
 `all NURBS-Python contributors <https://github.com/orbingol/NURBS-Python/blob/master/CONTRIBUTORS.rst>`_
 for their time and effort in fixing, extending and supporting this project.
+
 
 .. _NURBS-Python: https://github.com/orbingol/NURBS-Python

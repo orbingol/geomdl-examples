@@ -10,7 +10,7 @@ import os
 from geomdl import BSpline
 from geomdl import exchange
 
-from geomdl.visualization import VisMPL
+from geomdl.visualization import VisPlotly
 
 
 # Fix file path
@@ -37,7 +37,7 @@ surf.delta = 0.05
 surf.evaluate()
 
 # Plot the control point grid and the evaluated surface
-vis_comp = VisMPL.VisSurfTriangle()
+vis_comp = VisPlotly.VisSurface()
 surf.vis = vis_comp
 surf.render()
 

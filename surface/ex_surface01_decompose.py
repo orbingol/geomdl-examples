@@ -10,7 +10,7 @@ import os
 from geomdl import BSpline
 from geomdl import exchange
 
-from geomdl.visualization import VisMPL
+from geomdl.visualization import VisPlotly
 
 
 # Fix file path
@@ -37,7 +37,7 @@ surfaces = surf.decompose()
 surfaces.sample_size = 20
 
 # Plot the control point grid and the evaluated surface
-vis_comp = VisMPL.VisSurfScatter()
+vis_comp = VisPlotly.VisSurface()
 surfaces.vis = vis_comp
 surfaces.render()
 

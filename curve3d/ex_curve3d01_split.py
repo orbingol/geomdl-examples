@@ -11,7 +11,7 @@ from geomdl import BSpline
 from geomdl import utilities
 from geomdl import exchange
 
-from geomdl.visualization import VisMPL
+from geomdl.visualization import VisPlotly
 
 
 # Fix file path
@@ -39,7 +39,7 @@ curves[0].translate(c2tanvec)
 curves.sample_size = 100
 
 # Plot the control point polygon and the evaluated curve
-vis_comp = VisMPL.VisCurve3D()
+vis_comp = VisPlotly.VisCurve3D()
 curves.vis = vis_comp
 curves.render()
 

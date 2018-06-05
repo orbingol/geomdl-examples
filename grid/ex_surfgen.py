@@ -27,7 +27,7 @@ surfgrid = CPGen.Grid(50, 100)
 surfgrid.generate(5, 10)
 
 # Generate 4 bumps on the grid
-surfgrid.bumps(4)
+surfgrid.bumps(num_bumps=6, all_positive=False, bump_height=45)
 
 # Create a BSpline surface instance
 surf = BSpline.Surface()
@@ -43,8 +43,8 @@ surf.ctrlpts2d = surfgrid.grid()
 surf.knotvector_u = utilities.generate_knot_vector(surf.degree_u, surf.ctrlpts_size_u)
 surf.knotvector_v = utilities.generate_knot_vector(surf.degree_v, surf.ctrlpts_size_v)
 
-# Split the surface at u = 0.35
-split_surf = surf.split_u(0.35)
+# Split the surface at v = 0.35
+split_surf = surf.split_v(0.35)
 
 # Set sample size of the split surface
 split_surf.sample_size = 25

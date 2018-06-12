@@ -9,8 +9,9 @@
     This example illustrates the following operations:
 
     * Generating a control points grid
+    * Rotating the control points grid about some chosen axes
     * Generating a B-Spline surface and using the generated grid as its control points input
-    * Plotting the split surface using Plotly
+    * Plotting the surface
 """
 
 

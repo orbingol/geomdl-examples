@@ -7,23 +7,30 @@
     Developed by Onur Rauf Bingol (c) 2018
 """
 from geomdl.shapes import surface
+from geomdl.visualization import VisMPL
 
-# Try to load the visualization module
-try:
-    render = True
-    from geomdl.visualization import VisMPL
-except ImportError:
-    render = False
 
+# Generate a cylindrical surface using the shapes component
 cylinder = surface.cylinder(radius=5.0, height=22.5)
-cylinder.delta = 0.05
+cylinder.sample_size = 20
 
 # Render the surface
-if render:
-    vis_config = VisMPL.VisConfig(ctrlpts=False)
-    vis_comp = VisMPL.VisSurface(config=vis_config)
-    cylinder.vis = vis_comp
-    cylinder.render()
+vis_config = VisMPL.VisConfig(ctrlpts=True)
+vis_comp = VisMPL.VisSurface(config=vis_config)
+cylinder.vis = vis_comp
+cylinder.render()
+
+# Decompose the surface into Bezier segments
+cylinder_decomposed = cylinder.decompose()
+
+# Prepare Bezier segments for plotting
+cylinder_decomposed.sample_size = 20
+
+# Render the decomposed surface
+vis_config = VisMPL.VisConfig(ctrlpts=True)
+vis_comp = VisMPL.VisSurface(config=vis_config)
+cylinder_decomposed.vis = vis_comp
+cylinder_decomposed.render()
 
 # Good to have something here to put a breakpoint
 pass

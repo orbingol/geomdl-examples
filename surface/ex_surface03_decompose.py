@@ -26,7 +26,7 @@ surf.degree_u = 1
 surf.degree_v = 2
 
 # Set control points
-surf.set_ctrlpts(*exchange.read_txt("ex_surface03.cptw", two_dimensional=True))
+surf.set_ctrlpts(*exchange.import_txt("ex_surface03.cptw", two_dimensional=True))
 
 # Set knot vector
 surf.knotvector_u = [0, 0, 1, 1]

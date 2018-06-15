@@ -28,7 +28,7 @@ curve = BSpline.Curve()
 curve.degree = 3
 
 # Set control points
-curve.ctrlpts = exchange.read_txt("../curve2d/ex_curve03.cpt")
+curve.ctrlpts = exchange.import_txt("../curve2d/ex_curve03.cpt")
 
 # Auto-generate knot vector
 curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpts))

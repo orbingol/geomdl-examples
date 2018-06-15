@@ -13,7 +13,7 @@ cylinder = surface.cylinder(radius=5.0, height=22.5)
 cylinder.delta = 0.05
 
 # Export the surface as a .obj file
-exchange.save_obj(cylinder, "cylindrical_surface.obj")
+exchange.export_obj(cylinder, "cylindrical_surface.obj")
 
 # Good to have something here to put a breakpoint
 pass

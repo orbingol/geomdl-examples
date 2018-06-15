@@ -21,7 +21,7 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 curve = NURBS.Curve()
 
 # Set up curve
-curve.ctrlptsw = exchange.read_txt("ex_curve04.cptw")
+curve.ctrlptsw = exchange.import_txt("ex_curve04.cptw")
 curve.degree = 2
 # Use a specialized knot vector
 curve.knotvector = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]

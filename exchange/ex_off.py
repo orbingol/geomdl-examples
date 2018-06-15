@@ -13,7 +13,7 @@ cylinder = surface.cylinder(radius=5.0, height=22.5)
 cylinder.delta = 0.01
 
 # Export the surface as a .off file
-exchange.save_off(cylinder, "cylindrical_surface.off")
+exchange.export_off(cylinder, "cylindrical_surface.off")
 
 # Good to have something here to put a breakpoint
 pass

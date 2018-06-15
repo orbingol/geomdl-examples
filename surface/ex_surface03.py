@@ -12,7 +12,7 @@ import os
 from geomdl import NURBS
 from geomdl import exchange
 
-from geomdl.visualization import VisMPL
+from geomdl.visualization import VisPlotly
 
 
 # Fix file path
@@ -33,13 +33,13 @@ surf.knotvector_u = [0, 0, 1, 1]
 surf.knotvector_v = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]
 
 # Set evaluation delta
-surf.delta = 0.025
+surf.delta = 0.05
 
 # Evaluate surface
 surf.evaluate()
 
 # Plot the control point grid and the evaluated surface
-vis_comp = VisMPL.VisSurface()
+vis_comp = VisPlotly.VisSurface()
 surf.vis = vis_comp
 surf.render()
 

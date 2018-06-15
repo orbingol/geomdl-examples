@@ -31,7 +31,7 @@ surf.knotvector_u = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 surf.knotvector_v = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 
 # Set evaluation delta
-surf.delta = 0.05
+surf.delta = 0.025
 
 # Evaluate surface points
 surf.evaluate()

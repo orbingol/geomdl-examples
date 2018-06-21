@@ -9,13 +9,7 @@
 import os
 from geomdl import BSpline
 from geomdl import utilities
-
-# Try to load the visualization module
-try:
-    render_curve = True
-    from geomdl.visualization import VisMPL
-except ImportError:
-    render_curve = False
+from geomdl.visualization import VisMPL
 
 # Fix file path
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
@@ -24,8 +18,8 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 curve = BSpline.Curve()
 
 # Set up the Bezier curve
-curve.ctrlpts = [[10, 5, 10], [10, 20, -30], [40, 10, 25], [-10, 5, 0]]
 curve.degree = 3
+curve.ctrlpts = [[10, 5, 10], [10, 20, -30], [40, 10, 25], [-10, 5, 0]]
 
 # Auto-generate knot vector
 curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpts))
@@ -37,7 +31,8 @@ curve.sample_size = 40
 curve.evaluate()
 
 # Draw the control point polygon and the evaluated curve
-if render_curve:
-    vis_comp = VisMPL.VisCurve3D()
-    curve.vis = vis_comp
-    curve.render()
+vis_comp = VisMPL.VisCurve3D()
+curve.vis = vis_comp
+
+# Don't pop up the plot window, instead save it as a PDF file
+curve.render(filename="bezier.pdf", plot=False)

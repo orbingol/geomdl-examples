@@ -16,10 +16,10 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 mygrid = CPGen.Grid(50, 100)
 
 # Split the width into 5 equal pieces and the height into 10 equal pieces
-mygrid.generate(5, 10)
+mygrid.generate(15, 20)
 
 # Generate 4 bumps on the grid
-mygrid.bumps(4)
+mygrid.bumps(num_bumps=4, bump_height=50)
 
 # Save the file, by default as grid.txt
 mygrid.save()

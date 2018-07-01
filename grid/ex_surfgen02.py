@@ -25,7 +25,7 @@ from geomdl.visualization import VisMPL as myvis
 # Generate a control points grid
 surfgrid = CPGen.Grid(50, 100)
 
-# Split the width into 5 equal pieces and the height into 10 equal pieces
+# Grid size 25x30
 surfgrid.generate(25, 30)
 
 # Generate 4 bumps on the grid

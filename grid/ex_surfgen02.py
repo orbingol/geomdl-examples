@@ -26,14 +26,14 @@ from geomdl.visualization import VisMPL as myvis
 surfgrid = CPGen.Grid(50, 100)
 
 # Split the width into 5 equal pieces and the height into 10 equal pieces
-surfgrid.generate(5, 10)
+surfgrid.generate(25, 25)
 
 # Generate 4 bumps on the grid
-surfgrid.bumps(num_bumps=7, all_positive=False, bump_height=45)
+surfgrid.bumps(num_bumps=5, all_positive=True, bump_height=20, base_size=4)
 
 # Rotate the grid about y and z axes
-surfgrid.rotate_y(12.5)
-surfgrid.rotate_z(45)
+# surfgrid.rotate_y(12.5)
+# surfgrid.rotate_z(45)
 
 # Create a BSpline surface instance
 surf = BSpline.Surface()
@@ -50,10 +50,10 @@ surf.knotvector_u = utilities.generate_knot_vector(surf.degree_u, surf.ctrlpts_s
 surf.knotvector_v = utilities.generate_knot_vector(surf.degree_v, surf.ctrlpts_size_v)
 
 # Set sample size of the split surface
-surf.sample_size = 20
+surf.sample_size = 30
 
 # Generate the visualization component and its configuration
-vis_config = myvis.VisConfig(ctrlpts=True, legend=False)
+vis_config = myvis.VisConfig(ctrlpts=False, legend=False)
 vis_comp = myvis.VisSurface(vis_config)
 
 # Set visualization component of the split surface

@@ -28,7 +28,7 @@ surfgrid = CPGen.Grid(50, 100)
 # Grid size 25x30
 surfgrid.generate(25, 30)
 
-# Generate 4 bumps on the grid
+# Generate bumps on the grid
 surfgrid.bumps(num_bumps=5, all_positive=True, bump_height=20, base_extent=4)
 
 # Rotate the grid about y and z axes

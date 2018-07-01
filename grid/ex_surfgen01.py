@@ -26,7 +26,7 @@ surfgrid = CPGen.Grid(50, 100)
 # This will generate a32x32 grid
 surfgrid.generate(32, 32)
 
-# Generate 4 bumps on the grid
+# Generate bumps on the grid
 surfgrid.bumps(num_bumps=4, all_positive=True, bump_height=45, base_extent=4, base_adjust=1)
 
 # Create a BSpline surface instance

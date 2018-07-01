@@ -24,10 +24,10 @@ from geomdl.visualization import VisPlotly
 surfgrid = CPGen.Grid(50, 100)
 
 # Split the width into 5 equal pieces and the height into 10 equal pieces
-surfgrid.generate(17, 23)
+surfgrid.generate(4, 4)
 
 # Generate 4 bumps on the grid
-surfgrid.bumps(num_bumps=4, all_positive=False, bump_height=45, smoothness=2)
+surfgrid.bumps(num_bumps=1, all_positive=False, bump_height=45, base_extent=2)
 
 # Create a BSpline surface instance
 surf = BSpline.Surface()

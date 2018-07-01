@@ -26,14 +26,14 @@ from geomdl.visualization import VisMPL as myvis
 surfgrid = CPGen.Grid(50, 100)
 
 # Split the width into 5 equal pieces and the height into 10 equal pieces
-surfgrid.generate(25, 25)
+surfgrid.generate(25, 30)
 
 # Generate 4 bumps on the grid
-surfgrid.bumps(num_bumps=5, all_positive=True, bump_height=20, base_size=4)
+surfgrid.bumps(num_bumps=5, all_positive=True, bump_height=20, base_extent=4)
 
 # Rotate the grid about y and z axes
-# surfgrid.rotate_y(12.5)
-# surfgrid.rotate_z(45)
+surfgrid.rotate_y(12.5)
+surfgrid.rotate_z(45)
 
 # Create a BSpline surface instance
 surf = BSpline.Surface()

@@ -22,16 +22,16 @@ mygrid.generate(15, 20)
 mygrid.bumps(num_bumps=4, bump_height=50)
 
 # Add weight
-mygrid.add_weight(2.3)
+mygrid.weight = 2.3
 
 # Modify weight
-mygrid.modify_weight(1.0)
+mygrid.weight = 1.0
 
 # Save the file, by default as grid.txt
 mygrid.save()
 
 # Get the grid points for plotting
-grid_data = mygrid.grid()
+grid_data = mygrid.grid
 
 # Good to have something here to put a breakpoint
 pass

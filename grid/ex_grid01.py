@@ -25,7 +25,7 @@ mygrid.bumps(num_bumps=4, bump_height=50)
 mygrid.save()
 
 # Get the grid points for plotting
-grid_data = mygrid.grid()
+grid_data = mygrid.grid
 
 # Good to have something here to put a breakpoint
 pass

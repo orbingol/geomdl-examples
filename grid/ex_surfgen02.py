@@ -43,7 +43,7 @@ surf.degree_u = 3
 surf.degree_v = 3
 
 # Get the control points from the generated grid
-surf.ctrlpts2d = surfgrid.grid()
+surf.ctrlpts2d = surfgrid.grid
 
 # Set knot vectors
 surf.knotvector_u = utilities.generate_knot_vector(surf.degree_u, surf.ctrlpts_size_u)

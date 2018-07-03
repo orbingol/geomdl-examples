@@ -16,7 +16,7 @@ from geomdl.visualization import VisPlotly as vis
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 # Read a directory containing smesh files
-multi_smesh = exchange.import_smesh_dir('data')
+multi_smesh = exchange.import_smesh('data')
 multi_smesh.sample_size = 5
 
 # Draw the control point grid and the evaluated surface

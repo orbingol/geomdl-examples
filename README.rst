@@ -1,5 +1,5 @@
-NURBS-Python Examples
-^^^^^^^^^^^^^^^^^^^^^
+NURBS-Python (geomdl) Examples
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This repository contains API demonstration scripts for the NURBS-Python_ package. Please see the
 `documentation <http://nurbs-python.readthedocs.io/en/latest>`_ for more details.

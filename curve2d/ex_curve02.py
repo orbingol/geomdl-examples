@@ -10,6 +10,7 @@ import os
 from geomdl import BSpline
 from geomdl import utilities
 from geomdl import exchange
+from geomdl import evaluators
 
 # Try to load the visualization module
 try:
@@ -44,8 +45,13 @@ if render_curve:
     curve.render()
 
 # Evaluate derivatives at u = 0.6
-ders = curve.derivatives(0.6, 4)  # Algorithm A3.4
-ders2 = curve.derivatives2(0.6, 4)  # Algorithm A3.2
+ders1 = curve.derivatives(0.6, 4)
+
+# Change evaluator
+curve.evaluator = evaluators.CurveEvaluator2()
+
+# Evaluate derivatives at u = 0.6 using the new evaluator
+ders2 = curve.derivatives(0.6, 4)
 
 # Compute curve tangent at u = 0.6
 curvetan = curve.tangent(0.6)

@@ -14,6 +14,7 @@ from geomdl import BSpline
 from geomdl import utilities
 from geomdl.visualization import VisMPL
 
+
 # Fix file path
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 

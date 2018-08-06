@@ -5,13 +5,11 @@
     Released under The MIT License
     Developed by Onur Rauf Bingol (c) 2018
 
-    Tested with:
-    * Python v3.6.2
-    * NumPy v1.13.3
-    * Matplotlib v2.1.0
+    Creates a triangulated surface and plots tangent and normal vectors
 
     Colors: https://xkcd.com/color/rgb/
 """
+
 import os
 from geomdl import BSpline
 from geomdl import utilities

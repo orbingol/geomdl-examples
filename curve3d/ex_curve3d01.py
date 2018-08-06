@@ -5,7 +5,10 @@
     Examples for the NURBS-Python Package
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2018
+
+    3-dimensional B-Spline curve
 """
+
 import os
 from geomdl import BSpline
 from geomdl import utilities

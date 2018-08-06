@@ -4,6 +4,8 @@
     Visualization Examples for the NURBS-Python Package
     Released under The MIT License
     Developed by Onur Rauf Bingol (c) 2018
+
+    Creates a 3-dimensional curve and plots tangent vectors
 """
 import os
 from geomdl import BSpline

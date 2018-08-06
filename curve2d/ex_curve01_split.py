@@ -6,17 +6,13 @@
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2018
 """
+
 import os
 from geomdl import BSpline
 from geomdl import utilities
 from geomdl import exchange
+from geomdl.visualization import VisMPL
 
-# Try to load the visualization module
-try:
-    render_curve = True
-    from geomdl.visualization import VisMPL
-except ImportError:
-    render_curve = False
 
 # Fix file path
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
@@ -42,10 +38,10 @@ curves[0].translate(c2tanvec)
 # Plot the curves using the curve container
 curves.sample_size = 40
 
-if render_curve:
-    vis_comp = VisMPL.VisCurve2D()
-    curves.vis = vis_comp
-    curves.render()
+# Plot the curve
+vis_comp = VisMPL.VisCurve2D()
+curves.vis = vis_comp
+curves.render()
 
 # Good to have something here to put a breakpoint
 pass

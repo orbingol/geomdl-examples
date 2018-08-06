@@ -8,10 +8,10 @@
 
     The surface example is kindly contributed by John-Eric Dufour (@jedufour)
 """
+
 import os
 from geomdl import NURBS
 from geomdl import exchange
-
 from geomdl.visualization import VisMPL
 
 

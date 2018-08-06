@@ -6,8 +6,10 @@
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2018
 """
+
 from geomdl.shapes import curve2d
 from geomdl.visualization import VisMPL
+
 
 # Generate a NURBS full circle from 7 control points
 circle = curve2d.full_circle2(radius=5.0)

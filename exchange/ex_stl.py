@@ -5,7 +5,10 @@
     Examples for the NURBS-Python Package
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2018
+
+    Exporting a NURBS surface as .stl file
 """
+
 from geomdl.shapes import surface
 from geomdl import exchange
 

@@ -5,17 +5,14 @@
     Examples for the NURBS-Python Package
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2018
+
+    2nd degree and 3rd degree 2-dimensional Bezier curves
 """
+
 import os
 from geomdl import BSpline
 from geomdl import utilities
-
-# Try to load the visualization module
-try:
-    render_curve = True
-    from geomdl.visualization import VisMPL
-except ImportError:
-    render_curve = False
+from geomdl.visualization import VisMPL
 
 # Fix file path
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
@@ -41,10 +38,9 @@ curve1.sample_size = 40
 curve1.evaluate()
 
 # Draw the control point polygon and the evaluated curve
-if render_curve:
-    vis_comp1 = VisMPL.VisCurve2D()
-    curve1.vis = vis_comp1
-    curve1.render()
+vis_comp1 = VisMPL.VisCurve2D()
+curve1.vis = vis_comp1
+curve1.render()
 
 #
 # 2D CURVE 2
@@ -67,7 +63,8 @@ curve2.sample_size = 40
 curve2.evaluate()
 
 # Draw the control point polygon and the evaluated curve
-if render_curve:
-    vis_comp2 = VisMPL.VisCurve2D()
-    curve2.vis = vis_comp2
-    curve2.render()
+vis_comp2 = VisMPL.VisCurve2D()
+curve2.vis = vis_comp2
+curve2.render()
+
+pass

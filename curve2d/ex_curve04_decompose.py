@@ -6,16 +6,12 @@
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2017
 """
+
 import os
 from geomdl import NURBS
 from geomdl import exchange
+from geomdl.visualization import VisMPL
 
-# Try to load the visualization module
-try:
-    render_curve = True
-    from geomdl.visualization import VisMPL
-except ImportError:
-    render_curve = False
 
 # Fix file path
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
@@ -35,14 +31,14 @@ curve.knotvector = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]
 # Decompose the curve into Bezier curve segments
 bezier = curve.decompose()
 
-# Plot the curves using the curve container
+# Set sample size of the Bezier curves
 bezier.sample_size = 20
 
-if render_curve:
-    vis_config = VisMPL.VisConfig(figure_size=[8, 8])
-    vis_comp = VisMPL.VisCurve2D(vis_config)
-    bezier.vis = vis_comp
-    bezier.render()
+# Plot the Bezier curves
+vis_config = VisMPL.VisConfig(figure_size=[8, 8])
+vis_comp = VisMPL.VisCurve2D(vis_config)
+bezier.vis = vis_comp
+bezier.render()
 
 # Good to have something here to put a breakpoint
 pass

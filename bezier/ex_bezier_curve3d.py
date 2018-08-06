@@ -5,7 +5,10 @@
     Examples for the NURBS-Python Package
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2018
+
+    3rd degree 3-dimensional Bezier curve
 """
+
 import os
 from geomdl import BSpline
 from geomdl import utilities
@@ -36,3 +39,5 @@ curve.vis = vis_comp
 
 # Don't pop up the plot window, instead save it as a PDF file
 curve.render(filename="bezier.pdf", plot=False)
+
+pass

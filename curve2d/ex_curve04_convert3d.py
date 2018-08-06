@@ -6,16 +6,12 @@
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2018
 """
+
 import os
 from geomdl import NURBS
 from geomdl import exchange
+from geomdl.visualization import VisMPL
 
-# Try to load the visualization module
-try:
-    render_curve = True
-    from geomdl.visualization import VisMPL
-except ImportError:
-    render_curve = False
 
 # Fix file path
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
@@ -38,12 +34,11 @@ curve3d = curve.add_dimension()
 # Translate curve to z = 5
 curve3d.translate((0, 0, 5))
 
-# Draw the control point polygon and the evaluated curve
-if render_curve:
-    vis_config = VisMPL.VisConfig(ctrlpts=True)
-    vis_comp = VisMPL.VisCurve3D(vis_config)
-    curve3d.vis = vis_comp
-    curve3d.render()
+# Plot the control point polygon and the evaluated curve
+vis_config = VisMPL.VisConfig(ctrlpts=True)
+vis_comp = VisMPL.VisCurve3D(vis_config)
+curve3d.vis = vis_comp
+curve3d.render()
 
 # Good to have something here to put a breakpoint
 pass

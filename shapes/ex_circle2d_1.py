@@ -6,6 +6,7 @@
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2018
 """
+
 from geomdl.shapes import curve2d
 from geomdl.visualization import VisMPL
 

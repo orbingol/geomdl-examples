@@ -5,7 +5,10 @@
     Examples for the NURBS-Python Package
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2018
+
+    A cubic-quadratic Bezier surface
 """
+
 import os
 from geomdl import BSpline
 from geomdl import utilities
@@ -38,3 +41,5 @@ surf.evaluate()
 vis_comp = VisMPL.VisSurface()
 surf.vis = vis_comp
 surf.render()
+
+pass

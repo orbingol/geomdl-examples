@@ -5,7 +5,10 @@
     Examples for the NURBS-Python Package
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2018
+
+    A 3-dimensional B-Spline curve is split at u=0.3 and one of the split curves is translated using the tangent vector
 """
+
 import os
 from geomdl import BSpline
 from geomdl import utilities

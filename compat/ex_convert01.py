@@ -5,6 +5,8 @@
     Examples for the NURBS-Python Package
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2018
+
+    Demonstration of the compatibility module
 """
 
 from geomdl import NURBS

@@ -6,10 +6,10 @@
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2018
 """
+
 import os
 from geomdl import BSpline
 from geomdl import exchange
-
 from geomdl.visualization import VisMPL
 
 

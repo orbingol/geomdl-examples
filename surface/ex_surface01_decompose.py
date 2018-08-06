@@ -6,11 +6,11 @@
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2018
 """
+
 import os
 from geomdl import BSpline
 from geomdl import exchange
-
-from geomdl.visualization import VisPlotly
+from geomdl.visualization import VisMPL
 
 
 # Fix file path
@@ -37,7 +37,8 @@ surfaces = surf.decompose()
 surfaces.sample_size = 20
 
 # Plot the control point grid and the evaluated surface
-vis_comp = VisPlotly.VisSurface()
+vis_config = VisMPL.VisConfig(legend=False)
+vis_comp = VisMPL.VisSurface(vis_config)
 surfaces.vis = vis_comp
 surfaces.render()
 

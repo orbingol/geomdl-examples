@@ -40,7 +40,7 @@ surfaces = operations.decompose_surface(surf)
 operations.translate(surfaces[1], (-0.25, 0.25, 0), inplace=True)
 
 # Set number of samples for all split surfaces
-surfaces.sample_size = 51
+surfaces.sample_size = 50
 
 # Plot the control point grid and the evaluated surface
 vis_comp = VisMPL.VisSurfWireframe()

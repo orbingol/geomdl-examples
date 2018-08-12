@@ -10,6 +10,7 @@
 import os
 from geomdl import BSpline
 from geomdl import exchange
+from geomdl import operations
 from geomdl.visualization import VisMPL
 
 
@@ -31,10 +32,13 @@ surf.knotvector_u = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 surf.knotvector_v = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 
 # Split the surface
-surfaces1 = surf.split_u(t=0.25)
+surfaces1 = operations.split_surface_u(surf, t=0.25)
 
-# Split once more
-surfaces = surfaces1[1].split_v(t=0.75)
+# Translate one of the split surfaces
+operations.translate(surfaces1[0], (0, 0, 5), inplace=True)
+
+# Split the other split surface
+surfaces = operations.split_surface_v(surfaces1[1], t=0.75)
 surfaces.add(surfaces1[0])
 
 # Set number of samples for all split surfaces

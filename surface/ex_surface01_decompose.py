@@ -10,6 +10,7 @@
 import os
 from geomdl import BSpline
 from geomdl import exchange
+from geomdl import operations
 from geomdl.visualization import VisMPL
 
 
@@ -31,7 +32,7 @@ surf.knotvector_u = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 surf.knotvector_v = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 
 # Decompose the surface
-surfaces = surf.decompose()
+surfaces = operations.decompose_surface(surf)
 
 # Set number of samples for all split surfaces
 surfaces.sample_size = 20

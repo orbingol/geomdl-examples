@@ -12,6 +12,7 @@
 import os
 from geomdl import NURBS
 from geomdl import exchange
+from geomdl import operations
 from geomdl.visualization import VisMPL
 
 
@@ -33,7 +34,10 @@ surf.knotvector_u = [0, 0, 1, 1]
 surf.knotvector_v = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]
 
 # Decompose the surface
-surfaces = surf.decompose()
+surfaces = operations.decompose_surface(surf)
+
+# Translate one of the surface patch
+operations.translate(surfaces[1], (-0.25, 0.25, 0), inplace=True)
 
 # Set number of samples for all split surfaces
 surfaces.sample_size = 51

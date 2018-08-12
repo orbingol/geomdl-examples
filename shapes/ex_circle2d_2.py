@@ -8,6 +8,7 @@
 """
 
 from geomdl.shapes import curve2d
+from geomdl import operations
 from geomdl.visualization import VisMPL
 
 
@@ -22,7 +23,7 @@ circle.vis = vis_comp
 circle.render()
 
 # Decompose the circle into Bezier curve segments
-bezier_segments = circle.decompose()
+bezier_segments = operations.decompose_curve(circle)
 
 # Set sample size (delta)
 bezier_segments.sample_size = 25

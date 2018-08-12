@@ -10,6 +10,7 @@
 import os
 from geomdl import BSpline
 from geomdl import exchange
+from geomdl import operations
 # from geomdl.visualization import VisMPL as plotter
 from geomdl.visualization import VisPlotly as plotter
 
@@ -30,7 +31,7 @@ curve.ctrlpts = exchange.import_txt("ex_curve03.cpt")
 curve.knotvector = [0, 0, 0, 0, 0.25, 0.25, 0.5, 0.75, 0.75, 1, 1, 1, 1]
 
 # Decompose the curve
-curve_decomposed = curve.decompose()
+curve_decomposed = operations.decompose_curve(curve)
 
 # Set sample size for the decomposed curve
 curve_decomposed.sample_size = 25

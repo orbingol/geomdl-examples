@@ -10,6 +10,7 @@ import os
 from geomdl import BSpline
 from geomdl import utilities
 from geomdl import exchange
+from geomdl import operations
 from geomdl.visualization import VisMPL
 
 
@@ -27,16 +28,16 @@ curve.degree = 3
 curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpts))
 
 # Decompose the curve into Bezier curve segments
-bezier = curve.decompose()
+bezier = operations.decompose_curve(curve)
 
 # Move the curves a little bit away from each other (for display purposes only)
 c2tan1 = bezier[1].tangent(0.0, normalize=True)
 c2tanvec1 = [-1 * p for p in c2tan1[1]]
-bezier[0].translate(c2tanvec1)
+operations.translate(bezier[0], c2tanvec1, inplace=True)
 
 c2tan2 = bezier[1].tangent(1.0, normalize=True)
 c2tanvec2 = [1 * p for p in c2tan2[1]]
-bezier[2].translate(c2tanvec2)
+operations.translate(bezier[2], c2tanvec2, inplace=True)
 
 # Set sample size of the Bezier curves
 bezier.sample_size = 20

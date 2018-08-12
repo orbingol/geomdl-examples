@@ -10,6 +10,7 @@
 import os
 from geomdl import NURBS
 from geomdl import exchange
+from geomdl import operations
 from geomdl.visualization import VisMPL
 
 
@@ -29,10 +30,10 @@ curve.degree = 2
 curve.knotvector = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]
 
 # Convert to a 3D curve
-curve3d = curve.add_dimension()
+curve3d = operations.add_dimension(curve)
 
 # Translate curve to z = 5
-curve3d.translate((0, 0, 5))
+operations.translate(curve3d, (0, 0, 5))
 
 # Plot the control point polygon and the evaluated curve
 vis_config = VisMPL.VisConfig(ctrlpts=True)

@@ -10,6 +10,7 @@
 import os
 from geomdl import NURBS
 from geomdl import exchange
+from geomdl import operations
 from geomdl.visualization import VisMPL
 
 
@@ -29,10 +30,10 @@ curve.degree = 2
 curve.knotvector = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]
 
 # Decompose the curve into Bezier curve segments
-bezier = curve.decompose()
+bezier = operations.decompose_curve(curve)
 
 # Set sample size of the Bezier curves
-bezier.sample_size = 20
+bezier.sample_size = 25
 
 # Plot the Bezier curves
 vis_config = VisMPL.VisConfig(figure_size=[8, 8])

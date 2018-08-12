@@ -10,6 +10,7 @@ import os
 from geomdl import BSpline
 from geomdl import utilities
 from geomdl import exchange
+from geomdl import operations
 
 # Try to load the visualization module
 try:
@@ -32,7 +33,7 @@ curve.degree = 4
 curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpts))
 
 # Decompose the curve into Bezier curve segments
-bezier = curve.decompose()
+bezier = operations.decompose_curve(curve)
 
 # Plot the curves using the curve container
 bezier.sample_size = 40

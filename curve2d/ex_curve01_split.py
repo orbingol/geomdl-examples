@@ -11,6 +11,7 @@ import os
 from geomdl import BSpline
 from geomdl import utilities
 from geomdl import exchange
+from geomdl import operations
 from geomdl.visualization import VisMPL
 
 
@@ -28,12 +29,12 @@ curve.degree = 4
 curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpts))
 
 # Split the curve
-curves = curve.split(0.6)
+curves = operations.split_curve(curve, 0.6)
 
 # Move the 1st curve a little bit far away from the 2nd curve
 c2tan = curves[1].tangent(0.0, normalize=True)
 c2tanvec = [-3 * p for p in c2tan[1]]
-curves[0].translate(c2tanvec)
+operations.translate(curves[0], c2tanvec, inplace=True)
 
 # Plot the curves using the curve container
 curves.sample_size = 40

@@ -18,6 +18,7 @@
 from geomdl import BSpline
 from geomdl import CPGen
 from geomdl import utilities
+from geomdl import operations
 from geomdl.visualization import VisPlotly
 
 # Generate a control points grid
@@ -44,7 +45,7 @@ surf.knotvector_u = utilities.generate_knot_vector(surf.degree_u, surf.ctrlpts_s
 surf.knotvector_v = utilities.generate_knot_vector(surf.degree_v, surf.ctrlpts_size_v)
 
 # Split the surface at v = 0.35
-split_surf = surf.split_v(0.35)
+split_surf = operations.split_surface_v(surf, 0.35)
 
 # Set sample size of the split surface
 split_surf.sample_size = 25

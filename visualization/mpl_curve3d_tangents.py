@@ -11,6 +11,7 @@ import os
 from geomdl import BSpline
 from geomdl import utilities
 from geomdl import exchange
+from geomdl import operations
 
 import numpy as np
 import matplotlib
@@ -51,31 +52,31 @@ curve.evaluate()
 curvetan = []
 
 # Evaluate curve tangent at u = 0.0175
-ct1 = curve.tangent(0.0175, normalize=True)
+ct1 = operations.tangent(curve, 0.0175, normalize=True)
 curvetan.append(ct1)
 
 # Evaluate curve tangent at u = 0.075
-ct2 = curve.tangent(0.075, normalize=True)
+ct2 = operations.tangent(curve, 0.075, normalize=True)
 curvetan.append(ct2)
 
 # Evaluate curve tangent at u = 0.375
-ct3 = curve.tangent(0.375, normalize=True)
+ct3 = operations.tangent(curve, 0.375, normalize=True)
 curvetan.append(ct3)
 
 # Evaluate curve tangent at u = 0.535
-ct4 = curve.tangent(0.535, normalize=True)
+ct4 = operations.tangent(curve, 0.535, normalize=True)
 curvetan.append(ct4)
 
 # Evaluate curve tangent at u = 0.65
-ct5 = curve.tangent(0.65, normalize=True)
+ct5 = operations.tangent(curve, 0.65, normalize=True)
 curvetan.append(ct5)
 
 # Evaluate curve tangent at u = 0.85
-ct6 = curve.tangent(0.85, normalize=True)
+ct6 = operations.tangent(curve, 0.85, normalize=True)
 curvetan.append(ct6)
 
 # Evaluate curve tangent at u = 0.975
-ct7 = curve.tangent(0.975, normalize=True)
+ct7 = operations.tangent(curve, 0.975, normalize=True)
 curvetan.append(ct7)
 
 #
@@ -84,7 +85,7 @@ curvetan.append(ct7)
 
 # Arrange control points and evaluated curve points for plotting
 ctrlpts = np.array(curve.ctrlpts)
-curvepts = np.array(curve.curvepts)
+curvepts = np.array(curve.evalpts)
 
 # Convert tangent list into a NumPy array
 ctarr = np.array(curvetan)

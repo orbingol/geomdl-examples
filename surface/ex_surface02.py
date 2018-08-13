@@ -11,6 +11,7 @@ import os
 from geomdl import BSpline
 from geomdl import utilities
 from geomdl import exchange
+from geomdl import operations
 from geomdl.visualization import VisPlotly
 
 
@@ -44,8 +45,8 @@ surf.render()
 
 # Evaluate surface tangent and normal at the given u and v
 uv = [0.2, 0.9]
-surf_tangent = surf.tangent(uv[0], uv[1])
-surf_normal = surf.normal(uv[0], uv[1])
+surf_tangent = operations.tangent(surf, uv)
+surf_normal = operations.normal(surf, uv)
 
 # Good to have something here to put a breakpoint
 pass

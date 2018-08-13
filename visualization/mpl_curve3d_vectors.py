@@ -12,6 +12,7 @@ import os
 from geomdl import BSpline
 from geomdl import utilities
 from geomdl import exchange
+from geomdl import operations
 
 import numpy as np
 import matplotlib
@@ -52,9 +53,13 @@ curve.evaluate()
 u_list = (0.0175, 0.075, 0.375, 0.535, 0.65, 0.85, 0.975)
 
 # Evaluate tangents, normals and binormals, respectively
-curvetans = curve.tangents(u_list=u_list, normalize=True)
-curvenorms = curve.normals(u_list=u_list, normalize=True)
-curvebinorms = curve.binormals(u_list=u_list, normalize=True)
+curvetans = [[] for _ in range(len(u_list))]
+curvenorms = [[] for _ in range(len(u_list))]
+curvebinorms = [[] for _ in range(len(u_list))]
+for idx, u in enumerate(u_list):
+    curvetans[idx] = operations.tangent(curve, u, normalize=True)
+    curvenorms[idx] = operations.normal(curve, u, normalize=True)
+    curvebinorms[idx] = operations.binormal(curve, u, normalize=True)
 
 #
 # Control Points, Curve and Tangent Vector Plotting using Matplotlib
@@ -62,7 +67,7 @@ curvebinorms = curve.binormals(u_list=u_list, normalize=True)
 
 # Arrange control points and evaluated curve points for plotting
 ctrlpts = np.array(curve.ctrlpts)
-curvepts = np.array(curve.curvepts)
+curvepts = np.array(curve.evalpts)
 
 # Convert tangent, normal and binormal vector lists into NumPy arrays
 ctarr = np.array(curvetans)

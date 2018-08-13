@@ -11,6 +11,7 @@ import os
 from geomdl import BSpline
 from geomdl import utilities
 from geomdl import exchange
+from geomdl import operations
 # from geomdl.visualization import VisMPL
 from geomdl.visualization import VisPlotly
 
@@ -40,22 +41,22 @@ curve.vis = vis_comp
 curve.render()
 
 # Evaluate curve tangent at u = 0.0
-curvetan1 = curve.tangent(0.0, normalize=True)
+curvetan1 = operations.tangent(curve, 0.0, normalize=True)
 
 # Evaluate curve tangent at u = 0.2
-curvetan2 = curve.tangent(0.2, normalize=True)
+curvetan2 = operations.tangent(curve, 0.2, normalize=True)
 
 # Evaluate curve tangent at u = 0.5
-curvetan3 = curve.tangent(0.5, normalize=True)
+curvetan3 = operations.tangent(curve, 0.5, normalize=True)
 
 # Evaluate curve tangent at u = 0.6
-curvetan4 = curve.tangent(0.6, normalize=True)
+curvetan4 = operations.tangent(curve, 0.6, normalize=True)
 
 # Evaluate curve tangent at u = 0.8
-curvetan5 = curve.tangent(0.8, normalize=True)
+curvetan5 = operations.tangent(curve, 0.8, normalize=True)
 
 # Evaluate curve tangent at u = 1.0
-curvetan6 = curve.tangent(1.0, normalize=True)
+curvetan6 = operations.tangent(curve, 1.0, normalize=True)
 
 # Good to have something here to put a breakpoint
 pass

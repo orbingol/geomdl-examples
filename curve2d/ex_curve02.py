@@ -11,6 +11,7 @@ import os
 from geomdl import BSpline
 from geomdl import utilities
 from geomdl import exchange
+from geomdl import operations
 from geomdl import evaluators
 from geomdl.visualization import VisMPL
 
@@ -49,7 +50,7 @@ curve.evaluator = evaluators.CurveEvaluator2()
 ders2 = curve.derivatives(0.6, 4)
 
 # Compute curve tangent at u = 0.6
-curvetan = curve.tangent(0.6)
+curvetan = operations.tangent(curve, 0.6)
 
 # Good to have something here to put a breakpoint
 pass

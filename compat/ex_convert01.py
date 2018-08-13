@@ -51,7 +51,13 @@ n_knotvector_v = utils.generate_knot_vector(p_degree_v, p_size_v)
 #
 
 surf = NURBS.Surface()
-surf(p_degree_u, p_degree_v, p_size_u, p_size_v, n_ctrlptsw, n_knotvector_u, n_knotvector_v)
+surf.degree_u = p_degree_u
+surf.degree_v = p_degree_v
+surf.ctrlpts_size_u = p_size_u
+surf.ctrlpts_size_v = p_size_v
+surf.ctrlptsw = n_ctrlptsw
+surf.knotvector_u = n_knotvector_u
+surf.knotvector_v = n_knotvector_v
 
 # Set evaluation delta
 surf.delta = 0.05

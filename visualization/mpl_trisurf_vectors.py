@@ -14,6 +14,7 @@ import os
 from geomdl import BSpline
 from geomdl import utilities
 from geomdl import exchange
+from geomdl import operations
 
 import numpy as np
 import matplotlib
@@ -46,11 +47,15 @@ surf.evaluate()
 
 # Evaluate surface tangent and normal vectors
 uv_vals = [[0.1, 0.1], [0.65, 0.25], [0.9, 0.7], [0.2, 0.9]]
-surftans = surf.tangents(uv_list=uv_vals, normalize=True)
-surfnorms = surf.normals(uv_list=uv_vals, normalize=True)
+surftans = [[] for _ in range(len(uv_vals))]
+surfnorms = [[] for _ in range(len(uv_vals))]
+
+for idx, uv in enumerate(uv_vals):
+    surftans[idx] = operations.tangent(surf, uv, normalize=True)
+    surfnorms[idx] = operations.normal(surf, uv, normalize=True)
 
 # Prepare points for plotting
-surfpts = np.array(surf.surfpts)
+surfpts = np.array(surf.evalpts)
 tangent_vectors = np.array(surftans)
 normal_vectors = np.array(surfnorms)
 

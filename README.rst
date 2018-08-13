@@ -19,7 +19,7 @@ Directory Structure
 * ``curve3d/`` contains 3-dimensional curve examples
 * ``surface/`` contains surface examples
 * ``grid/`` contains examples for surface grid generator
-* ``visualization/`` contains advanced visualization examples. Please see NURBS-Python_ documentation for details.
+* ``visualization/`` contains advanced visualization examples.
 * ``bezier/`` contains Bezier curve and surface examples
 * ``shapes/`` contains examples demonstrating ``geomdl.shapes`` component
 * ``exchange/`` contains examples demonstrating  ``geomdl.exchange`` module

@@ -7,15 +7,16 @@ This repository contains API demonstration scripts for the NURBS-Python_ package
 Branch Information
 ==================
 
-* ``master`` branch contains examples compatible with NURBS-Python v4.x (currently beta)
+* ``master`` branch contains examples compatible with the current version of NURBS-Python
+* ``devmaster`` branch contains examples compatible with the next version of NURBS-Python
 * ``3.x`` branch contains examples compatible with NURBS-Python v3.x
 * ``2.x`` branch contains examples compatible with NURBS-Python v2.x
 
 Directory Structure
 ===================
 
-* ``curve2d/`` contains 2D curve examples
-* ``curve3d/`` contains 3D curve examples
+* ``curve2d/`` contains 2-dimensional curve examples
+* ``curve3d/`` contains 3-dimensional curve examples
 * ``surface/`` contains surface examples
 * ``grid/`` contains examples for surface grid generator
 * ``visualization/`` contains advanced visualization examples. Please see NURBS-Python_ documentation for details.
@@ -23,6 +24,7 @@ Directory Structure
 * ``shapes/`` contains examples demonstrating ``geomdl.shapes`` component
 * ``exchange/`` contains examples demonstrating  ``geomdl.exchange`` module
 * ``compat/`` contains examples which utilize ``geomdl.compatibility`` module for data conversion
+* ``objects/`` contains examples of the real world objects
 
 Input Files
 -----------

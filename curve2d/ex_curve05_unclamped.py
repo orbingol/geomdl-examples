@@ -19,9 +19,6 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 # Create a BSpline (NUBS) curve instance
 curve = BSpline.Curve()
 
-# Set evaluation delta
-curve.delta = 0.01
-
 # Set degree
 curve.degree = 2
 
@@ -30,6 +27,9 @@ curve.ctrlpts = [[-1, 0], [-0.5, 0.5], [0.5, -0.5], [1, 0]]
 
 # Knot vector for unclamped curve
 curve.knotvector = [0, 1, 2, 3, 4, 5, 6]
+
+# Set evaluation delta
+curve.delta = 0.01
 
 # Evaulate curve
 curve.evaluate()

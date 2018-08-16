@@ -20,12 +20,10 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 # Create a NURBS curve instance (full circle)
 curve = NURBS.Curve()
 
-# Set evaluation delta
-curve.delta = 0.01
-
-# Set up curve
-curve.ctrlptsw = exchange.import_txt("ex_curve04.cptw")
+# Set up the curve
 curve.degree = 2
+curve.ctrlptsw = exchange.import_txt("ex_curve04.cptw")
+
 # Use a specialized knot vector
 curve.knotvector = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]
 

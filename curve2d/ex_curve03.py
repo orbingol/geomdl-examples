@@ -22,9 +22,9 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 # Create a BSpline curve instance
 curve = BSpline.Curve()
 
-# Set up the NURBS curve
-curve.ctrlpts = exchange.import_txt("ex_curve03.cpt")
+# Set up the curve
 curve.degree = 3
+curve.ctrlpts = exchange.import_txt("ex_curve03.cpt")
 
 # Auto-generate knot vector
 curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpts))

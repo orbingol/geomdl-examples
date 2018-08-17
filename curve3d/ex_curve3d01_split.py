@@ -24,8 +24,8 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 curve = BSpline.Curve()
 
 # Set up curve
-curve.ctrlpts = exchange.import_txt("ex_curve3d01.cpt")
 curve.degree = 4
+curve.ctrlpts = exchange.import_txt("ex_curve3d01.cpt")
 
 # Auto-generate knot vector
 curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpts))
@@ -34,7 +34,7 @@ curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpt
 curves = operations.split_curve(curve, 0.3)
 
 # Move the 1st curve a little bit far away from the 2nd curve
-c2tan = curves[1].tangent(0.0, normalize=True)
+c2tan = operations.tangent(curves[1], 0.0, normalize=True)
 c2tanvec = [-1 * p for p in c2tan[1]]
 operations.translate(curves[0], c2tanvec, inplace=True)
 

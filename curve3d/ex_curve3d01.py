@@ -24,8 +24,8 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 curve = BSpline.Curve()
 
 # Set up curve
-curve.ctrlpts = exchange.import_txt("ex_curve3d01.cpt")
 curve.degree = 4
+curve.ctrlpts = exchange.import_txt("ex_curve3d01.cpt")
 
 # Auto-generate knot vector
 curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpts))

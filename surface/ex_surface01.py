@@ -10,7 +10,7 @@
 import os
 from geomdl import BSpline
 from geomdl import exchange
-from geomdl.visualization import VisPlotly
+from geomdl.visualization import VisMPL as vis
 
 
 # Fix file path
@@ -36,10 +36,13 @@ surf.delta = 0.025
 # Evaluate surface points
 surf.evaluate()
 
+# Import and use Matplotlib's colormaps
+from matplotlib import cm
+
 # Plot the control point grid and the evaluated surface
-vis_comp = VisPlotly.VisSurface()
+vis_comp = vis.VisSurfTriangle()
 surf.vis = vis_comp
-surf.render()
+surf.render(colormap=cm.cool)
 
 # Good to have something here to put a breakpoint
 pass

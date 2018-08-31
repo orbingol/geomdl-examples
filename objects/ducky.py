@@ -94,8 +94,12 @@ duck3.knotvector_v = [0, 0, 0, 0, 0.333333, 0.666667, 1, 1, 1, 1]
 ducky = Multi.MultiSurface()
 ducky.add_list([duck1, duck2, duck3])
 vis_config = VisMPL.VisConfig(ctrlpts=False, legend=False)
-ducky.vis = VisMPL.VisSurfWireframe(vis_config)
+
+# Use Matplotlib's colormaps to color the duck
+from matplotlib import cm
+
+ducky.vis = VisMPL.VisSurfTriangle(vis_config)
 ducky.sample_size = 50
-ducky.render()
+ducky.render(colormap=[cm.Wistia, cm.copper, cm.copper])
 
 pass

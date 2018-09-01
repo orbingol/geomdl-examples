@@ -13,9 +13,8 @@ import os
 from geomdl import BSpline
 from geomdl import utilities
 from geomdl import exchange
-from geomdl import evaluators
-from geomdl.visualization import VisMPL as vis
-# from geomdl.visualization import VisPlotly as vis
+# from geomdl.visualization import VisMPL
+from geomdl.visualization import VisPlotly
 
 
 # Fix file path
@@ -23,10 +22,6 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 # Create a B-Spline curve instance
 curve = BSpline.Curve()
-
-# Set threaded evaluator
-threading_evaluator = evaluators.ThreadedCurveEvaluator(curve.evaluator, threads=4)
-curve.evaluator = threading_evaluator
 
 # Set up curve
 curve.degree = 3
@@ -42,7 +37,7 @@ curve.delta = 0.01
 curve.evaluate()
 
 # Plot the control point polygon and the evaluated curve
-vis_comp = vis.VisCurve3D()
+vis_comp = VisPlotly.VisCurve3D()
 curve.vis = vis_comp
 curve.render()
 

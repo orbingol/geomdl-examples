@@ -26,8 +26,9 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 curve1 = BSpline.Curve()
 
 # Set up the Bezier curve
-curve1.ctrlpts = [[10, 0], [20, 15], [30, 0]]
 curve1.degree = 2
+curve1.ctrlpts = [[10, 0], [20, 15], [30, 0]]
+
 
 # Auto-generate knot vector
 curve1.knotvector = utilities.generate_knot_vector(curve1.degree, len(curve1.ctrlpts))
@@ -51,8 +52,8 @@ curve1.render()
 curve2 = BSpline.Curve()
 
 # Set up the Bezier curve
-curve2.ctrlpts = [[10, 0], [20, 15], [20, 15], [30, 0]]
 curve2.degree = 3
+curve2.ctrlpts = [[10, 0], [20, 15], [20, 15], [30, 0]]
 
 # Auto-generate knot vector
 curve2.knotvector = utilities.generate_knot_vector(curve2.degree, len(curve2.ctrlpts))

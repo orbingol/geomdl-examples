@@ -27,8 +27,8 @@ surfgrid = CPGen.Grid(100, 100)
 # This will generate a 10x10 grid
 surfgrid.generate(8, 8)
 
-# Generate 1 bump at the center of the grid and generate some padding with a negative base_adjust value
-surfgrid.bumps(num_bumps=1, bump_height=20, base_extent=4)
+# Generate 1 bump at the center of the grid and generate some padding with a padding between the bumps
+surfgrid.bumps(num_bumps=1, bump_height=20, base_extent=4, base_adjust=1)
 
 # surfgrid.rotate_x(10.0)
 # surfgrid.rotate_y(7.5)

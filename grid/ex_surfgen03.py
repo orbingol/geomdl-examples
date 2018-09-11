@@ -22,13 +22,16 @@ from geomdl.visualization import VisMPL as vis
 from geomdl import exchange
 
 # Generate a control points grid
-surfgrid = CPGen.Grid(50, 100)
+surfgrid = CPGen.Grid(100, 100)
 
 # This will generate a 10x10 grid
-surfgrid.generate(10, 10)
+surfgrid.generate(8, 8)
 
 # Generate 1 bump at the center of the grid and generate some padding with a negative base_adjust value
-surfgrid.bumps(num_bumps=1, all_positive=True, bump_height=45, base_extent=4, base_adjust=-1)
+surfgrid.bumps(num_bumps=1, bump_height=20, base_extent=4)
+
+# surfgrid.rotate_x(10.0)
+# surfgrid.rotate_y(7.5)
 
 # Create a BSpline surface instance
 surf = BSpline.Surface()
@@ -48,7 +51,7 @@ surf.knotvector_v = utilities.generate_knot_vector(surf.degree_v, surf.ctrlpts_s
 surf.sample_size = 50
 
 # Generate the visualization component and its configuration
-vis_config = vis.VisConfig(ctrlpts=False, legend=False)
+vis_config = vis.VisConfig(ctrlpts=True, legend=False)
 vis_comp = vis.VisSurface(vis_config)
 
 # Set visualization component of the surface

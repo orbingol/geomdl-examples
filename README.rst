@@ -1,6 +1,8 @@
 NURBS-Python (geomdl) Examples
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|DOI|_ |RTD|_ |PYPI|_ |ANACONDA|_
+
 This repository contains API demonstration scripts for the NURBS-Python_ package. Please see the
 `documentation <http://nurbs-python.readthedocs.io/en/latest>`_ for more details.
 
@@ -54,3 +56,15 @@ for their time and effort in supporting this project.
 
 
 .. _NURBS-Python: https://github.com/orbingol/NURBS-Python
+
+.. |DOI| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.1346376.svg
+.. _DOI: https://doi.org/10.5281/zenodo.1346376
+
+.. |RTD| image:: https://readthedocs.org/projects/nurbs-python/badge/?version=latest
+.. _RTD: http://nurbs-python.readthedocs.io/en/latest/?badge=latest
+
+.. |PYPI| image:: https://img.shields.io/pypi/v/geomdl.svg
+.. _PYPI: https://pypi.org/project/geomdl/
+
+.. |ANACONDA| image:: https://anaconda.org/orbingol/geomdl/badges/version.svg
+.. _ANACONDA: https://anaconda.org/orbingol/geomdl

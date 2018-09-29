@@ -13,7 +13,6 @@ from geomdl.shapes import surface
 from geomdl import exchange
 
 cylinder = surface.cylinder(radius=5.0, height=22.5)
-cylinder.delta = 0.01
 
 # Export the surface as a .off file
 exchange.export_off(cylinder, "cylindrical_surface.off")

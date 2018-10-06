@@ -91,8 +91,7 @@ duck3.knotvector_u = [0, 0, 0, 0, 0.333333, 0.666667, 1, 1, 1, 1]
 duck3.knotvector_v = [0, 0, 0, 0, 0.333333, 0.666667, 1, 1, 1, 1]
 
 # Plotting
-ducky = Multi.MultiSurface()
-ducky.add_list([duck1, duck2, duck3])
+ducky = Multi.MultiSurface(duck1, duck2, duck3)
 vis_config = VisMPL.VisConfig(ctrlpts=False, legend=False)
 
 # Use Matplotlib's colormaps to color the duck

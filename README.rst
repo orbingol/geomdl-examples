@@ -6,14 +6,6 @@ NURBS-Python (geomdl) Examples
 This repository contains API demonstration scripts for the NURBS-Python_ package. Please see the
 `documentation <http://nurbs-python.readthedocs.io/en/latest>`_ for more details.
 
-Branch Information
-==================
-
-* ``master`` branch contains examples compatible with the current version of NURBS-Python
-* ``devmaster`` branch contains examples compatible with the next version of NURBS-Python
-* ``3.x`` branch contains examples compatible with NURBS-Python v3.x
-* ``2.x`` branch contains examples compatible with NURBS-Python v2.x
-
 Directory Structure
 ===================
 

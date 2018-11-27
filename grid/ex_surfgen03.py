@@ -24,7 +24,7 @@ from geomdl import exchange
 # Generate a control points grid
 surfgrid = CPGen.Grid(100, 100)
 
-# This will generate a 10x10 grid
+# This will generate a 8x8 grid
 surfgrid.generate(8, 8)
 
 # Generate 1 bump at the center of the grid and generate some padding with a padding between the bumps

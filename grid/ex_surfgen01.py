@@ -24,7 +24,7 @@ from geomdl.visualization import VisPlotly
 # Generate a control points grid
 surfgrid = CPGen.Grid(50, 100)
 
-# This will generate a32x32 grid
+# This will generate a 32x32 grid
 surfgrid.generate(32, 32)
 
 # Generate bumps on the grid

@@ -10,7 +10,7 @@
 import os
 from geomdl import BSpline
 from geomdl import utilities
-from geomdl import Multi
+from geomdl import multi
 from geomdl import exchange
 from geomdl import operations
 from geomdl.visualization import VisMPL
@@ -38,7 +38,7 @@ c2tanvec = [-1 * p for p in c2tan[1]]
 operations.translate(curve1, c2tanvec, inplace=True)
 
 # Plot the curves using the curve container
-curves = Multi.MultiCurve()
+curves = multi.MultiCurve()
 curves.sample_size = 40
 curves.add(curve1)
 curves.add(curve2)

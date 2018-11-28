@@ -4,16 +4,15 @@
 """
     Examples for the NURBS-Python Package
     Released under MIT License
-    Developed by Onur Rauf Bingol (c) 2018
+    Developed by Onur Rauf Bingol (c) 2016-2017
 
-    The surface example is kindly contributed by John-Eric Dufour (@jedufour)
+    This example is contributed by John-Eric Dufour (@jedufour)
 """
 
 import os
 from geomdl import NURBS
 from geomdl import exchange
-from geomdl import operations
-from geomdl.visualization import VisMPL
+from geomdl.visualization import VisPlotly
 
 
 # Fix file path
@@ -27,25 +26,22 @@ surf.degree_u = 1
 surf.degree_v = 2
 
 # Set control points
-surf.set_ctrlpts(*exchange.import_txt("ex_surface03.cptw", two_dimensional=True))
+surf.set_ctrlpts(*exchange.import_txt("ex_cylinder.cptw", two_dimensional=True))
 
-# Set knot vector
+# Set knot vectors
 surf.knotvector_u = [0, 0, 1, 1]
 surf.knotvector_v = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]
 
-# Decompose the surface
-surfaces = operations.decompose_surface(surf)
+# Set evaluation delta
+surf.delta = 0.05
 
-# Translate one of the surface patch
-operations.translate(surfaces[1], (-0.25, 0.25, 0), inplace=True)
-
-# Set number of samples for all split surfaces
-surfaces.sample_size = 50
+# Evaluate surface
+surf.evaluate()
 
 # Plot the control point grid and the evaluated surface
-vis_comp = VisMPL.VisSurfWireframe()
-surfaces.vis = vis_comp
-surfaces.render()
+vis_comp = VisPlotly.VisSurface()
+surf.vis = vis_comp
+surf.render()
 
 # Good to have something here to put a breakpoint
 pass

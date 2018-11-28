@@ -27,9 +27,6 @@ mygrid.weight = 2.3
 # Modify weight
 mygrid.weight = 1.0
 
-# Save the file, by default as grid.txt
-mygrid.save()
-
 # Get the grid points for plotting
 grid_data = mygrid.grid
 

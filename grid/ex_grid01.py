@@ -21,9 +21,6 @@ mygrid.generate(15, 20)
 # Generate 4 bumps on the grid
 mygrid.bumps(num_bumps=4, bump_height=50)
 
-# Save the file, by default as grid.txt
-mygrid.save()
-
 # Get the grid points for plotting
 grid_data = mygrid.grid
 

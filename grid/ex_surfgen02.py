@@ -48,8 +48,8 @@ surf.knotvector_v = utilities.generate_knot_vector(surf.degree_v, surf.ctrlpts_s
 surf.sample_size = 50
 
 # Rotate the surface about y and z axes
-operations.rotate_y(surf, 12.5)
-operations.rotate_z(surf, 45)
+operations.rotate(surf, 12.5, axis=1)
+operations.rotate(surf, 45, axis=2)
 
 # Generate the visualization component and its configuration
 vis_config = vis.VisConfig(ctrlpts=False, legend=False)

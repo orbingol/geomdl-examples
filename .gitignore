@@ -9,5 +9,6 @@
 *.pdf
 *.cfg
 *.smesh
+*.vtk
 *.yaml
 *.yml

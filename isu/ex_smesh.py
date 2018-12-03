@@ -25,7 +25,7 @@ vis_comp = vis.VisSurface(vis_config)
 multi_smesh.vis = vis_comp
 multi_smesh.render()
 
-# Save MultiSurface as a .obj file
+# Save SurfaceContainer as a .obj file
 exchange.export_obj(multi_smesh, "multisurface01.obj")
 
 # Good to have something here to put a breakpoint

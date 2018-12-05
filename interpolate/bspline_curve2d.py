@@ -18,7 +18,16 @@ degree = 3  # cubic curve
 # Do global curve interpolation
 curve = interpolate.interpolate_curve(points, degree)
 
-# Plot the curve
+# Plot the interpolated curve
 curve.delta = 0.01
 curve.vis = vis.VisCurve2D()
 curve.render()
+
+# # Visualize data and evaluated points together
+# import numpy as np
+# import matplotlib.pyplot as plt
+# evalpts = np.array(curve.evalpts)
+# pts = np.array(points)
+# plt.plot(evalpts[:, 0], evalpts[:, 1])
+# plt.scatter(pts[:, 0], pts[:, 1])
+# plt.show()

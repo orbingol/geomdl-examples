@@ -8,7 +8,9 @@
 *.dat
 *.pdf
 *.cfg
+*.json
 *.smesh
+*.vmesh
 *.vtk
 *.yaml
 *.yml

@@ -7,7 +7,7 @@
     Developed by Onur Rauf Bingol (c) 2018
 """
 
-from geomdl import interpolate
+from geomdl import fitting
 from geomdl.visualization import VisMPL as vis
 
 
@@ -16,7 +16,7 @@ points = ((0, 0), (3, 4), (-1, 4), (-4, 0), (-4, -3))
 degree = 3  # cubic curve
 
 # Do global curve interpolation
-curve = interpolate.interpolate_curve(points, degree)
+curve = fitting.interpolate_curve(points, degree)
 
 # Plot the interpolated curve
 curve.delta = 0.01

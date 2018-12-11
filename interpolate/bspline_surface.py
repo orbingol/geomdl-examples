@@ -7,7 +7,7 @@
     Developed by Onur Rauf Bingol (c) 2018
 """
 
-from geomdl import interpolate
+from geomdl import fitting
 from geomdl.visualization import VisMPL as vis
 
 
@@ -32,7 +32,7 @@ degree_v = 3
 # degree_v = 2
 
 # Do global surface interpolation
-surf = interpolate.interpolate_surface(points, size_u, size_v, degree_u, degree_v)
+surf = fitting.interpolate_surface(points, size_u, size_v, degree_u, degree_v)
 
 # Plot the interpolated surface
 surf.delta = 0.05

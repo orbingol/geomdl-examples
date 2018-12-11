@@ -7,7 +7,7 @@
     Developed by Onur Rauf Bingol (c) 2018
 """
 
-from geomdl import interpolate
+from geomdl import fitting
 from geomdl import exchange
 from geomdl.visualization import VisMPL as vis
 
@@ -15,7 +15,7 @@ from geomdl.visualization import VisMPL as vis
 points = exchange.import_csv("bspline_curve3d.cpt")
 
 # Do global curve interpolation
-curve = interpolate.interpolate_curve(points, degree=3)
+curve = fitting.interpolate_curve(points, degree=3)
 
 # Plot the interpolated curve
 curve.delta = 0.005

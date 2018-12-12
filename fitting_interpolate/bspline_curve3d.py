@@ -5,6 +5,8 @@
     Examples for the NURBS-Python Package
     Released under MIT License
     Developed by Onur Rauf Bingol (c) 2018
+
+    3-dimensional curve fitting by global interpolation
 """
 
 from geomdl import fitting

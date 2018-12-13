@@ -24,19 +24,9 @@ size_v = 7
 degree_u = 2
 degree_v = 3
 
-# # Data set - flipped
-# points = ((-5, -5, 0), (-5, 0, 3), (-5, 5, 0),
-#           (-2.5, -5, 0), (-2.5, 0, 3), (-2.5, 5, 0),
-#           (0, -5, 0), (0, 0, 3), (0, 5, 0),
-#           (2.5, -5, 0), (2.5, 0, 3), (2.5, 5, 0),
-#           (5, -5, 0), (5, 0, 3), (5, 5, 0))
-# size_u = 5
-# size_v = 3
-# degree_u = 3
-# degree_v = 2
-
-# Do global surface interpolation
-surf = fitting.approximate_surface(points, size_u, size_v, degree_u, degree_v, ctrlpts_size_u=3, ctrlpts_size_v=4)
+# Do global surface approximation
+# surf = fitting.approximate_surface(points, size_u, size_v, degree_u, degree_v, ctrlpts_size_u=3, ctrlpts_size_v=4)
+surf = fitting.approximate_surface(points, size_u, size_v, degree_u, degree_v)
 
 # Plot the interpolated surface
 surf.delta = 0.05

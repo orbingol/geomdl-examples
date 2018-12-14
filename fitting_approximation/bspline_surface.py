@@ -11,7 +11,7 @@
 
 from geomdl import construct
 from geomdl import fitting
-from geomdl.visualization import VisPlotly as vis
+from geomdl.visualization import VisMPL as vis
 
 
 # Data set
@@ -32,13 +32,13 @@ surf_curves = construct.extract_curves(surf)
 plot_extras = [
     dict(
         points=surf_curves['u'][0].evalpts,
-        name="v-dir",
+        name="u",
         color="cyan",
         size=5
     ),
     dict(
         points=surf_curves['v'][0].evalpts,
-        name="u-dir",
+        name="v",
         color="magenta",
         size=5
     )

@@ -11,8 +11,9 @@
 
 import os
 from geomdl import NURBS
+from geomdl import construct
 from geomdl import exchange
-from geomdl.visualization import VisPlotly
+from geomdl.visualization import VisMPL as vis
 
 
 # Fix file path
@@ -35,13 +36,25 @@ surf.knotvector_v = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]
 # Set evaluation delta
 surf.delta = 0.05
 
-# Evaluate surface
-surf.evaluate()
+surf_curves = construct.extract_curves(surf)
+plot_extras = [
+    dict(
+        points=surf_curves['u'][0].evalpts,
+        name="u",
+        color="cyan",
+        size=15
+    ),
+    dict(
+        points=surf_curves['v'][0].evalpts,
+        name="v",
+        color="magenta",
+        size=5
+    )
+]
 
 # Plot the control point grid and the evaluated surface
-vis_comp = VisPlotly.VisSurface()
-surf.vis = vis_comp
-surf.render()
+surf.vis = vis.VisSurface()
+surf.render(extras=plot_extras)
 
 # Good to have something here to put a breakpoint
 pass

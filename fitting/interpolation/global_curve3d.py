@@ -14,7 +14,7 @@ from geomdl import exchange
 from geomdl.visualization import VisMPL as vis
 
 # Read data points from a .csv file (ref: https://github.com/idealab-isu/de-la-mo)
-points = exchange.import_csv("bspline_curve3d.cpt")
+points = exchange.import_csv("ex_curve3d.cpt")
 
 # Do global curve interpolation
 curve = fitting.interpolate_curve(points, degree=3)

@@ -9,8 +9,9 @@
     Surface fitting by global approximation
 """
 
+from geomdl import construct
 from geomdl import fitting
-from geomdl.visualization import VisMPL as vis
+from geomdl.visualization import VisPlotly as vis
 
 
 # Data set
@@ -27,11 +28,26 @@ degree_v = 3
 # Do global surface approximation
 # surf = fitting.approximate_surface(points, size_u, size_v, degree_u, degree_v, ctrlpts_size_u=3, ctrlpts_size_v=4)
 surf = fitting.approximate_surface(points, size_u, size_v, degree_u, degree_v)
+surf_curves = construct.extract_curves(surf)
+plot_extras = [
+    dict(
+        points=surf_curves['u'][0].evalpts,
+        name="v-dir",
+        color="cyan",
+        size=5
+    ),
+    dict(
+        points=surf_curves['v'][0].evalpts,
+        name="u-dir",
+        color="magenta",
+        size=5
+    )
+]
 
 # Plot the interpolated surface
 surf.delta = 0.05
 surf.vis = vis.VisSurface()
-surf.render()
+surf.render(extras=plot_extras)
 
 # # Visualize data and evaluated points together
 # import numpy as np

@@ -22,7 +22,7 @@ curve = fitting.approximate_curve(points, degree=2, ctrlpts_size=30)
 # Plot the interpolated curve
 curve.delta = 0.005
 curve.vis = vis.VisCurve3D(vis.VisConfig(ctrlpts=False))
-# curve.render()
+curve.render()
 
 # # Visualize data and evaluated points together
 # import numpy as np

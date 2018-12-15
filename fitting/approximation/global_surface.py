@@ -26,8 +26,10 @@ degree_u = 2
 degree_v = 3
 
 # Do global surface approximation
-# surf = fitting.approximate_surface(points, size_u, size_v, degree_u, degree_v, ctrlpts_size_u=3, ctrlpts_size_v=4)
 surf = fitting.approximate_surface(points, size_u, size_v, degree_u, degree_v)
+# surf = fitting.approximate_surface(points, size_u, size_v, degree_u, degree_v, ctrlpts_size_u=3, ctrlpts_size_v=4)
+
+# Extract curves from the approximated surface
 surf_curves = construct.extract_curves(surf)
 plot_extras = [
     dict(

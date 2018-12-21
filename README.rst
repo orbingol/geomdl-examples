@@ -12,6 +12,7 @@ Directory Structure
 * ``curve2d/`` contains 2-dimensional curve examples
 * ``curve3d/`` contains 3-dimensional curve examples
 * ``surface/`` contains surface examples
+* ``volume/`` contains volume examples
 * ``grid/`` contains examples for surface grid generator
 * ``visualization/`` contains advanced visualization examples.
 * ``bezier/`` contains Bezier curve and surface examples
@@ -19,12 +20,7 @@ Directory Structure
 * ``exchange/`` contains examples demonstrating  ``geomdl.exchange`` module
 * ``compat/`` contains examples which utilize ``geomdl.compatibility`` module for data conversion
 * ``objects/`` contains examples of the real world objects
-
-Input Files
------------
-
-``*.cpt`` and ``*.cptw`` files are simple text files. They contain *control points* and *weighted control points*,
-respectively. Please see the NURBS-Python_ documentation for details on the input file formats.
+* ``fitting/`` contains examples for curve and surface fitting
 
 Author
 ======

@@ -1,4 +1,5 @@
 .idea/*
+examples/*
 *.txt
 *.csv
 *.obj

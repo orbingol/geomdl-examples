@@ -11,8 +11,9 @@ import os
 from geomdl import BSpline
 from geomdl import exchange
 from geomdl import operations
-# from geomdl.visualization import VisMPL as plotter
-from geomdl.visualization import VisPlotly as plotter
+from geomdl import multi
+# from geomdl.visualization import VisMPL as vis
+from geomdl.visualization import VisPlotly as vis
 
 
 # Fix file path
@@ -31,13 +32,14 @@ curve.ctrlpts = exchange.import_txt("ex_curve03.cpt")
 curve.knotvector = [0, 0, 0, 0, 0.25, 0.25, 0.5, 0.75, 0.75, 1, 1, 1, 1]
 
 # Decompose the curve
-curve_decomposed = operations.decompose_curve(curve)
+curve_list = operations.decompose_curve(curve)
+curve_decomposed = multi.CurveContainer(curve_list)
 
 # Set sample size for the decomposed curve
 curve_decomposed.sample_size = 25
 
 # Plot the decomposed curve
-vis_comp = plotter.VisCurve2D()
+vis_comp = vis.VisCurve2D()
 curve_decomposed.vis = vis_comp
 curve_decomposed.render()
 

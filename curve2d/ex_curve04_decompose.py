@@ -11,6 +11,7 @@ import os
 from geomdl import NURBS
 from geomdl import exchange
 from geomdl import operations
+from geomdl import multi
 from geomdl.visualization import VisMPL
 
 
@@ -28,7 +29,8 @@ curve.ctrlptsw = exchange.import_txt("ex_curve04.cptw")
 curve.knotvector = [0, 0, 0, 0.25, 0.25, 0.5, 0.5, 0.75, 0.75, 1, 1, 1]
 
 # Decompose the curve into Bezier curve segments
-bezier = operations.decompose_curve(curve)
+curve_list = operations.decompose_curve(curve)
+bezier = multi.CurveContainer(curve_list)
 
 # Set sample size of the Bezier curves
 bezier.sample_size = 25

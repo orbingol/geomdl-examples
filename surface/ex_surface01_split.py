@@ -11,6 +11,7 @@ import os
 from geomdl import BSpline
 from geomdl import exchange
 from geomdl import operations
+from geomdl import multi
 from geomdl.visualization import VisMPL
 
 
@@ -31,8 +32,9 @@ surf.set_ctrlpts(*exchange.import_txt("ex_surface01.cpt", two_dimensional=True))
 surf.knotvector_u = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 surf.knotvector_v = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 
-# Split the surface in V-direction
-surfaces = operations.split_surface_v(surf, t=0.5)
+# Split the surface on the v-direction
+surf_list = operations.split_surface_v(surf, param=0.5)
+surfaces = multi.SurfaceContainer(surf_list)
 
 # Translate one of the surfaces by a vector
 operations.translate(surfaces[0], (0, -2.5, 0), inplace=True)

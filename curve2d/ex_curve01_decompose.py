@@ -11,13 +11,9 @@ from geomdl import BSpline
 from geomdl import utilities
 from geomdl import exchange
 from geomdl import operations
+from geomdl import multi
+from geomdl.visualization import VisMPL
 
-# Try to load the visualization module
-try:
-    render_curve = True
-    from geomdl.visualization import VisMPL
-except ImportError:
-    render_curve = False
 
 # Fix file path
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
@@ -33,15 +29,14 @@ curve.ctrlpts = exchange.import_txt("ex_curve01.cpt")
 curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpts))
 
 # Decompose the curve into Bezier curve segments
-bezier = operations.decompose_curve(curve)
+bezier_curves = operations.decompose_curve(curve)
+bezier = multi.CurveContainer(bezier_curves)
 
 # Plot the curves using the curve container
 bezier.sample_size = 40
-
-if render_curve:
-    vis_comp = VisMPL.VisCurve2D()
-    bezier.vis = vis_comp
-    bezier.render()
+vis_comp = VisMPL.VisCurve2D()
+bezier.vis = vis_comp
+bezier.render()
 
 # Good to have something here to put a breakpoint
 pass

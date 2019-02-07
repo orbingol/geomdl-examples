@@ -11,6 +11,7 @@ from geomdl import BSpline
 from geomdl import utilities
 from geomdl import exchange
 from geomdl import operations
+from geomdl import multi
 from geomdl.visualization import VisMPL
 
 
@@ -28,7 +29,8 @@ curve.ctrlpts = exchange.import_txt("ex_curve02.cpt")
 curve.knotvector = utilities.generate_knot_vector(curve.degree, len(curve.ctrlpts))
 
 # Decompose the curve into Bezier curve segments
-bezier = operations.decompose_curve(curve)
+curve_list = operations.decompose_curve(curve)
+bezier = multi.CurveContainer(curve_list)
 
 # Move the curves a little bit away from each other (for display purposes only)
 c2tan1 = bezier[1].tangent(0.0, normalize=True)

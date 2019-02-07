@@ -30,17 +30,7 @@ Author
 License
 =======
 
-NURBS-Python_ package and all the scripts in this repository are licensed under the `MIT License <LICENSE>`_.
-
-Acknowledgments
-===============
-
-I would like to thank my PhD adviser, `Dr. Adarsh Krishnamurthy <https://www.me.iastate.edu/faculty/?user_page=adarsh>`_,
-for his guidance and supervision throughout the course of this project.
-
-In addition, I would like to thank
-`all NURBS-Python contributors <https://github.com/orbingol/NURBS-Python/blob/master/CONTRIBUTORS.rst>`_
-for their time and effort in supporting this project.
+`MIT <LICENSE>`_
 
 
 .. _NURBS-Python: https://github.com/orbingol/NURBS-Python

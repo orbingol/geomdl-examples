@@ -72,7 +72,7 @@ if __name__ == "__main__":
     surf03.knotvector_v = utilities.generate_knot_vector(surf03.degree_v, surf03.ctrlpts_size_v)
 
     # Construct the parametric volume
-    pvolume = construct.construct_volume(surf01, surf02, surf03, degree=1)
+    pvolume = construct.construct_volume('w', surf01, surf02, surf03, degree=1)
     pvolume.vis = vis.VisVoxel(vis.VisConfig(ctrlpts=False))
     pvolume.delta_u = pvolume.delta_v = 0.025
     pvolume.delta_w = 0.05

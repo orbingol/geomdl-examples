@@ -71,19 +71,20 @@ if __name__ == "__main__":
     surf03.knotvector_u = utilities.generate_knot_vector(surf03.degree_u, surf03.ctrlpts_size_u)
     surf03.knotvector_v = utilities.generate_knot_vector(surf03.degree_v, surf03.ctrlpts_size_v)
 
-    # Construct the parametric volume
+    # Construct the volume
     pvolume = construct.construct_volume('w', surf01, surf02, surf03, degree=1)
+
+    # Voxelize the volume
     pvolume.vis = vis.VisVoxel(vis.VisConfig(ctrlpts=False))
     pvolume.delta_u = pvolume.delta_v = 0.025
     pvolume.delta_w = 0.05
     pvolume.render(evalcolor="firebrick", use_mp=True, num_procs=16)
 
-    # Extract surfaces from the parametric volume
-    surfvol = construct.extract_surfaces(pvolume)
+    # Extract the isosurface
+    surfvol = construct.extract_isosurface(pvolume)
+    msurf = multi.SurfaceContainer(surfvol)
 
-    # Construct the isosurface
-    msurf = multi.SurfaceContainer(surfvol['uv'][0], surfvol['uv'][-1], surfvol['uw'][0], surfvol['uw'][-1],
-                                   surfvol['vw'][0], surfvol['vw'][-1])
+    # Visualize the isosurface
     msurf.vis = vis.VisSurface(vis.VisConfig(ctrlpts=False))
     msurf.delta = 0.05
     msurf.render(evalcolor=["skyblue", "cadetblue", "crimson", "crimson", "crimson", "crimson"])

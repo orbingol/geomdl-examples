@@ -4,7 +4,7 @@
 """
     Examples for the NURBS-Python Package
     Released under MIT License
-    Developed by Onur Rauf Bingol (c) 2018
+    Developed by Onur Rauf Bingol (c) 2019
 """
 
 from geomdl import BSpline
@@ -17,13 +17,13 @@ from geomdl.visualization import VisMPL as vis
 
 # Generate control points grid for Surface #1
 sg01 = CPGen.Grid(15, 10, z_value=0.0)
-sg01.generate(8, 8)
+sg01.generate(4, 3)
 
 # Create a BSpline surface instance
 surf01 = BSpline.Surface()
 
 # Set degrees
-surf01.degree_u = 1
+surf01.degree_u = 2
 surf01.degree_v = 1
 
 # Get the control points from the generated grid
@@ -35,13 +35,13 @@ surf01.knotvector_v = utilities.generate_knot_vector(surf01.degree_v, surf01.ctr
 
 # Generate control points grid for Surface #2
 sg02 = CPGen.Grid(15, 10, z_value=1.0)
-sg02.generate(8, 8)
+sg02.generate(4, 3)
 
 # Create a BSpline surface instance
 surf02 = BSpline.Surface()
 
 # Set degrees
-surf02.degree_u = 1
+surf02.degree_u = 2
 surf02.degree_v = 1
 
 # Get the control points from the generated grid
@@ -53,13 +53,13 @@ surf02.knotvector_v = utilities.generate_knot_vector(surf02.degree_v, surf02.ctr
 
 # Generate control points grid for Surface #3
 sg03 = CPGen.Grid(15, 10, z_value=2.0)
-sg03.generate(8, 8)
+sg03.generate(4, 3)
 
 # Create a BSpline surface instance
 surf03 = BSpline.Surface()
 
 # Set degrees
-surf03.degree_u = 1
+surf03.degree_u = 2
 surf03.degree_v = 1
 
 # Get the control points from the generated grid
@@ -77,8 +77,7 @@ pvolume.vis = vis.VisVolume(vis.VisConfig(ctrlpts=True, evalpts=False))
 pvolume.render()
 
 # Insert knots
-operations.insert_knot(pvolume, [None, None, 0.25], [0, 0, 1])
-operations.insert_knot(pvolume, [None, None, 0.75], [0, 0, 1])
+operations.insert_knot(pvolume, [0.9, 0.1, None], [2, 1, 0])
 
 # Visualize volume after knot insertions
 pvolume.render()

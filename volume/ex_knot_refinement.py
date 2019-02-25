@@ -96,7 +96,7 @@ pvolume.vis = vis.VisVolume(vis.VisConfig(ctrlpts=True, evalpts=False))
 pvolume.render()
 
 # Knot vector refinement
-operations.refine_knotvector(pvolume, [True, True, True])
+operations.refine_knotvector(pvolume, [1, 1, 1])
 
 # Visualize volume after knot insertions
 pvolume.render()

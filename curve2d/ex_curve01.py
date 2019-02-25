@@ -11,7 +11,6 @@ import os
 from geomdl import BSpline
 from geomdl import utilities
 from geomdl import exchange
-
 from geomdl.visualization import VisMPL
 
 
@@ -38,27 +37,6 @@ curve.evaluate()
 vis_comp = VisMPL.VisCurve2D()
 curve.vis = vis_comp
 curve.render()
-
-from geomdl import operations
-c = operations.decompose_curve(curve)
-from geomdl import helpers
-cps = helpers.degree_elevation(c[0].degree, c[0].ctrlpts)
-
-c[0].vis = VisMPL.VisCurve2D(VisMPL.VisConfig(legend=False))
-# c[0].render()
-from copy import deepcopy
-ce = deepcopy(c[0])
-ce.degree = curve.degree + 1
-ce.ctrlpts = cps
-ce.knotvector = utilities.generate_knot_vector(ce.degree, ce.ctrlpts_size)
-# ce.render()
-
-# Insert a knot
-u = 0.2
-curve.insert_knot(u)
-
-# Plot the control point polygon and the evaluated curve after knot insertion
-# curve.render()
 
 # Good to have something here to put a breakpoint
 pass

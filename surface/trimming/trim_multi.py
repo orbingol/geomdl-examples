@@ -49,6 +49,11 @@ circle = curve2d.full_circle(radius=0.15)
 # Translate circle
 operations.translate(circle, (0.5, 0.5), inplace=True)
 
+# Set evaluation deltas
+trim_curve1.delta = 0.001
+trim_curve2.delta = 0.001
+circle.delta = 0.01
+
 # List of trim curves
 trim_curves = [trim_curve1, trim_curve2, circle]
 
@@ -70,8 +75,8 @@ surf.set_ctrlpts(*exchange.import_txt("../ex_surface01.cpt", two_dimensional=Tru
 surf.knotvector_u = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 surf.knotvector_v = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 
-# Set sample size
-surf.delta = 0.020
+# Set evaluation delta
+surf.delta = 0.01
 
 # Set surface tessellation component
 surf.tessellator = tessellate.TrimTessellate()

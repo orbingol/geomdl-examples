@@ -3,8 +3,8 @@ NURBS-Python (geomdl) Examples
 
 |DOI|_ |RTD|_ |PYPI|_ |ANACONDA|_
 
-This repository contains API demonstration scripts for the NURBS-Python_ package. Please see the
-`documentation <http://nurbs-python.readthedocs.io/en/latest>`_ for more details.
+This repository contains API demonstration scripts for the NURBS-Python_ package. Please refer to the
+`documentation <http://nurbs-python.readthedocs.io/>`_ for more details.
 
 Directory Structure
 ===================

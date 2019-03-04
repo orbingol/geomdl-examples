@@ -50,8 +50,8 @@ circle = curve2d.full_circle(radius=0.15)
 operations.translate(circle, (0.5, 0.5), inplace=True)
 
 # Set evaluation deltas
-trim_curve1.delta = 0.001
-trim_curve2.delta = 0.001
+trim_curve1.delta = 0.01
+trim_curve2.delta = 0.01
 circle.delta = 0.01
 
 # List of trim curves
@@ -76,7 +76,7 @@ surf.knotvector_u = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 surf.knotvector_v = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 
 # Set evaluation delta
-surf.delta = 0.01
+surf.delta = 0.015
 
 # Set surface tessellation component
 surf.tessellator = tessellate.TrimTessellate()

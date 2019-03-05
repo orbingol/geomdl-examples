@@ -92,7 +92,7 @@ surf.vis = vis.VisSurface(config=visconf)
 surf.render(colormap=cm.copper)
 
 # Save as Wavefront OBJ file
-# exchange.export_obj(surf, "trimsurf_rectangular.obj")
+# exchange.export_obj(surf, "trim_multi.obj")
 
 # Good to have something here to put a breakpoint
 pass

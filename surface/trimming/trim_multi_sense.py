@@ -34,7 +34,7 @@ surf.knotvector_u = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 surf.knotvector_v = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 
 # Set sample size
-surf.sample_size = 25
+surf.sample_size = 30
 
 # Set surface tessellation component
 surf.tessellator = tessellate.TrimTessellate()
@@ -44,10 +44,10 @@ visconf = vis.VisConfig(ctrlpts=False, legend=False, trims=False)
 surf.vis = vis.VisSurface(config=visconf)
 
 # Generate circular trim curves with different sense
-tcrv1 = analytic.Circle(origin=(0.35, 0.35), radius=0.25)
+tcrv1 = analytic.Circle(origin=(0.25, 0.25), radius=0.20)
 tcrv1.opt = ['sense', 1]
-tcrv2 = analytic.Circle(origin=(0.45, 0.45), radius=0.25)
-tcrv2.opt = ['sense', 0]
+tcrv2 = analytic.Circle(origin=(0.75, 0.75), radius=0.20)
+tcrv2.opt = ['sense', 1]
 trim_curves = [tcrv1, tcrv2]
 
 # Set trim curves (as a list)

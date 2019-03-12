@@ -25,7 +25,7 @@ from geomdl import NURBS
 from geomdl import multi
 from geomdl import exchange
 from geomdl import compatibility
-from geomdl.visualization import VisMPL
+from geomdl.visualization import VisVTK
 
 
 def read_weights(filename, sep=","):
@@ -90,15 +90,13 @@ duck3.ctrlpts = d3_ctrlpts
 duck3.knotvector_u = [0, 0, 0, 0, 0.333333, 0.666667, 1, 1, 1, 1]
 duck3.knotvector_v = [0, 0, 0, 0, 0.333333, 0.666667, 1, 1, 1, 1]
 
-# Plotting
+# Add all surfaces to a surface container
 ducky = multi.SurfaceContainer(duck1, duck2, duck3)
-vis_config = VisMPL.VisConfig(ctrlpts=False, legend=False)
-
-# Use Matplotlib's colormaps to color the duck
-from matplotlib import cm
-
-ducky.vis = VisMPL.VisSurfTriangle(vis_config)
 ducky.sample_size = 50
-ducky.render(colormap=[cm.Wistia, cm.copper, cm.copper])
 
-pass
+# Visualization configuration
+vis_config = VisVTK.VisConfig(ctrlpts=False, legend=False)
+ducky.vis = VisVTK.VisSurface(vis_config)
+
+# Render the ducky
+ducky.render()

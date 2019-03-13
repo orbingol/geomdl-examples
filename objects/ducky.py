@@ -48,6 +48,7 @@ d1_ctrlptsw = compatibility.combine_ctrlpts_weights(d2_ctrlpts, d1_weights)
 
 # Create a NURBS surface
 duck1 = NURBS.Surface()
+duck1.name = "body"
 duck1.order_u = 4
 duck1.order_v = 4
 duck1.ctrlpts_size_u = 14
@@ -66,6 +67,7 @@ d2_ctrlpts = exchange.import_txt("duck2.ctrlpts", separator=" ")
 
 # Create a NURBS surface
 duck2 = NURBS.Surface()
+duck2.name = "beak top"
 duck2.order_u = 4
 duck2.order_v = 4
 duck2.ctrlpts_size_u = 9
@@ -82,6 +84,7 @@ d3_ctrlpts = exchange.import_txt("duck3.ctrlpts", separator=" ")
 
 # Create a NURBS surface
 duck3 = NURBS.Surface()
+duck3.name = "beak bottom"
 duck3.order_u = 4
 duck3.order_v = 4
 duck3.ctrlpts_size_u = 6

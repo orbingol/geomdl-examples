@@ -10,7 +10,7 @@
 import os
 from geomdl import BSpline
 from geomdl import exchange
-from geomdl.visualization import VisMPL as vis
+from geomdl.visualization import VisVTK as vis
 
 
 # Fix file path
@@ -40,7 +40,7 @@ surf.evaluate()
 from matplotlib import cm
 
 # Plot the control point grid and the evaluated surface
-vis_comp = vis.VisSurfTriangle()
+vis_comp = vis.VisSurface()
 surf.vis = vis_comp
 surf.render(colormap=cm.cool)
 

@@ -12,10 +12,14 @@
 from geomdl.shapes import surface
 from geomdl import exchange_vtk
 
+# Create a cylindrical surface
 cylinder = surface.cylinder(radius=5.0, height=22.5)
 
-# Export the surface as a .obj file
-exchange_vtk.export_polydata(cylinder, "cylindrical_surface.vtk")
+# Export evaluated points as a .vtk file
+exchange_vtk.export_polydata(cylinder, "cylindrical_surface_evalpts.vtk", tessellate=True)
+
+# Export control points as a .vtk file (optionally tessellated as quads)
+exchange_vtk.export_polydata(cylinder, "cylindrical_surface_ctrlpts.vtk", point_type="ctrlpts", tessellate=False)
 
 # Good to have something here to put a breakpoint
 pass

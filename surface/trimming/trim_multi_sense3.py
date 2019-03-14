@@ -8,11 +8,10 @@
 """
 
 import os
-from matplotlib import cm
 from geomdl import BSpline
 from geomdl import exchange
 from geomdl import tessellate
-from geomdl.visualization import VisMPL as vis
+from geomdl.visualization import VisVTK as vis
 from geomdl.shapes import analytic
 
 
@@ -33,9 +32,6 @@ surf.set_ctrlpts(*exchange.import_txt("../ex_surface01.cpt", two_dimensional=Tru
 surf.knotvector_u = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 surf.knotvector_v = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 
-# Set sample size
-surf.sample_size = 20
-
 # Set surface tessellation component
 surf.tessellator = tessellate.TrimTessellate()
 
@@ -50,13 +46,17 @@ tcrv2 = analytic.Circle(origin=(0.0, 0.5), radius=0.2)
 tcrv2.opt = ['sense', 0]
 tcrv3 = analytic.Circle(origin=(1.0, 0.5), radius=0.2)
 tcrv3.opt = ['sense', 0]
-trim_curves = [tcrv1, tcrv3, tcrv2]
+trim_curves = [tcrv1, tcrv2, tcrv3]
+# trim_curves = [tcrv3]
 
 # Set trim curves (as a list)
 surf.trims = trim_curves
 
+# Set sample size
+surf.sample_size = 30
+
 # Visualize surface
-surf.render(colormap=cm.copper)
+surf.render()
 
 # # Save as Wavefront OBJ file
 # exchange.export_obj(surf, "trim_multi_sense.obj")

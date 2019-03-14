@@ -8,13 +8,12 @@
 """
 
 import os
-from matplotlib import cm
 from geomdl import BSpline
 from geomdl import exchange
 from geomdl import knotvector
 from geomdl import operations
 from geomdl import tessellate
-from geomdl.visualization import VisMPL as vis
+from geomdl.visualization import VisVTK as vis
 from geomdl.shapes import curve2d
 
 

@@ -14,6 +14,7 @@ from geomdl import exchange
 from geomdl import tessellate
 from geomdl.visualization import VisMPL as vis
 from geomdl import knotvector
+from geomdl import trimming
 
 
 # Fix file path
@@ -34,7 +35,7 @@ surf.knotvector_u = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 surf.knotvector_v = [0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0]
 
 # Set sample size
-surf.sample_size = 20
+surf.sample_size = 50
 
 # Set surface tessellation component
 surf.tessellator = tessellate.TrimTessellate()
@@ -53,8 +54,8 @@ trim_curves = [tcrv]
 # Set trim curves (as a list)
 surf.trims = trim_curves
 
-from geomdl import operations
-operations.trim_surface(surf)
+# Fix trimming curves
+trimming.trim_surface(surf)
 
 # Visualize surface
 surf.render(colormap=cm.copper)

@@ -78,7 +78,7 @@ if __name__ == "__main__":
     pvolume.vis = vis.VisVoxel(vis.VisConfig(ctrlpts=False))
     pvolume.delta_u = pvolume.delta_v = 0.025
     pvolume.delta_w = 0.05
-    pvolume.render(evalcolor="firebrick", use_mp=True, num_procs=16)
+    pvolume.render(evalcolor="firebrick", num_procs=16)
 
     # Extract the isosurface
     surfvol = construct.extract_isosurface(pvolume)

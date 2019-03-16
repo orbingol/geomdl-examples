@@ -88,7 +88,7 @@ visconf = vis.VisConfig(ctrlpts=False, legend=False, trims=False)
 surf.vis = vis.VisSurface(config=visconf)
 
 # Visualize surface
-surf.render(colormap=cm.copper)
+surf.render()
 
 # Save as Wavefront OBJ file
 # exchange.export_obj(surf, "trim_multi.obj")

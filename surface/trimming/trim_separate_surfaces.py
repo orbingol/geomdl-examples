@@ -62,7 +62,7 @@ surf3.trims = [trim2]
 # Visualize all surfaces
 mult = multi.SurfaceContainer(surf1, surf2, surf3)
 mult.sample_size = 30
-mult.set_tessellator(tessellate.TrimTessellate)
+mult.tessellator = tessellate.TrimTessellate()
 
 # Show trim curves but don't show control points
 vis_conf = vis.VisConfig(trims=True, ctrlpts=False)

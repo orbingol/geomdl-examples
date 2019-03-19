@@ -98,8 +98,7 @@ ducky = multi.SurfaceContainer(duck1, duck2, duck3)
 ducky.sample_size = 50
 
 # Visualization configuration
-vis_config = VisVTK.VisConfig(ctrlpts=False, legend=False)
-ducky.vis = VisVTK.VisSurface(vis_config)
+ducky.vis = VisVTK.VisSurface(ctrlpts=True, legend=False, figure_size=[940, 940])
 
 # Render the ducky
-ducky.render()
+ducky.render(evalcolor=["green", "yellow", "yellow"], cpcolor="wheat")

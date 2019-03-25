@@ -61,7 +61,7 @@ trimming.fix_trim_curves(surf)
 surf.render(colormap=cm.copper)
 
 # # Save as Wavefront OBJ file
-# exchange.export_obj(surf, "trim_single.obj")
+# exchange.export_obj(surf, "trim_advanced.obj")
 
 # Good to have something here to put a breakpoint
 pass

@@ -53,13 +53,13 @@ trim_curves = [tcrv1, tcrv2, tcrv3]
 surf.trims = trim_curves
 
 # Set sample size
-surf.sample_size = 30
+surf.sample_size = 50
 
 # Visualize surface
 surf.render()
 
 # # Save as Wavefront OBJ file
-# exchange.export_obj(surf, "trim_multi_sense.obj")
+# exchange.export_obj(surf, "trim_multi_sense3.obj")
 
 # Good to have something here to put a breakpoint
 pass

@@ -56,7 +56,7 @@ surf.trims = trim_curves
 surf.render()
 
 # # Save as Wavefront OBJ file
-# exchange.export_obj(surf, "trim_multi_sense.obj")
+# exchange.export_obj(surf, "trim_multi_sense1.obj")
 
 # Good to have something here to put a breakpoint
 pass

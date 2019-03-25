@@ -27,8 +27,8 @@ surfgrid = CPGen.Grid(100, 100)
 # This will generate a 8x8 grid
 surfgrid.generate(8, 8)
 
-# Generate 1 bump at the center of the grid and generate some padding with a padding between the bumps
-surfgrid.bumps(num_bumps=1, bump_height=20, base_extent=4, base_adjust=1)
+# Generate 1 bump at the center of the grid
+surfgrid.bumps(num_bumps=1, bump_height=20, base_extent=4, base_adjust=-1)
 
 # Create a BSpline surface instance
 surf = BSpline.Surface()

@@ -44,17 +44,17 @@ surf.vis = vis.VisSurface(config=visconf)
 
 # Generate a circular trim curve
 tcrv = analytic.Circle(origin=(0.5, 0.5), radius=0.25)
-tcrv.opt = ['sense', 1]
+tcrv.opt = ['reversed', 1]
 trim_curves = [tcrv]
 
 # Set trim curves (as a list)
 surf.trims = trim_curves
 
 # Visualize surface
-surf.render()
+# surf.render()
 
 # # Save as Wavefront OBJ file
-# exchange.export_obj(surf, "trim_single.obj")
+exchange.export_obj(surf, "trim_single.obj")
 
 # Good to have something here to put a breakpoint
 pass

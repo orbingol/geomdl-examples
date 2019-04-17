@@ -47,11 +47,11 @@ trim1.ctrlpts = (
 )
 trim1.knotvector = knotvector.generate(trim1.degree, trim1.ctrlpts_size)
 trim1.delta = 0.001
-trim1.opt = ['sense', 1]
+trim1.opt = ['reversed', 1]
 # operations.scale(trim1, 0.5, inplace=True)
 
 trim2 = deepcopy(trim1)
-trim2.opt = ['sense', 0]
+trim2.opt = ['reversed', 0]
 
 # Add trim to surface 1
 surf1.trims = [trim1]
@@ -69,4 +69,7 @@ vis_conf = vis.VisConfig(trims=True, ctrlpts=False)
 mult.vis = vis.VisSurface(vis_conf)
 
 # Render with colors
-mult.render(evalcolor=["steelblue", "red", "green"])
+# mult.render(evalcolor=["steelblue", "red", "green"])
+
+from geomdl import exchange
+exchange.export_json(mult, "mult.json")

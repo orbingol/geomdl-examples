@@ -44,11 +44,11 @@ surf.vis = vis.VisSurface(config=visconf)
 
 # Generate circular trim curves with different sense
 tcrv1 = analytic.Circle(origin=(0.35, 0.35), radius=0.3)
-tcrv1.opt = ['sense', 1]
+tcrv1.opt = ['reversed', 1]
 tcrv2 = analytic.Circle(origin=(0.65, 0.65), radius=0.3)
-tcrv2.opt = ['sense', 1]
+tcrv2.opt = ['reversed', 1]
 tcrv3 = analytic.Circle(origin=(0.5, 0.5), radius=0.05)
-tcrv3.opt = ['sense', 0]
+tcrv3.opt = ['reversed', 0]
 trim_curves = [tcrv1, tcrv3, tcrv2]
 
 # Set trim curves (as a list)

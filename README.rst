@@ -3,8 +3,15 @@ NURBS-Python (geomdl) Examples
 
 |DOI|_ |RTD|_ |PYPI|_ |ANACONDA|_
 
-This repository contains API demonstration scripts for the NURBS-Python_ package. Please refer to the
-`documentation <http://nurbs-python.readthedocs.io/>`_ for more details.
+This repository contains API demonstration scripts for the NURBS-Python (geomdl) package.
+Please refer to our `SoftwareX article <https://doi.org/10.1016/j.softx.2018.12.005>`_
+for more details.
+
+More on NURBS-Python (geomdl)
+=============================
+
+* `Documentation <http://nurbs-python.readthedocs.io/>`_
+* `Downloads <https://github.com/orbingol/NURBS-Python>`_
 
 Directory Structure
 ===================
@@ -18,7 +25,7 @@ Directory Structure
 * ``bezier/`` contains Bezier curve and surface examples
 * ``shapes/`` contains examples demonstrating ``geomdl.shapes`` component
 * ``exchange/`` contains examples demonstrating  ``geomdl.exchange`` module
-* ``compat/`` contains examples which utilize ``geomdl.compatibility`` module for data conversion
+* ``compat/`` contains examples for data conversion
 * ``objects/`` contains examples of the real world objects
 * ``fitting/`` contains examples for curve and surface fitting
 
@@ -32,8 +39,6 @@ License
 
 `MIT <LICENSE>`_
 
-
-.. _NURBS-Python: https://github.com/orbingol/NURBS-Python
 
 .. |DOI| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.1346376.svg
 .. _DOI: https://doi.org/10.5281/zenodo.1346376

@@ -21,6 +21,7 @@
     correct shapes. This example fixes the issues caused by the row order difference.
 """
 
+import os
 from geomdl import NURBS
 from geomdl import multi
 from geomdl import exchange
@@ -38,6 +39,9 @@ def read_weights(filename, sep=","):
         print("An error occurred: {}".format(e.args[-1]))
         raise e
 
+
+# Fix file path
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 # duck1.nurbs
 

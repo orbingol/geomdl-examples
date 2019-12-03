@@ -55,7 +55,7 @@ trim_curves = [tcrv]
 surf.trims = trim_curves
 
 # Fix trimming curves
-trimming.fix_trim_curves(surf)
+# trimming.fix_trim_curves(surf)
 
 # Visualize surface
 surf.render(colormap=cm.copper)
